@@ -1,0 +1,7 @@
+footage_cache/
+audio_cache/
+caption_cache/
+videos/
+client_secrets.json
+token.json
+.env
