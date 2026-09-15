@@ -4,6 +4,7 @@ Shorts channel to surface (the channel's About/link section, since Shorts
 descriptions/comments/pinned-comments are all non-clickable as of 2023).
 Lists every video with its topic and, where relevant, the product mentioned.
 """
+import json
 import os
 import urllib.parse
 
@@ -56,7 +57,24 @@ def load_env():
     return env
 
 
+def load_product_links():
+    path = os.path.join(SCRIPT_DIR, "product_links.json")
+    if os.path.exists(path):
+        with open(path) as f:
+            return json.load(f)
+    return {}
+
+
+PRODUCT_LINKS = load_product_links()
+
+
 def amazon_url(item, tag):
+    """Direct product-page link when we've resolved a real ASIN for this
+    item (see product_links.json) - falls back to a search link only for
+    items not yet resolved."""
+    link = PRODUCT_LINKS.get(item)
+    if link:
+        return f"{link['url']}?tag={tag}"
     return f"https://www.amazon.com/s?k={urllib.parse.quote_plus(item)}&tag={tag}"
 
 
