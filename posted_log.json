@@ -3,6 +3,7 @@
     "offload_unused_apps",
     "fast_charging_myth",
     "power_bank_mah_trap",
-    "browser_tab_memory"
+    "browser_tab_memory",
+    "charging_to_100_mistake"
   ]
 }
