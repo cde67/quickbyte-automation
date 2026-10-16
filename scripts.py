@@ -21,11 +21,36 @@ Fields:
 - title: on-screen hook / video title
 - script: narration text for TTS (~110-170 words, ~45-65s spoken)
 - footage_queries: 3-5 varied Pexels video search terms for B-roll, in order
-- captions: short on-screen text overlays (NOT a transcript - sparse, punchy,
-  timed to hit key beats only, since text-on-screen-as-transcript is part of
-  the "no narrative" pattern YouTube flags)
+- captions: 0-2 short key-point callouts shown as cards in the top band, timed
+  to when the narration reaches them. Use {"text": ..., "at": "spoken word"}
+  to pin one to an exact word; plain strings are matched automatically. (Spoken words are captioned separately,
+  word-by-word, from the TTS timings - see build_video.py.)
+
+Queue order = list order (run_cycle.py publishes the first unposted entry), so
+put the scripts you most want out next earlier in the list. performance.py
+records view counts per slug in performance_log.json - check it before
+writing new entries and lean toward what's actually working.
 - affiliate: optional {product_name, search_term} - omit entirely for pure
   informational videos (keep roughly half the library affiliate-free)
+- graphics: optional animated explainer graphics (versus / checklist / steps /
+  stat), each shown when the narration reaches its `at` word - see graphics.py
+  for the spec formats. 1-2 per video; they replace stock footage at key beats.
+- hashtags: 2-3 topic hashtags without '#' (description adds #shorts)
+- tags: extra search tags for the upload
+- question: one natural question for the description that invites comments
+  (e.g. "Where is your router right now?") - not engagement bait
+
+Style that's working (Oct 2026): ~95-110 words (~30s). End on a line that
+runs straight back into the first sentence, so the Short loops seamlessly
+(e.g. "...So before you blame your laptop for a slow transfer," -> "Grab two
+USB-C cables from your drawer."). Read the seam as one sentence before saving it.
+
+Tone (owner's direction): informative yet engaging, NOT corny like other tech
+channels. Confident, conversational, specific. Every sentence carries a fact
+or a step. Engagement comes from a sharp hook, concrete numbers and a quick
+rhetorical question or two ("No rating?"), never from hype. Avoid: "insane",
+"game-changer", "mind-blowing", "you won't believe", "Seriously!", filler
+like "right?", and exclamation marks (zero is normal; one at most).
 """
 
 SCRIPTS = [
@@ -135,35 +160,51 @@ SCRIPTS = [
         "slug": "mechanical_keyboard_budget",
         "format": "under_budget",
         "title": "You don't need a $150 keyboard to stop hating how you type",
+        # Script upgraded Oct 16, 2026 for the Instagram re-post (title unchanged
+        # so performance.py still matches the original YouTube upload).
         "script": (
-            "If you spend hours a day typing and you're still on a flat laptop keyboard or a basic membrane "
-            "board, the jump to a budget mechanical keyboard is one of the highest value upgrades for how a "
-            "desk setup actually feels to use. You don't need the expensive hot-swappable enthusiast boards "
-            "people build for fun - a solid entry-level mechanical keyboard with brown or red switches gets "
-            "you most of the tactile improvement for a fraction of the price. The difference isn't really "
-            "about speed, it's about fatigue - your fingers aren't bottoming out on a hard plastic membrane "
-            "for eight hours straight. It's a genuinely different feeling by the end of a work day."
+            "You don't need a hundred-fifty-dollar keyboard to stop hating how you type. If you're on a flat "
+            "laptop keyboard or a mushy membrane board, a budget mechanical keyboard is one of the best upgrades "
+            "for your desk. Each key has its own switch, so you get a clean, consistent press instead of "
+            "bottoming out on rubber. Pick brown switches for a quiet tactile bump, or red for a smooth press. "
+            "Entry-level boards get you most of the feel of the enthusiast ones for a fraction of the price. "
+            "The difference shows up at the end of a long day, and"
         ),
-        "footage_queries": ["mechanical keyboard typing closeup", "desk setup keyboard mouse", "hands typing keyboard office", "keyboard switches closeup"],
-        "captions": ["Membrane vs mechanical", "Less finger fatigue, not just speed", "Entry-level tactile switches = 80% of the feel"],
+        "footage_queries": ["mechanical keyboard typing closeup", "laptop keyboard typing", "rgb mechanical keyboard", "desk setup keyboard mouse"],
+        "captions": [],
+        "graphics": [
+            {"type": "versus", "at": "membrane", "left": ["Membrane", "mushy, bottoms out"],
+             "right": ["Mechanical", "clean, consistent press"], "winner": "right"},
+            {"type": "checklist", "at": "brown", "title": "Pick your switch",
+             "items": ["Brown: quiet tactile bump", "Red: smooth and linear"], "reveal_at": ["brown", "red"]},
+        ],
+        "hashtags": ["mechanicalkeyboard", "desksetup", "techtips"],
+        "tags": ["budget mechanical keyboard", "best cheap keyboard", "mechanical keyboard switches"],
+        "question": "What keyboard are you typing on right now?",
         "affiliate": {"product_name": "budget mechanical keyboard", "search_term": "mechanical keyboard"},
     },
     {
         "slug": "usb_c_lightning_why",
         "format": "comparison",
         "title": "Why the USB-C switch actually matters, not just for cables",
+        # Script upgraded Oct 16, 2026 for the Instagram re-post (title unchanged).
         "script": (
-            "The move from Lightning to USB-C isn't just about which cable you carry. USB-C is a completely "
-            "open standard, which means the port itself can support wildly different capabilities depending "
-            "on the device - some support display output, some support much faster data transfer, some "
-            "support way higher charging wattage. Lightning topped out around the same speed for over a "
-            "decade. The tradeoff is that USB-C's flexibility means two cables that look identical can behave "
-            "completely differently - one might charge fast and transfer files quickly, another might only "
-            "handle slow charging. That's why the cable that came in the box matters more with USB-C than it "
-            "ever did with Lightning."
+            "Switching from Lightning to USB-C isn't really about which cable you carry. It's about what the port "
+            "can do. Lightning ran at roughly the same speed for over a decade. USB-C is an open standard, so the "
+            "same port can handle fast charging, external displays, or data transfers many times faster, "
+            "depending on the device and the cable. That flexibility has a catch. Two USB-C cables can look "
+            "identical and still behave completely differently, so the cable in the box matters more than it used "
+            "to. Keep the fast one for your laptop and phone, because"
         ),
-        "footage_queries": ["usb c cable closeup", "charging cable comparison desk", "plugging cable into laptop", "phone charging port closeup"],
-        "captions": ["Lightning: one fixed spec", "USB-C: spec varies by cable", "Same port, different capabilities"],
+        "footage_queries": ["bunch of wires cables", "laptop charging", "portable ssd usb c", "usb port laptop", "phone charging"],
+        "captions": [{"text": "Same plug, different cables", "at": "identical"}],
+        "graphics": [
+            {"type": "versus", "at": "ran", "left": ["Lightning", "one fixed speed"],
+             "right": ["USB-C", "charging, video, fast data"], "winner": "right"},
+        ],
+        "hashtags": ["usbc", "iphone", "techtips"],
+        "tags": ["usb c vs lightning", "usb c cable", "iphone usb c"],
+        "question": "Are you fully switched to USB-C yet?",
     },
     {
         "slug": "old_phone_security_camera",
@@ -200,89 +241,347 @@ SCRIPTS = [
         "footage_queries": ["phone charger plugged into wall", "charging cable and adapter closeup", "wall outlet with plug", "phone charging warning concept"],
         "captions": ["Suspiciously light = red flag", "No certification mark = red flag", "Hot to the touch = red flag"],
     },
+    # ---- Oct 2026 batch: modeled on the two breakout videos ----
+    # usb_c_lightning_why (1.3K views) and mechanical_keyboard_budget (590)
+    # beat everything else by 10-100x. What they share: a thing nearly
+    # everyone owns, a "this vs that" or "you don't need the expensive one"
+    # angle, and a concrete takeaway. Everything else (hidden settings,
+    # myths, how-tos) stalled under 60 views. These stay structurally varied
+    # (sequel, comparison, budget, before-you-buy, did-you-know) per the note above.
+    # Each is ~35s and its last line runs back into its first (seamless loop).
     {
-        "slug": "two_factor_30_seconds",
-        "format": "quick_tip",
-        "title": "The 30-second setting that stops almost every account takeover",
+        "slug": "usb_c_cable_speed_test",
+        "format": "comparison",
+        "title": "Why two identical USB-C cables can charge at totally different speeds",
         "script": (
-            "If you've been putting off setting up two-factor authentication because it sounds like a hassle, "
-            "the app-based version takes about thirty seconds per account and is genuinely worth doing today. "
-            "Skip text message codes if you can - they can be intercepted through a SIM swap. Instead use an "
-            "authenticator app, Google Authenticator or Authy both work fine and are free. Go into your email "
-            "and banking app security settings, look for two-factor or two-step verification, and scan the QR "
-            "code it shows you with the authenticator app. From then on, even if someone steals your password "
-            "in a data breach, they still can't get into your account without your phone physically in hand."
+            "Grab two USB-C cables from your drawer. They look identical, but one might charge a laptop at a "
+            "hundred watts while the other tops out at sixty, and one might move files dozens of times faster. "
+            "Here's how to tell them apart. First, check the plug or the box for a wattage, like sixty or two "
+            "hundred forty watts. Anything above sixty needs a tiny chip called an e-marker, which is why cheap "
+            "cables usually stop there. Second, look for a speed rating, like twenty or forty gigabits per "
+            "second. No rating? Assume it's stuck at old USB two speeds. So before you blame your laptop for a "
+            "slow transfer,"
         ),
-        "footage_queries": ["phone authenticator app screen", "scanning qr code phone", "entering code on phone", "account security settings screen"],
-        "captions": ["Skip SMS codes (SIM swap risk)", "Use an authenticator app instead", "Password leaked ≠ account taken"],
+        "footage_queries": ["bunch of wires cables", "laptop charging", "portable ssd usb c", "usb port laptop", "phone charging"],
+        "captions": [],
+        "graphics": [
+            {"type": "versus", "at": "charge", "left": ["Cable A", "100W + fast data"],
+             "right": ["Cable B", "60W + USB 2 speed"]},
+            {"type": "checklist", "at": "wattage", "title": "Read the label",
+             "items": ["Wattage: over 60W = e-marker", "Speed: 20 or 40 Gbps", "No rating = basic cable"],
+             "reveal_at": ["wattage", "speed", "no"]},
+        ],
+        "hashtags": ["usbc", "techtips", "charging"],
+        "tags": ["usb c cable", "usb c cable speed", "e-marker", "usb c charging"],
+        "question": "Do you know which of your cables is the fast one?",
     },
     {
-        "slug": "reverse_image_search_shortcut",
-        "format": "hidden_feature",
-        "title": "You can search using a photo instead of typing anything",
+        "slug": "flagship_vs_midrange_phone",
+        "format": "under_budget",
+        "title": "You don't need a $1,000 phone. Here's what the expensive one actually adds",
         "script": (
-            "Most people don't realize you can search using an image instead of words, and it's built directly "
-            "into your phone's camera and browser already. On iPhone, open a photo, tap the little sparkle "
-            "icon or long-press an object in the image, and it identifies what's in it - a plant, a product, "
-            "a landmark - and shows matching results. On Android it's built into Google Lens, accessible "
-            "directly from the camera app or by long-pressing any image in your browser. It's genuinely useful "
-            "for figuring out where to buy something you saw in a photo, identifying a plant on a walk, or "
-            "translating text in a picture instantly without typing a single word."
+            "You don't need a thousand-dollar phone. Here's what the expensive one actually gets you. A good "
+            "mid-range phone runs the same apps, messaging and streaming just as smoothly for everyday use. What "
+            "a flagship really adds comes down to three things: better photos in low light and at zoom, a faster "
+            "chip that mostly matters for heavy gaming, and sometimes more years of software updates. That last "
+            "one matters most. A cheaper phone with six or seven years of updates can easily outlast a pricier "
+            "one. So check the update promise first, the camera second, and the chip last, because"
         ),
-        "footage_queries": ["phone camera scanning object", "google lens app screen", "person taking photo of plant", "phone identifying product photo"],
-        "captions": ["Long-press any photo", "Or open camera > Lens", "Search with the image, not words"],
+        "footage_queries": ["person holding new smartphone", "phone camera night photo", "mobile gaming on phone", "phone software update screen", "comparing two smartphones"],
+        "captions": ["Same apps, same smoothness"],
+        "graphics": [
+            {"type": "checklist", "at": "three", "title": "What $1,000 actually buys",
+             "items": ["Low-light + zoom photos", "Faster chip (gaming)", "More years of updates"]},
+            {"type": "steps", "at": "check", "items": ["Years of updates", "Camera", "Chip"]},
+        ],
+        "hashtags": ["smartphone", "techtips", "budgettech"],
+        "tags": ["flagship vs midrange", "best budget phone", "phone buying guide"],
+        "question": "Would you go mid-range for your next phone?",
     },
     {
-        "slug": "anc_earbuds_what_matters",
+        "slug": "esim_vs_physical_sim",
+        "format": "comparison",
+        "title": "eSIM vs a physical SIM card: what actually changes for you",
+        "script": (
+            "Your next phone might not even have a SIM tray. So what actually changes? With an eSIM, your number "
+            "lives on a chip built into the phone, not a card you can pop out. The upside: a thief can't just "
+            "pull your SIM to grab your text codes, and you can add a cheap travel data plan from an app before "
+            "you even land. The catch is switching phones. Instead of moving a card, you transfer the eSIM during "
+            "setup or through your carrier. So before you wipe or trade in an old phone, move the eSIM first, "
+            "because"
+        ),
+        "footage_queries": ["sim card tray phone", "traveler at airport using phone", "person setting up new phone", "hand holding two smartphones"],
+        "captions": ["Cheap travel data from an app", "Move the eSIM BEFORE wiping"],
+        "graphics": [
+            {"type": "versus", "at": "upside", "left": ["SIM card", "easy to swap, easy to steal"],
+             "right": ["eSIM", "harder to steal, multiple plans"]},
+        ],
+        "hashtags": ["esim", "iphone", "techtips"],
+        "tags": ["esim vs sim", "what is esim", "esim travel"],
+        "question": "Have you switched to eSIM yet?",
+    },
+    {
+        "slug": "charger_brick_matters",
         "format": "before_you_buy",
-        "title": "What actually separates good noise cancelling earbuds from bad ones",
+        "title": "Your phone charges slowly because of the brick, not the cable",
         "script": (
-            "Before buying noise cancelling earbuds based on the spec sheet, know that the marketing number "
-            "for noise cancellation depth barely tells you anything useful. What actually matters is the seal - "
-            "how well the ear tip physically blocks your ear canal - because noise cancelling electronics only "
-            "handle low, steady sounds like engine hum or air conditioning. They do almost nothing for sudden "
-            "sharp sounds like someone talking nearby or a door closing, and a bad physical seal makes even "
-            "great electronics feel weak. That's why the same earbuds can feel amazing on one person and "
-            "mediocre on another - ear shape changes the seal completely. If a company offers multiple ear tip "
-            "sizes and a fit test in their app, that matters more than any noise cancellation percentage they "
-            "advertise."
+            "If your phone charges slowly, the brick is usually the problem, not the cable. Those old cube "
+            "chargers often put out just five watts, while most modern phones can take twenty, twenty-five, or "
+            "more. When you buy a new one, look for P D, short for Power Delivery, and a wattage printed right on "
+            "the brick. Chargers sold as GaN pack that power into a much smaller body, and many have several "
+            "ports. Just know they split their power when you plug in more than one device. For a single phone, "
+            "twenty to thirty watts with P D is the sweet spot. Try one, and you'll see that"
         ),
-        "footage_queries": ["wireless earbuds case closeup", "person wearing earbuds outdoors", "earbuds ear tips comparison", "noise cancelling earbuds unboxing"],
-        "captions": ["ANC spec number = mostly marketing", "The physical seal matters more", "Multiple ear tip sizes > higher dB rating"],
+        "footage_queries": ["phone charger plugged into wall", "small usb c charger closeup", "phone charging on desk", "charging station smartwatch"],
+        "captions": [],
+        "graphics": [
+            {"type": "stat", "at": "five", "from": 5, "to": 30, "unit": "W", "label": "old cube brick vs modern PD"},
+            {"type": "checklist", "at": "look", "title": "Check the brick",
+             "items": ["'PD' printed on it", "20-30W for one phone", "GaN = smaller, multi-port"]},
+        ],
+        "hashtags": ["charging", "techtips", "iphone"],
+        "tags": ["fast charger", "usb c pd charger", "gan charger", "slow charging fix"],
+        "question": "What wattage is the charger on your nightstand?",
+        "affiliate": {"product_name": "30W USB-C PD GaN charger", "search_term": "30w usb c gan charger"},
+    },
+    {
+        "slug": "wifi7_vs_wifi6_router",
+        "format": "comparison",
+        "title": "Wi-Fi 7 vs Wi-Fi 6: do you actually need the new router?",
+        "script": (
+            "A new Wi-Fi 7 router probably won't make your internet any faster. Here's why. Your wifi can only be "
+            "as fast as the plan coming into your house. If you're paying for three hundred megabits, a decent "
+            "Wi-Fi 6 router already delivers that, so Wi-Fi 7's multi-gig speeds just go unused. It also only "
+            "helps devices that support it, which is still mostly the newest phones and laptops. Where it does "
+            "help is a home packed with devices, or a multi-gig fiber plan. So before you upgrade, run a speed "
+            "test right next to your router, because unless you're on multi-gig fiber,"
+        ),
+        "footage_queries": ["wifi network laptop", "internet speed test on phone", "family using devices at home", "fiber optic cable closeup"],
+        "captions": [{"text": "Speed test next to the router first", "at": "test"}],
+        "graphics": [
+            {"type": "stat", "at": "three", "to": 300, "unit": " Mbps", "label": "a typical plan - Wi-Fi 6 already handles it"},
+            {"type": "checklist", "at": "help", "title": "When Wi-Fi 7 IS worth it",
+             "items": ["Multi-gig fiber plan", "Lots of devices at once", "Newest phones + laptops"]},
+        ],
+        "hashtags": ["wifi", "techtips", "router"],
+        "tags": ["wifi 7 vs wifi 6", "do i need wifi 7", "slow wifi fix"],
+        "question": "What speed do you actually get next to your router?",
+    },
+    {
+        "slug": "ssd_old_laptop_upgrade",
+        "format": "under_budget",
+        "title": "Don't replace your slow old laptop until you check this one part",
+        "script": (
+            "Don't replace your slow old laptop until you check this one part. If it's five or more years old and "
+            "takes forever to boot, the culprit is often a spinning hard drive, not the processor. Swapping in a "
+            "solid-state drive costs around fifty dollars and cuts boot times from minutes to seconds. But check "
+            "two things first. Does your laptop have a replaceable drive? Most older Windows laptops do, but "
+            "newer MacBooks don't. And which type does it take: a two-and-a-half-inch SATA drive, or a small M "
+            "dot two stick? Search your model number plus SSD upgrade, and"
+        ),
+        "footage_queries": ["old laptop on desk", "frustrated person waiting at laptop", "ssd drive closeup", "opening laptop back panel", "person typing on laptop happy"],
+        "captions": [],
+        "graphics": [
+            {"type": "versus", "at": "swapping", "left": ["Hard drive", "boots in minutes"],
+             "right": ["SSD", "boots in seconds"], "winner": "right"},
+            {"type": "checklist", "at": "check", "title": "Before you buy",
+             "items": ["Replaceable drive?", "SATA 2.5\" or M.2?", "Search: model + SSD"]},
+        ],
+        "hashtags": ["laptop", "pcupgrade", "techtips"],
+        "tags": ["ssd upgrade", "slow laptop fix", "hdd to ssd"],
+        "question": "How old is the laptop you're using right now?",
+        "affiliate": {"product_name": "2.5 inch SATA SSD 1TB", "search_term": "2.5 inch sata ssd 1tb"},
+    },
+    {
+        "slug": "five_g_battery_drain",
+        "format": "did_you_know",
+        "title": "Why 5G might be draining your battery faster than 4G",
+        "script": (
+            "If your battery dies faster than it used to, 5G could be part of the reason. When the 5G signal is "
+            "weak, your phone keeps hunting between 5G and 4G, and that burns power. For texting, maps and music, "
+            "you usually can't tell the difference anyway. On iPhone, go to Settings, Cellular, Cellular Data "
+            "Options, Voice and Data, and pick 5G Auto. On Android, open your network settings, find preferred "
+            "network type, and choose LTE if 5G is spotty where you live. Try it for a week and watch your "
+            "battery screen, because"
+        ),
+        "footage_queries": ["low battery phone screen", "phone signal bars city", "person using phone on street", "phone settings menu scrolling"],
+        "captions": ["Weak 5G = phone keeps hunting", "Android: preferred network type"],
+        "graphics": [
+            {"type": "steps", "at": "settings", "items": ["Settings", "Cellular", "Cellular Data Options", "Voice & Data: 5G Auto"]},
+        ],
+        "hashtags": ["iphone", "battery", "techtips"],
+        "tags": ["5g battery drain", "iphone battery tips", "5g auto"],
+        "question": "Do you keep 5G on, or Auto?",
+    },
+    {
+        "slug": "browser_passwords_vs_manager",
+        "format": "comparison",
+        "title": "Browser passwords vs a password manager: is the built-in one enough?",
+        "script": (
+            "Is the password saver in your browser actually good enough? For most people, yes. The ones built "
+            "into your iPhone, your Android phone or your browser now create strong passwords, sync across your "
+            "devices, and warn you about leaks. A dedicated manager makes sense if you mix ecosystems, like an "
+            "iPhone with a Windows PC, share logins with family, or want to store things like recovery codes. But "
+            "the real danger isn't picking the wrong one. It's reusing the same password. So open your saved "
+            "passwords today, fix any reuse warnings starting with your email, and then ask yourself:"
+        ),
+        "footage_queries": ["typing password on laptop", "phone password autofill screen", "family sharing tablet couch", "padlock security concept"],
+        "captions": [{"text": "Reusing a password is the real risk", "at": "reusing"},
+                     {"text": "Fix your email password first", "at": "email"}],
+        "graphics": [
+            {"type": "versus", "at": "dedicated", "left": ["Built-in", "fine for most people"],
+             "right": ["Dedicated app", "mixed devices, sharing"]},
+        ],
+        "hashtags": ["cybersecurity", "passwords", "techtips"],
+        "tags": ["password manager", "browser password manager", "password security"],
+        "question": "Built-in password saver or a dedicated manager?",
+    },
+    # ---- Oct 2026, batch 2: the five older scripts re-angled into the formats
+    # that win (head-to-head choices / "you don't need the expensive one"),
+    # plus one timely topic (Qi2 chargers are replacing MagSafe-only pads).
+    {
+        "slug": "qi2_vs_magsafe",
+        "format": "comparison",
+        "title": "Qi2 vs MagSafe: do you need a new wireless charger?",
+        "script": (
+            "Qi2 is showing up on more and more chargers, and it's basically MagSafe made universal. Apple "
+            "helped create it, so it uses the same kind of magnetic ring to snap your phone into the right spot. "
+            "That alignment is the whole point. Old flat wireless pads waste energy as heat when your phone sits "
+            "slightly off-center, which is why they charge slowly and run warm. A Qi2 charger works with recent "
+            "iPhones and newer Android phones like the Pixel 10, and other phones can use it with a magnetic "
+            "case. So if you're replacing an old wireless pad anyway, look for the Qi2 logo, because"
+        ),
+        "footage_queries": ["wireless charging pad phone", "magnetic phone charger", "phone charging on desk", "charging station smartwatch"],
+        "captions": [],
+        "graphics": [
+            {"type": "versus", "at": "alignment", "left": ["Flat pad", "slips off-center, runs warm"],
+             "right": ["Qi2 magnetic", "snaps into place"], "winner": "right"},
+            {"type": "checklist", "at": "works", "title": "Qi2 works with",
+             "items": ["Recent iPhones", "Pixel 10 + newer Android", "Others: a magnetic case"],
+             "reveal_at": ["iphones", "pixel", "case"]},
+        ],
+        "hashtags": ["qi2", "magsafe", "techtips"],
+        "tags": ["qi2 charger", "magsafe vs qi2", "wireless charging"],
+        "question": "MagSafe, Qi2, or still plugging in?",
+        "affiliate": {"product_name": "Qi2 magnetic wireless charger", "search_term": "qi2 magnetic charger"},
+    },
+    {
+        "slug": "budget_anc_earbuds",
+        "format": "under_budget",
+        "title": "You don't need $250 earbuds for good noise cancelling",
+        "script": (
+            "You don't need two-hundred-fifty-dollar earbuds for good noise cancelling. Here's what actually "
+            "blocks the noise. The noise cancelling chip handles low, steady sounds like engine hum or an air "
+            "conditioner, but it barely touches voices or a door slamming. What blocks those is the seal: how "
+            "well the ear tip plugs your ear. That's why a fifty-to-eighty-dollar pair with the right fit can get "
+            "surprisingly close to a flagship. The expensive pairs mostly add better call quality and app "
+            "features. So before you upgrade, try every tip size in the box and run the fit test if your app has "
+            "one, because"
+        ),
+        "footage_queries": ["wireless earbuds case closeup", "person wearing earbuds commuting", "airplane cabin passengers", "person putting in earbuds"],
+        "captions": [{"text": "Pricier pairs add calls + app features", "at": "expensive"}],
+        "graphics": [
+            {"type": "versus", "at": "chip", "left": ["ANC chip", "engine hum, AC"],
+             "right": ["Ear tip seal", "voices, sudden noise"]},
+            {"type": "checklist", "at": "upgrade", "title": "Before you upgrade",
+             "items": ["Try every tip size", "Run the fit test"], "reveal_at": ["tip", "fit"]},
+        ],
+        "hashtags": ["earbuds", "airpods", "techtips"],
+        "tags": ["best budget earbuds", "noise cancelling earbuds", "airpods pro alternative"],
+        "question": "What earbuds are you using right now?",
         "affiliate": {"product_name": "noise cancelling wireless earbuds", "search_term": "noise cancelling earbuds"},
     },
     {
-        "slug": "wifi_router_placement",
-        "format": "did_you_know",
-        "title": "Moving your router two feet can double your wifi speed",
+        "slug": "sms_codes_vs_authenticator",
+        "format": "comparison",
+        "title": "Text codes vs an authenticator app: which one actually protects you?",
         "script": (
-            "Where your router physically sits changes your wifi speed more than almost any setting you could "
-            "change. Routers radiate signal outward and slightly downward from the antennas, so a router "
-            "sitting on the floor, inside a cabinet, or behind a TV loses a huge amount of range immediately. "
-            "The ideal spot is elevated, out in the open, and as central to your home as possible - a shelf in "
-            "a hallway beats a closed media console every time. Mirrors and metal surfaces reflect wifi signal "
-            "almost like they reflect light, and microwaves running nearby can interfere with two point four "
-            "gigahertz bands specifically. Moving a router from inside a cabinet onto an open shelf a few feet "
-            "away can genuinely double measured speed in the far rooms of a house."
+            "Text message codes are better than nothing, but they're the weakest kind of two-factor. Here's why. "
+            "A scammer can talk your carrier into moving your number to their SIM card, and then your codes go "
+            "straight to them. An authenticator app creates the codes on your phone itself, so there's nothing to "
+            "intercept. Setting one up takes about thirty seconds per account. Install a free authenticator app, "
+            "open your account's security settings, choose authenticator app, and scan the QR code. Start with "
+            "your email and your bank, because"
         ),
-        "footage_queries": ["wifi router on shelf", "router blinking lights closeup", "home network setup", "person checking wifi speed phone"],
-        "captions": ["Router in a cabinet = signal loss", "Elevated + open + central = best", "Metal surfaces reflect wifi signal"],
+        "footage_queries": ["phone text message notification", "hacker typing laptop dark", "phone authenticator app screen", "scanning qr code phone", "person banking on phone"],
+        "captions": [],
+        "graphics": [
+            {"type": "versus", "at": "authenticator", "left": ["Text codes", "can be redirected"],
+             "right": ["Authenticator app", "codes stay on your phone"], "winner": "right"},
+            {"type": "steps", "at": "install", "items": ["Install an authenticator app", "Open security settings",
+                                                         "Choose authenticator app", "Scan the QR code"],
+             "reveal_at": ["install", "security", "choose", "scan"]},
+        ],
+        "hashtags": ["cybersecurity", "2fa", "techtips"],
+        "tags": ["two factor authentication", "sim swap", "authenticator app"],
+        "question": "Are you still using text codes anywhere?",
     },
     {
-        "slug": "laptop_screen_cleaning_mistake",
-        "format": "common_mistake",
-        "title": "The way most people clean their laptop screen is slowly damaging it",
+        "slug": "screen_cleaner_vs_water",
+        "format": "comparison",
+        "title": "Glass cleaner vs water: what's actually safe for your laptop screen",
         "script": (
-            "Spraying glass cleaner directly onto a laptop screen or wiping it with a dry paper towel are both "
-            "surprisingly common habits that damage the screen over time. Most laptop and phone screens have a "
-            "thin oleophobic coating that reduces fingerprint smudging, and ammonia-based glass cleaners break "
-            "that coating down with repeated use. Dry paper towels are actually abrasive at a microscopic level "
-            "and create fine scratches you won't notice until the screen looks hazy under certain lighting. The "
-            "safe method is a microfiber cloth, lightly dampened with plain water or a dedicated electronics "
-            "cleaner, never sprayed directly onto the screen - spray it on the cloth first. It takes the same "
-            "amount of time and the screen stays clear for years instead of gradually clouding."
+            "Glass cleaner and a paper towel feel like the obvious way to clean a screen, but they can slowly ruin "
+            "it. Most laptop and phone screens have a thin coating that resists fingerprints, and ammonia-based "
+            "cleaners wear it down over time. Paper towels are slightly abrasive, so they leave fine scratches you "
+            "only notice in bright light. The safe way is simple: a microfiber cloth, lightly dampened with plain "
+            "water, wiped gently. Spray the cloth, never the screen, so nothing seeps into the edges. Because"
         ),
-        "footage_queries": ["cleaning laptop screen cloth", "microfiber cloth closeup", "laptop screen reflection", "person wiping phone screen"],
-        "captions": ["Paper towel = micro-scratches", "Spray on cloth, never on screen", "Microfiber + water only"],
+        "footage_queries": ["cleaning laptop screen cloth", "glass cleaner spray bottle", "microfiber cloth closeup", "laptop screen closeup"],
+        "captions": [{"text": "Spray the cloth, never the screen", "at": "spray"}],
+        "graphics": [
+            {"type": "versus", "at": "safe", "left": ["Cleaner + paper towel", "strips coating, scratches"],
+             "right": ["Microfiber + water", "safe every time"], "winner": "right"},
+        ],
+        "hashtags": ["laptop", "cleaning", "techtips"],
+        "tags": ["how to clean laptop screen", "screen cleaning", "microfiber cloth"],
+        "question": "What have you been cleaning your screen with?",
+    },
+    {
+        "slug": "move_router_before_upgrading",
+        "format": "before_you_buy",
+        "title": "Don't buy a new router until you try moving this one",
+        "script": (
+            "Don't buy a new router until you try moving the one you have. Where it sits can matter more than "
+            "which model it is. A router sends its signal outward in every direction, so one on the floor, inside "
+            "a cabinet or behind the TV loses range right away. Put it up high, out in the open and as central as "
+            "you can. Keep it away from mirrors and big metal objects, which reflect the signal, and from the "
+            "microwave, which interferes with the two point four gigahertz band. Then run a speed test in your "
+            "slowest room. If it's still slow, upgrade. But"
+        ),
+        "footage_queries": ["wifi network laptop", "tv cabinet living room", "hallway shelf home", "person using phone on couch", "microwave oven closeup"],
+        "captions": [{"text": "Away from mirrors, metal + microwaves", "at": "microwave"}],
+        "graphics": [
+            {"type": "checklist", "at": "high", "title": "The best spot",
+             "items": ["Up high", "Out in the open", "Central in your home"], "reveal_at": ["high", "open", "central"]},
+        ],
+        "hashtags": ["wifi", "router", "techtips"],
+        "tags": ["slow wifi fix", "router placement", "wifi tips"],
+        "question": "Where is your router right now?",
+    },
+    {
+        "slug": "search_with_your_camera",
+        "format": "comparison",
+        "title": "Stop typing what you're trying to find. Search with your camera instead",
+        "script": (
+            "Stop trying to describe things in a search bar. Your phone can search with a photo instead. On "
+            "iPhone, open any photo and tap the info button with the little sparkles, or touch and hold something "
+            "in the picture. It identifies plants, products, landmarks and even dog breeds. On Android, open "
+            "Google Lens from the camera or the search bar, and on many phones you can circle anything on screen "
+            "to search it. It's the fastest way to find where to buy something you saw, or to translate a sign. "
+            "So next time you can't find the right words,"
+        ),
+        "footage_queries": ["phone camera scanning object", "person taking photo of plant", "google lens app screen", "street sign foreign city", "phone identifying product photo"],
+        "captions": [],
+        "graphics": [
+            {"type": "versus", "at": "photo", "left": ["Typing", "guessing the right words"],
+             "right": ["Camera search", "point and tap"], "winner": "right"},
+            {"type": "checklist", "at": "identifies", "title": "Works great for",
+             "items": ["Plants + dog breeds", "Products to buy", "Signs to translate"],
+             "reveal_at": ["plants", "buy", "translate"]},
+        ],
+        "hashtags": ["iphone", "android", "techtips"],
+        "tags": ["google lens", "visual look up", "circle to search"],
+        "question": "Have you tried searching with a photo yet?",
     },
 ]
