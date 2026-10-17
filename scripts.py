@@ -18,7 +18,12 @@ looking authentic, not just for viewer trust).
 Fields:
 - slug: filename-safe id
 - format: the structural format (for variety tracking - don't let one format dominate)
-- title: on-screen hook / video title
+- title: YouTube title / metadata (no longer drawn on screen)
+- hook_text: the on-screen hook card in the first frame: <= 6 words, <= 34
+  characters, no "!", no hype. Lead with the concrete object, price or spec
+  (both breakout videos did). It complements the title, it doesn't repeat it.
+  Must fit 2 lines at 84 px (caption_render.hook_layout). Falls back to title.
+- hook_emph: optional word/phrase of hook_text drawn in orange (e.g. "$150")
 - script: narration text for TTS (~110-170 words, ~45-65s spoken)
 - footage_queries: 3-5 varied Pexels video search terms for B-roll, in order
 - captions: 0-2 short key-point callouts shown as cards in the top band, timed
@@ -32,9 +37,16 @@ records view counts per slug in performance_log.json - check it before
 writing new entries and lean toward what's actually working.
 - affiliate: optional {product_name, search_term} - omit entirely for pure
   informational videos (keep roughly half the library affiliate-free)
-- graphics: optional animated explainer graphics (versus / checklist / steps /
-  stat), each shown when the narration reaches its `at` word - see graphics.py
-  for the spec formats. 1-2 per video; they replace stock footage at key beats.
+- graphics: animated explainer graphics (versus / checklist / steps / stat /
+  specs), each shown when the narration reaches its `at` word - see graphics.py
+  for the spec formats. At least 2 per video, together on screen >= 12 s, so
+  ~40% of the runtime is original visuals. `specs` cards carry only real,
+  checkable numbers (prefer ones the narration states) plus a source line.
+  Text must fit the minimum font sizes: run `python3 graphics.py --check`.
+- callouts (`captions`): <= 6 words each.
+- footage_queries[0] is the opener: the product itself, close up (e.g. "wifi
+  router closeup"), never a generic hand-holding-phone shot. Clips are never
+  shared between videos (footage_ledger.json, see build_video.py).
 - hashtags: 2-3 topic hashtags without '#' (description adds #shorts)
 - tags: extra search tags for the upload
 - question: one natural question for the description that invites comments
@@ -160,6 +172,8 @@ SCRIPTS = [
         "slug": "mechanical_keyboard_budget",
         "format": "under_budget",
         "title": "You don't need a $150 keyboard to stop hating how you type",
+        "hook_text": "$150 keyboard? Not needed",
+        "hook_emph": "$150",
         # Script upgraded Oct 16, 2026 for the Instagram re-post (title unchanged
         # so performance.py still matches the original YouTube upload).
         "script": (
@@ -174,7 +188,7 @@ SCRIPTS = [
         "captions": [],
         "graphics": [
             {"type": "versus", "at": "membrane", "left": ["Membrane", "mushy, bottoms out"],
-             "right": ["Mechanical", "clean, consistent press"], "winner": "right"},
+             "right": ["Per-key switch", "clean, even press"], "winner": "right"},
             {"type": "checklist", "at": "brown", "title": "Pick your switch",
              "items": ["Brown: quiet tactile bump", "Red: smooth and linear"], "reveal_at": ["brown", "red"]},
         ],
@@ -187,6 +201,8 @@ SCRIPTS = [
         "slug": "usb_c_lightning_why",
         "format": "comparison",
         "title": "Why the USB-C switch actually matters, not just for cables",
+        "hook_text": "USB-C isn't about the cable",
+        "hook_emph": "USB-C",
         # Script upgraded Oct 16, 2026 for the Instagram re-post (title unchanged).
         "script": (
             "Switching from Lightning to USB-C isn't really about which cable you carry. It's about what the port "
@@ -200,7 +216,7 @@ SCRIPTS = [
         "captions": [{"text": "Same plug, different cables", "at": "identical"}],
         "graphics": [
             {"type": "versus", "at": "ran", "left": ["Lightning", "one fixed speed"],
-             "right": ["USB-C", "charging, video, fast data"], "winner": "right"},
+             "right": ["USB-C", "charging, video, data"], "winner": "right"},
         ],
         "hashtags": ["usbc", "iphone", "techtips"],
         "tags": ["usb c vs lightning", "usb c cable", "iphone usb c"],
@@ -268,17 +284,20 @@ SCRIPTS = [
             {"type": "versus", "at": "charge", "left": ["Cable A", "100W + fast data"],
              "right": ["Cable B", "60W + USB 2 speed"]},
             {"type": "checklist", "at": "wattage", "title": "Read the label",
-             "items": ["Wattage: over 60W = e-marker", "Speed: 20 or 40 Gbps", "No rating = basic cable"],
+             "items": ["Over 60W: e-marker", "Speed: 20 or 40 Gbps", "No rating = basic cable"],
              "reveal_at": ["wattage", "speed", "no"]},
         ],
         "hashtags": ["usbc", "techtips", "charging"],
         "tags": ["usb c cable", "usb c cable speed", "e-marker", "usb c charging"],
         "question": "Do you know which of your cables is the fast one?",
+        "affiliate": {"product_name": "240W USB-C cable with e-marker (USB4 40Gbps)", "search_term": "usb4 240w usb c cable"},
     },
     {
         "slug": "flagship_vs_midrange_phone",
         "format": "under_budget",
         "title": "You don't need a $1,000 phone. Here's what the expensive one actually adds",
+        "hook_text": "What $1,000 phones add",
+        "hook_emph": "$1,000",
         "script": (
             "You don't need a thousand-dollar phone. Here's what the expensive one actually gets you. A good "
             "mid-range phone runs the same apps, messaging and streaming just as smoothly for everyday use. What "
@@ -287,12 +306,18 @@ SCRIPTS = [
             "one matters most. A cheaper phone with six or seven years of updates can easily outlast a pricier "
             "one. So check the update promise first, the camera second, and the chip last, because"
         ),
-        "footage_queries": ["person holding new smartphone", "phone camera night photo", "mobile gaming on phone", "phone software update screen", "comparing two smartphones"],
-        "captions": ["Same apps, same smoothness"],
+        "footage_queries": ["smartphone closeup", "phone camera night photo", "taking photo with smartphone",
+                            "mobile gaming on phone", "smartphone screen scrolling", "phone software update screen",
+                            "comparing two smartphones"],
+        "captions": [],
         "graphics": [
-            {"type": "checklist", "at": "three", "title": "What $1,000 actually buys",
-             "items": ["Low-light + zoom photos", "Faster chip (gaming)", "More years of updates"]},
-            {"type": "steps", "at": "check", "items": ["Years of updates", "Camera", "Chip"]},
+            {"type": "versus", "at": "mid-range", "left": ["Mid-range", "same apps, just as smooth"],
+             "right": ["Flagship", "camera, chip, updates"], "dur": 4.6},
+            {"type": "checklist", "at": "three", "title": "What $1,000 buys",
+             "items": ["Low-light + zoom photos", "Faster chip (gaming)", "More years of updates"],
+             "reveal_at": ["photos", "chip", "updates"]},
+            {"type": "steps", "at": "check", "title": "Check in this order",
+             "items": ["Years of updates", "Camera", "Chip"], "reveal_at": ["update", "camera", "chip"]},
         ],
         "hashtags": ["smartphone", "techtips", "budgettech"],
         "tags": ["flagship vs midrange", "best budget phone", "phone buying guide"],
@@ -302,6 +327,8 @@ SCRIPTS = [
         "slug": "esim_vs_physical_sim",
         "format": "comparison",
         "title": "eSIM vs a physical SIM card: what actually changes for you",
+        "hook_text": "eSIM vs SIM: what changes",
+        "hook_emph": "eSIM",
         "script": (
             "Your next phone might not even have a SIM tray. So what actually changes? With an eSIM, your number "
             "lives on a chip built into the phone, not a card you can pop out. The upside: a thief can't just "
@@ -310,11 +337,16 @@ SCRIPTS = [
             "setup or through your carrier. So before you wipe or trade in an old phone, move the eSIM first, "
             "because"
         ),
-        "footage_queries": ["sim card tray phone", "traveler at airport using phone", "person setting up new phone", "hand holding two smartphones"],
-        "captions": ["Cheap travel data from an app", "Move the eSIM BEFORE wiping"],
+        "footage_queries": ["sim card", "smartphone settings", "traveler at airport using phone",
+                            "airplane window travel", "setting up new smartphone", "hand holding two smartphones",
+                            "smartphone closeup"],
+        "captions": [{"text": "Cheap travel data from an app", "at": "cheap"}],
         "graphics": [
-            {"type": "versus", "at": "upside", "left": ["SIM card", "easy to swap, easy to steal"],
-             "right": ["eSIM", "harder to steal, multiple plans"]},
+            {"type": "versus", "at": "upside", "left": ["SIM card", "easy to pull out"],
+             "right": ["eSIM", "can't be pulled out"], "winner": "right", "dur": 4.3},
+            {"type": "steps", "at": "catch", "title": "Switching phones",
+             "items": ["Transfer during setup", "Or through your carrier", "Move it before you wipe"],
+             "reveal_at": ["transfer", "carrier", "wipe"]},
         ],
         "hashtags": ["esim", "iphone", "techtips"],
         "tags": ["esim vs sim", "what is esim", "esim travel"],
@@ -324,6 +356,8 @@ SCRIPTS = [
         "slug": "charger_brick_matters",
         "format": "before_you_buy",
         "title": "Your phone charges slowly because of the brick, not the cable",
+        "hook_text": "Slow charging? It's the 5W brick",
+        "hook_emph": "5W",
         "script": (
             "If your phone charges slowly, the brick is usually the problem, not the cable. Those old cube "
             "chargers often put out just five watts, while most modern phones can take twenty, twenty-five, or "
@@ -332,12 +366,17 @@ SCRIPTS = [
             "ports. Just know they split their power when you plug in more than one device. For a single phone, "
             "twenty to thirty watts with P D is the sweet spot. Try one, and you'll see that"
         ),
-        "footage_queries": ["phone charger plugged into wall", "small usb c charger closeup", "phone charging on desk", "charging station smartwatch"],
-        "captions": [],
+        "footage_queries": ["charger brick", "phone charging cable", "phone charger plugged into wall",
+                            "usb cable plug", "smartphone charging", "power outlet",
+                            "charging station smartwatch"],
+        "captions": [{"text": "Several ports share the power", "at": "split"},
+                     {"text": "One phone: 20-30W with PD", "at": "single"}],
         "graphics": [
-            {"type": "stat", "at": "five", "from": 5, "to": 30, "unit": "W", "label": "old cube brick vs modern PD"},
+            {"type": "stat", "at": "five", "from": 5, "to": 30, "unit": "W", "label": "Old cube brick vs modern PD",
+             "dur": 4.0},
             {"type": "checklist", "at": "look", "title": "Check the brick",
-             "items": ["'PD' printed on it", "20-30W for one phone", "GaN = smaller, multi-port"]},
+             "items": ["PD (Power Delivery)", "Wattage printed on it", "GaN: smaller, multi-port"],
+             "reveal_at": ["p", "wattage", "gan"], "hold": 2.4},
         ],
         "hashtags": ["charging", "techtips", "iphone"],
         "tags": ["fast charger", "usb c pd charger", "gan charger", "slow charging fix"],
@@ -348,6 +387,8 @@ SCRIPTS = [
         "slug": "wifi7_vs_wifi6_router",
         "format": "comparison",
         "title": "Wi-Fi 7 vs Wi-Fi 6: do you actually need the new router?",
+        "hook_text": "Wi-Fi 7 router? Check your plan",
+        "hook_emph": "Wi-Fi 7",
         "script": (
             "A new Wi-Fi 7 router probably won't make your internet any faster. Here's why. Your wifi can only be "
             "as fast as the plan coming into your house. If you're paying for three hundred megabits, a decent "
@@ -356,12 +397,20 @@ SCRIPTS = [
             "help is a home packed with devices, or a multi-gig fiber plan. So before you upgrade, run a speed "
             "test right next to your router, because unless you're on multi-gig fiber,"
         ),
-        "footage_queries": ["wifi network laptop", "internet speed test on phone", "family using devices at home", "fiber optic cable closeup"],
-        "captions": [{"text": "Speed test next to the router first", "at": "test"}],
+        "footage_queries": ["router closeup", "internet speed test on phone", "family using devices at home",
+                            "laptop on couch at home", "smartphone and laptop on desk", "fiber optic cable closeup",
+                            "wifi network laptop"],
+        "captions": [{"text": "Speed test next to the router", "at": "test"}],
         "graphics": [
-            {"type": "stat", "at": "three", "to": 300, "unit": " Mbps", "label": "a typical plan - Wi-Fi 6 already handles it"},
-            {"type": "checklist", "at": "help", "title": "When Wi-Fi 7 IS worth it",
-             "items": ["Multi-gig fiber plan", "Lots of devices at once", "Newest phones + laptops"]},
+            # 9.6 / 46 Gbps: peak PHY rates in the IEEE 802.11ax (Wi-Fi 6) and
+            # 802.11be (Wi-Fi 7) standards; 300 Mbps is the plan in the narration.
+            {"type": "specs", "at": "three", "title": "Your plan vs the router",
+             "rows": [["Your plan", "300 Mbps"], ["Wi-Fi 6 peak", "9.6 Gbps"], ["Wi-Fi 7 peak", "46 Gbps"]],
+             "highlight": 0, "reveal_at": ["three", "6", "multi"],
+             "source": "Peak rates: IEEE 802.11ax / 802.11be"},
+            {"type": "checklist", "at": "helps", "title": "Wi-Fi 7 only helps",
+             "items": ["Devices that support it", "Device-packed homes", "Multi-gig fiber plans"],
+             "reveal_at": ["support", "packed", "fiber"]},
         ],
         "hashtags": ["wifi", "techtips", "router"],
         "tags": ["wifi 7 vs wifi 6", "do i need wifi 7", "slow wifi fix"],
@@ -371,31 +420,38 @@ SCRIPTS = [
         "slug": "ssd_old_laptop_upgrade",
         "format": "under_budget",
         "title": "Don't replace your slow old laptop until you check this one part",
+        "hook_text": "Slow laptop? Swap in an SSD",
+        "hook_emph": "SSD",
         "script": (
             "Don't replace your slow old laptop until you check this one part. If it's five or more years old and "
             "takes forever to boot, the culprit is often a spinning hard drive, not the processor. Swapping in a "
-            "solid-state drive costs around fifty dollars and cuts boot times from minutes to seconds. But check "
+            "solid-state drive costs far less than a new laptop and cuts boot times from minutes to seconds. But check "
             "two things first. Does your laptop have a replaceable drive? Most older Windows laptops do, but "
             "newer MacBooks don't. And which type does it take: a two-and-a-half-inch SATA drive, or a small M "
             "dot two stick? Search your model number plus SSD upgrade, and"
         ),
-        "footage_queries": ["old laptop on desk", "frustrated person waiting at laptop", "ssd drive closeup", "opening laptop back panel", "person typing on laptop happy"],
-        "captions": [],
+        "footage_queries": ["hard drive closeup", "old laptop on desk", "frustrated person waiting at laptop",
+                            "computer repair technician", "laptop motherboard", "opening laptop back panel",
+                            "person typing on laptop happy"],
+        "captions": [{"text": "Spinning hard drive = slow boot", "at": "spinning"}],
         "graphics": [
             {"type": "versus", "at": "swapping", "left": ["Hard drive", "boots in minutes"],
-             "right": ["SSD", "boots in seconds"], "winner": "right"},
+             "right": ["SSD", "boots in seconds"], "winner": "right", "dur": 5.6},
             {"type": "checklist", "at": "check", "title": "Before you buy",
-             "items": ["Replaceable drive?", "SATA 2.5\" or M.2?", "Search: model + SSD"]},
+             "items": ["Replaceable drive?", "SATA 2.5\" or M.2?", "Search: model + SSD"],
+             "reveal_at": ["replaceable", "sata", "search"]},
         ],
         "hashtags": ["laptop", "pcupgrade", "techtips"],
         "tags": ["ssd upgrade", "slow laptop fix", "hdd to ssd"],
         "question": "How old is the laptop you're using right now?",
-        "affiliate": {"product_name": "2.5 inch SATA SSD 1TB", "search_term": "2.5 inch sata ssd 1tb"},
+        "affiliate": {"product_name": "2.5 inch SATA SSD 500GB", "search_term": "2.5 inch sata ssd 500gb"},
     },
     {
         "slug": "five_g_battery_drain",
         "format": "did_you_know",
         "title": "Why 5G might be draining your battery faster than 4G",
+        "hook_text": "Weak 5G drains your battery",
+        "hook_emph": "5G",
         "script": (
             "If your battery dies faster than it used to, 5G could be part of the reason. When the 5G signal is "
             "weak, your phone keeps hunting between 5G and 4G, and that burns power. For texting, maps and music, "
@@ -404,10 +460,20 @@ SCRIPTS = [
             "network type, and choose LTE if 5G is spotty where you live. Try it for a week and watch your "
             "battery screen, because"
         ),
-        "footage_queries": ["low battery phone screen", "phone signal bars city", "person using phone on street", "phone settings menu scrolling"],
-        "captions": ["Weak 5G = phone keeps hunting", "Android: preferred network type"],
+        "footage_queries": ["phone battery", "low battery phone screen", "phone signal bars city",
+                            "person using phone on street", "texting on phone", "listening to music on phone",
+                            "phone settings menu scrolling"],
+        "captions": [{"text": "Try it for a week", "at": "try"}],
         "graphics": [
-            {"type": "steps", "at": "settings", "items": ["Settings", "Cellular", "Cellular Data Options", "Voice & Data: 5G Auto"]},
+            # Apple: 5G Auto switches to LTE when 5G wouldn't be noticeably faster
+            {"type": "versus", "at": "weak", "left": ["Always 5G", "hunts on a weak signal"],
+             "right": ["5G Auto", "5G only when it helps"], "winner": "right", "dur": 4.4},
+            {"type": "steps", "at": "iphone", "title": "iPhone",
+             "items": ["Settings", "Cellular", "Cellular Data Options", "Voice & Data: 5G Auto"],
+             "reveal_at": ["settings", "cellular", "options", "voice"]},
+            {"type": "steps", "at": "android", "title": "Android",
+             "items": ["Network settings", "Preferred network type", "LTE if 5G is spotty"],
+             "reveal_at": ["network", "preferred", "lte"]},
         ],
         "hashtags": ["iphone", "battery", "techtips"],
         "tags": ["5g battery drain", "iphone battery tips", "5g auto"],
@@ -417,6 +483,8 @@ SCRIPTS = [
         "slug": "browser_passwords_vs_manager",
         "format": "comparison",
         "title": "Browser passwords vs a password manager: is the built-in one enough?",
+        "hook_text": "Your password saver is enough",
+        "hook_emph": "password saver",
         "script": (
             "Is the password saver in your browser actually good enough? For most people, yes. The ones built "
             "into your iPhone, your Android phone or your browser now create strong passwords, sync across your "
@@ -425,12 +493,17 @@ SCRIPTS = [
             "the real danger isn't picking the wrong one. It's reusing the same password. So open your saved "
             "passwords today, fix any reuse warnings starting with your email, and then ask yourself:"
         ),
-        "footage_queries": ["typing password on laptop", "phone password autofill screen", "family sharing tablet couch", "padlock security concept"],
-        "captions": [{"text": "Reusing a password is the real risk", "at": "reusing"},
-                     {"text": "Fix your email password first", "at": "email"}],
+        "footage_queries": ["password", "typing password on laptop", "smartphone and laptop on desk",
+                            "family sharing tablet couch", "using smartphone on couch", "laptop keyboard closeup",
+                            "padlock security concept"],
+        "captions": [{"text": "Strong passwords, sync, leak alerts", "at": "strong"},
+                     {"text": "Reused passwords are the real risk", "at": "danger"}],
         "graphics": [
             {"type": "versus", "at": "dedicated", "left": ["Built-in", "fine for most people"],
-             "right": ["Dedicated app", "mixed devices, sharing"]},
+             "right": ["Manager", "iPhone + PC, sharing"], "dur": 8.4},
+            {"type": "checklist", "at": "open", "title": "Do this today",
+             "items": ["Open saved passwords", "Fix reuse warnings", "Start with your email"],
+             "reveal_at": ["open", "reuse", "email"]},
         ],
         "hashtags": ["cybersecurity", "passwords", "techtips"],
         "tags": ["password manager", "browser password manager", "password security"],
@@ -443,6 +516,8 @@ SCRIPTS = [
         "slug": "qi2_vs_magsafe",
         "format": "comparison",
         "title": "Qi2 vs MagSafe: do you need a new wireless charger?",
+        "hook_text": "Qi2 is MagSafe for everyone",
+        "hook_emph": "Qi2",
         "script": (
             "Qi2 is showing up on more and more chargers, and it's basically MagSafe made universal. Apple "
             "helped create it, so it uses the same kind of magnetic ring to snap your phone into the right spot. "
@@ -451,11 +526,14 @@ SCRIPTS = [
             "iPhones and newer Android phones like the Pixel 10, and other phones can use it with a magnetic "
             "case. So if you're replacing an old wireless pad anyway, look for the Qi2 logo, because"
         ),
-        "footage_queries": ["wireless charging pad phone", "magnetic phone charger", "phone charging on desk", "charging station smartwatch"],
-        "captions": [],
+        "footage_queries": ["wireless charging phone", "wireless charging pad phone", "magnetic phone charger",
+                            "smartphone on desk", "phone charging on desk", "charging station smartwatch",
+                            "smartphone closeup"],
+        "captions": [{"text": "Same magnetic ring as MagSafe", "at": "magnetic"},
+                     {"text": "Look for the Qi2 logo", "at": "look"}],
         "graphics": [
-            {"type": "versus", "at": "alignment", "left": ["Flat pad", "slips off-center, runs warm"],
-             "right": ["Qi2 magnetic", "snaps into place"], "winner": "right"},
+            {"type": "versus", "at": "alignment", "left": ["Flat pad", "off-center, runs warm"],
+             "right": ["Qi2", "magnets snap it into place"], "winner": "right", "dur": 6.5},
             {"type": "checklist", "at": "works", "title": "Qi2 works with",
              "items": ["Recent iPhones", "Pixel 10 + newer Android", "Others: a magnetic case"],
              "reveal_at": ["iphones", "pixel", "case"]},
@@ -469,20 +547,25 @@ SCRIPTS = [
         "slug": "budget_anc_earbuds",
         "format": "under_budget",
         "title": "You don't need $250 earbuds for good noise cancelling",
+        "hook_text": "$250 earbuds? It's the seal",
+        "hook_emph": "$250",
         "script": (
             "You don't need two-hundred-fifty-dollar earbuds for good noise cancelling. Here's what actually "
             "blocks the noise. The noise cancelling chip handles low, steady sounds like engine hum or an air "
             "conditioner, but it barely touches voices or a door slamming. What blocks those is the seal: how "
-            "well the ear tip plugs your ear. That's why a fifty-to-eighty-dollar pair with the right fit can get "
+            "well the ear tip plugs your ear. That's why an under-a-hundred-dollar pair with the right fit can get "
             "surprisingly close to a flagship. The expensive pairs mostly add better call quality and app "
             "features. So before you upgrade, try every tip size in the box and run the fit test if your app has "
             "one, because"
         ),
-        "footage_queries": ["wireless earbuds case closeup", "person wearing earbuds commuting", "airplane cabin passengers", "person putting in earbuds"],
-        "captions": [{"text": "Pricier pairs add calls + app features", "at": "expensive"}],
+        "footage_queries": ["wireless earbuds", "wireless earbuds case closeup", "air conditioner",
+                            "door closing", "airplane cabin passengers", "person putting in earbuds",
+                            "person wearing earbuds commuting"],
+        "captions": [{"text": "Right fit: close to a flagship", "at": "fit"},
+                     {"text": "Pricier pairs add calls + app features", "at": "expensive"}],
         "graphics": [
-            {"type": "versus", "at": "chip", "left": ["ANC chip", "engine hum, AC"],
-             "right": ["Ear tip seal", "voices, sudden noise"]},
+            {"type": "versus", "at": "chip", "left": ["ANC chip", "blocks engine hum, AC"],
+             "right": ["Ear tip seal", "blocks voices, slams"], "reveal_at": ["chip", "seal"], "hold": 2.2},
             {"type": "checklist", "at": "upgrade", "title": "Before you upgrade",
              "items": ["Try every tip size", "Run the fit test"], "reveal_at": ["tip", "fit"]},
         ],
@@ -495,6 +578,8 @@ SCRIPTS = [
         "slug": "sms_codes_vs_authenticator",
         "format": "comparison",
         "title": "Text codes vs an authenticator app: which one actually protects you?",
+        "hook_text": "Text codes: the weakest 2FA",
+        "hook_emph": "Text codes",
         "script": (
             "Text message codes are better than nothing, but they're the weakest kind of two-factor. Here's why. "
             "A scammer can talk your carrier into moving your number to their SIM card, and then your codes go "
@@ -503,13 +588,16 @@ SCRIPTS = [
             "open your account's security settings, choose authenticator app, and scan the QR code. Start with "
             "your email and your bank, because"
         ),
-        "footage_queries": ["phone text message notification", "hacker typing laptop dark", "phone authenticator app screen", "scanning qr code phone", "person banking on phone"],
-        "captions": [],
+        "footage_queries": ["text message", "text message on phone closeup", "phone text message notification",
+                            "hacker typing laptop dark", "scanning qr code phone", "smartphone security",
+                            "person banking on phone"],
+        "captions": [{"text": "About 30 seconds per account", "at": "setting"}],
         "graphics": [
-            {"type": "versus", "at": "authenticator", "left": ["Text codes", "can be redirected"],
-             "right": ["Authenticator app", "codes stay on your phone"], "winner": "right"},
-            {"type": "steps", "at": "install", "items": ["Install an authenticator app", "Open security settings",
-                                                         "Choose authenticator app", "Scan the QR code"],
+            {"type": "versus", "at": "scammer", "left": ["Text codes", "can be redirected"],
+             "right": ["App codes", "made on your phone"], "winner": "right",
+             "reveal_at": ["scammer", "authenticator"], "hold": 2.6},
+            {"type": "steps", "at": "install", "items": ["Install the app", "Open security settings",
+                                                         "Choose authenticator", "Scan the QR code"],
              "reveal_at": ["install", "security", "choose", "scan"]},
         ],
         "hashtags": ["cybersecurity", "2fa", "techtips"],
@@ -520,6 +608,8 @@ SCRIPTS = [
         "slug": "screen_cleaner_vs_water",
         "format": "comparison",
         "title": "Glass cleaner vs water: what's actually safe for your laptop screen",
+        "hook_text": "Glass cleaner vs your screen",
+        "hook_emph": "Glass cleaner",
         "script": (
             "Glass cleaner and a paper towel feel like the obvious way to clean a screen, but they can slowly ruin "
             "it. Most laptop and phone screens have a thin coating that resists fingerprints, and ammonia-based "
@@ -527,20 +617,28 @@ SCRIPTS = [
             "only notice in bright light. The safe way is simple: a microfiber cloth, lightly dampened with plain "
             "water, wiped gently. Spray the cloth, never the screen, so nothing seeps into the edges. Because"
         ),
-        "footage_queries": ["cleaning laptop screen cloth", "glass cleaner spray bottle", "microfiber cloth closeup", "laptop screen closeup"],
+        "footage_queries": ["cleaning screen", "cleaning laptop screen cloth", "glass cleaner spray bottle",
+                            "paper towel", "microfiber cloth closeup", "laptop screen closeup",
+                            "spray bottle"],
         "captions": [{"text": "Spray the cloth, never the screen", "at": "spray"}],
         "graphics": [
-            {"type": "versus", "at": "safe", "left": ["Cleaner + paper towel", "strips coating, scratches"],
-             "right": ["Microfiber + water", "safe every time"], "winner": "right"},
+            {"type": "checklist", "at": "coating", "title": "What goes wrong", "style": "avoid",
+             "items": ["Ammonia strips coating", "Paper towels scratch"],
+             "reveal_at": ["ammonia", "paper"], "hold": 4.6},
+            {"type": "versus", "at": "safe", "left": ["Glass cleaner", "strips coating, scratches"],
+             "right": ["Microfiber", "+ plain water, gently"], "winner": "right", "dur": 5.4},
         ],
         "hashtags": ["laptop", "cleaning", "techtips"],
         "tags": ["how to clean laptop screen", "screen cleaning", "microfiber cloth"],
         "question": "What have you been cleaning your screen with?",
+        "affiliate": {"product_name": "microfiber cleaning cloths for screens", "search_term": "microfiber cleaning cloth screens"},
     },
     {
         "slug": "move_router_before_upgrading",
         "format": "before_you_buy",
         "title": "Don't buy a new router until you try moving this one",
+        "hook_text": "Router on the floor? Move it",
+        "hook_emph": "floor",
         "script": (
             "Don't buy a new router until you try moving the one you have. Where it sits can matter more than "
             "which model it is. A router sends its signal outward in every direction, so one on the floor, inside "
@@ -549,11 +647,18 @@ SCRIPTS = [
             "microwave, which interferes with the two point four gigahertz band. Then run a speed test in your "
             "slowest room. If it's still slow, upgrade. But"
         ),
-        "footage_queries": ["wifi network laptop", "tv cabinet living room", "hallway shelf home", "person using phone on couch", "microwave oven closeup"],
-        "captions": [{"text": "Away from mirrors, metal + microwaves", "at": "microwave"}],
+        "footage_queries": ["router", "tv cabinet living room", "hallway shelf home",
+                            "person using phone on couch", "mirror in living room", "microwave oven closeup",
+                            "internet speed test on phone"],
+        "captions": [{"text": "Placement can matter more", "at": "matter"},
+                     {"text": "Speed test in your slowest room", "at": "run"}],
         "graphics": [
-            {"type": "checklist", "at": "high", "title": "The best spot",
-             "items": ["Up high", "Out in the open", "Central in your home"], "reveal_at": ["high", "open", "central"]},
+            {"type": "versus", "at": "floor", "left": ["Floor or cabinet", "loses range right away"],
+             "right": ["Up high", "open and central"], "winner": "right",
+             "reveal_at": ["floor", "high"], "hold": 2.4},
+            {"type": "checklist", "at": "keep", "title": "Keep it away from", "style": "avoid",
+             "items": ["Mirrors", "Big metal objects", "Microwaves (2.4 GHz)"],
+             "reveal_at": ["mirrors", "metal", "microwave"], "hold": 3.2},
         ],
         "hashtags": ["wifi", "router", "techtips"],
         "tags": ["slow wifi fix", "router placement", "wifi tips"],
@@ -563,6 +668,8 @@ SCRIPTS = [
         "slug": "search_with_your_camera",
         "format": "comparison",
         "title": "Stop typing what you're trying to find. Search with your camera instead",
+        "hook_text": "Your camera is a search bar",
+        "hook_emph": "camera",
         "script": (
             "Stop trying to describe things in a search bar. Your phone can search with a photo instead. On "
             "iPhone, open any photo and tap the info button with the little sparkles, or touch and hold something "
@@ -571,14 +678,19 @@ SCRIPTS = [
             "to search it. It's the fastest way to find where to buy something you saw, or to translate a sign. "
             "So next time you can't find the right words,"
         ),
-        "footage_queries": ["phone camera scanning object", "person taking photo of plant", "google lens app screen", "street sign foreign city", "phone identifying product photo"],
-        "captions": [],
+        "footage_queries": ["phone camera", "phone camera scanning object", "person taking photo of plant",
+                            "landmark tourist photo", "dog breed", "street sign foreign city",
+                            "phone identifying product photo"],
+        "captions": [{"text": "iPhone: tap the info button", "at": "tap"},
+                     {"text": "Fastest way to shop or translate", "at": "fastest"}],
         "graphics": [
             {"type": "versus", "at": "photo", "left": ["Typing", "guessing the right words"],
-             "right": ["Camera search", "point and tap"], "winner": "right"},
-            {"type": "checklist", "at": "identifies", "title": "Works great for",
-             "items": ["Plants + dog breeds", "Products to buy", "Signs to translate"],
-             "reveal_at": ["plants", "buy", "translate"]},
+             "right": ["Camera", "point and tap"], "winner": "right", "dur": 4.0},
+            {"type": "checklist", "at": "identifies", "title": "It identifies",
+             "items": ["Plants", "Products", "Landmarks + dog breeds"],
+             "reveal_at": ["plants", "products", "landmarks"]},
+            {"type": "steps", "at": "android", "title": "Android",
+             "items": ["Open Google Lens", "Or circle to search"], "reveal_at": ["google", "circle"]},
         ],
         "hashtags": ["iphone", "android", "techtips"],
         "tags": ["google lens", "visual look up", "circle to search"],
