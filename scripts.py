@@ -592,7 +592,7 @@ SCRIPTS = [
         "graphics": [
             {
                 "type": "versus",
-                "at": "charge",
+                "at": "reflects",
                 "left": [
                     "Kindle",
                     "weeks per charge"

@@ -11,22 +11,27 @@
     "old_phone_security_camera",
     "counterfeit_charger_red_flags",
     "usb_c_cable_speed_test",
-    "flagship_vs_midrange_phone"
+    "flagship_vs_midrange_phone",
+    "esim_vs_physical_sim"
   ],
   "ig_posted": [
     "mechanical_keyboard_budget",
     "usb_c_lightning_why",
     "usb_c_cable_speed_test",
-    "flagship_vs_midrange_phone"
+    "flagship_vs_midrange_phone",
+    "esim_vs_physical_sim"
   ],
   "tiktok_exported": [
     "mechanical_keyboard_budget",
     "usb_c_lightning_why",
     "usb_c_cable_speed_test",
-    "flagship_vs_midrange_phone"
+    "flagship_vs_midrange_phone",
+    "esim_vs_physical_sim"
   ],
   "tiktok_posted": [
     "usb_c_lightning_why",
-    "mechanical_keyboard_budget"
+    "mechanical_keyboard_budget",
+    "esim_vs_physical_sim",
+    "usb_c_cable_speed_test"
   ]
 }
