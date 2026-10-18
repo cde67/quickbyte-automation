@@ -18,6 +18,9 @@ looking authentic, not just for viewer trust).
 Fields:
 - slug: filename-safe id
 - format: the structural format (for variety tracking - don't let one format dominate)
+- series: running series name ("Charging, decoded", "Before you buy", "Settings
+  worth changing", "Security in 30 seconds"). Drawn under the hook; captions add
+  "Part N of <series>" (series.py). A next part coming is a reason to follow.
 - title: YouTube title / metadata (no longer drawn on screen)
 - hook_text: the on-screen hook card in the first frame: <= 6 words, <= 34
   characters, no "!", no hype. Lead with the concrete object, price or spec
@@ -68,6 +71,7 @@ like "right?", and exclamation marks (zero is normal; one at most).
 SCRIPTS = [
     {
         "slug": "offload_unused_apps",
+        "series": "Settings worth changing",
         "format": "quick_tip",
         "title": "Free up storage without deleting a single app",
         "script": (
@@ -85,6 +89,7 @@ SCRIPTS = [
     },
     {
         "slug": "fast_charging_myth",
+        "series": "Charging, decoded",
         "format": "myth_vs_reality",
         "title": "Does fast charging actually ruin your battery?",
         "script": (
@@ -102,6 +107,7 @@ SCRIPTS = [
     },
     {
         "slug": "power_bank_mah_trap",
+        "series": "Charging, decoded",
         "format": "before_you_buy",
         "title": "The number on power banks that's basically a lie",
         "script": (
@@ -120,6 +126,7 @@ SCRIPTS = [
     },
     {
         "slug": "browser_tab_memory",
+        "series": "Settings worth changing",
         "format": "did_you_know",
         "title": "Your browser is quietly eating your RAM even when tabs are hidden",
         "script": (
@@ -137,6 +144,7 @@ SCRIPTS = [
     },
     {
         "slug": "charging_to_100_mistake",
+        "series": "Charging, decoded",
         "format": "common_mistake",
         "title": "Charging to 100% every single night is quietly wearing out your battery",
         "script": (
@@ -154,6 +162,7 @@ SCRIPTS = [
     },
     {
         "slug": "back_tap_gesture",
+        "series": "Settings worth changing",
         "format": "hidden_feature",
         "title": "The gesture built into your phone that almost nobody turns on",
         "script": (
@@ -170,6 +179,7 @@ SCRIPTS = [
     },
     {
         "slug": "mechanical_keyboard_budget",
+        "series": "Before you buy",
         "format": "under_budget",
         "title": "You don't need a $150 keyboard to stop hating how you type",
         "hook_text": "$150 keyboard? Not needed",
@@ -199,6 +209,7 @@ SCRIPTS = [
     },
     {
         "slug": "usb_c_lightning_why",
+        "series": "Charging, decoded",
         "format": "comparison",
         "title": "Why the USB-C switch actually matters, not just for cables",
         "hook_text": "USB-C isn't about the cable",
@@ -224,6 +235,7 @@ SCRIPTS = [
     },
     {
         "slug": "old_phone_security_camera",
+        "series": "Before you buy",
         "format": "life_hack",
         "title": "That old phone in your drawer can replace a $60 security camera",
         "script": (
@@ -241,6 +253,7 @@ SCRIPTS = [
     },
     {
         "slug": "counterfeit_charger_red_flags",
+        "series": "Charging, decoded",
         "format": "red_flag",
         "title": "Three signs a cheap charger is actually dangerous, not just low quality",
         "script": (
@@ -267,6 +280,7 @@ SCRIPTS = [
     # Each is ~35s and its last line runs back into its first (seamless loop).
     {
         "slug": "usb_c_cable_speed_test",
+        "series": "Charging, decoded",
         "format": "comparison",
         "title": "Why two identical USB-C cables can charge at totally different speeds",
         "script": (
@@ -294,6 +308,7 @@ SCRIPTS = [
     },
     {
         "slug": "flagship_vs_midrange_phone",
+        "series": "Before you buy",
         "format": "under_budget",
         "title": "You don't need a $1,000 phone. Here's what the expensive one actually adds",
         "hook_text": "What $1,000 phones add",
@@ -325,12 +340,13 @@ SCRIPTS = [
     },
     {
         "slug": "esim_vs_physical_sim",
+        "series": "Settings worth changing",
         "format": "comparison",
         "title": "eSIM vs a physical SIM card: what actually changes for you",
         "hook_text": "eSIM vs SIM: what changes",
         "hook_emph": "eSIM",
         "script": (
-            "Your next phone might not even have a SIM tray. So what actually changes? With an eSIM, your number "
+            "Your next phone might not even have a SIM tray. With an eSIM, your number "
             "lives on a chip built into the phone, not a card you can pop out. The upside: a thief can't just "
             "pull your SIM to grab your text codes, and you can add a cheap travel data plan from an app before "
             "you even land. The catch is switching phones. Instead of moving a card, you transfer the eSIM during "
@@ -353,7 +369,78 @@ SCRIPTS = [
         "question": "Have you switched to eSIM yet?",
     },
     {
+        "slug": "tech_gifts_under_30",
+        "series": "Before you buy",
+        "format": "under_budget",
+        "title": "Three tech gifts under $30 people actually use",
+        "hook_text": "3 tech gifts under $30",
+        "hook_emph": "$30",
+        "script": "Three tech gifts under thirty dollars that won't end up in a drawer. First, a small thirty-watt USB-C charger. Most phones ship without one now, and it charges far faster than an old cube. Second, a long braided USB-C cable, because the one in the box never reaches the bed or the couch. Third, a tracker for their keys: an AirTag for iPhone users, or a Tile if they're on Android. Each one solves a problem they hit every day, which is the whole trick. So if you're stuck on a gift for someone who has everything, start with these",
+        "footage_queries": [
+            "usb c charger closeup",
+            "braided usb cable",
+            "phone charging on bed",
+            "keys on table",
+            "wrapped gifts table"
+        ],
+        "captions": [],
+        "graphics": [
+            {
+                "type": "checklist",
+                "at": "charger",
+                "title": "Under $30",
+                "items": [
+                    "30W USB-C charger",
+                    "Long braided cable",
+                    "Key tracker"
+                ],
+                "reveal_at": [
+                    "charger",
+                    "cable",
+                    "tracker"
+                ],
+                "hold": 1.2
+            },
+            {
+                "type": "specs",
+                "at": "solves",
+                "title": "Typical prices",
+                "rows": [
+                    [
+                        "30W charger",
+                        "~$20"
+                    ],
+                    [
+                        "Braided cable",
+                        "~$12"
+                    ],
+                    [
+                        "AirTag / Tile",
+                        "~$25-29"
+                    ]
+                ],
+                "source": "source: typical US retail, Oct 2026"
+            }
+        ],
+        "hashtags": [
+            "giftideas",
+            "techgifts",
+            "techtips"
+        ],
+        "tags": [
+            "tech gifts under 30",
+            "cheap tech gifts",
+            "tech stocking stuffers"
+        ],
+        "question": "What's the most useful cheap gift you've ever gotten?",
+        "affiliate": {
+            "product_name": "30W USB-C PD GaN charger",
+            "search_term": "30W USB-C charger"
+        }
+    },
+    {
         "slug": "charger_brick_matters",
+        "series": "Charging, decoded",
         "format": "before_you_buy",
         "title": "Your phone charges slowly because of the brick, not the cable",
         "hook_text": "Slow charging? It's the 5W brick",
@@ -384,13 +471,78 @@ SCRIPTS = [
         "affiliate": {"product_name": "30W USB-C PD GaN charger", "search_term": "30w usb c gan charger"},
     },
     {
+        "slug": "airtag_vs_tile_gift",
+        "series": "Before you buy",
+        "format": "comparison",
+        "title": "AirTag or Tile? Check their phone before you buy one",
+        "hook_text": "AirTag or Tile? Ask first",
+        "hook_emph": "AirTag",
+        "script": "An AirTag is useless as a gift for someone with an Android phone. It only sets up on an iPhone or iPad, and it finds things through Apple's Find My network, which is huge because nearly every iPhone nearby helps locate it. A Tile works with both iPhone and Android, so it's the safe pick when you don't know what phone they carry. Its network is smaller, though, so it's better for keys around the house than a bag lost across town. Android also has Google's Find Hub network, with trackers from brands like Chipolo and Pebblebee. So before you wrap a tracker, find out what phone they use, because",
+        "footage_queries": [
+            "airtag closeup",
+            "keys on table",
+            "android phone in hand",
+            "backpack airport",
+            "wrapping gift box"
+        ],
+        "captions": [],
+        "graphics": [
+            {
+                "type": "versus",
+                "at": "only",
+                "left": [
+                    "AirTag",
+                    "iPhone only"
+                ],
+                "right": [
+                    "Tile",
+                    "iPhone + Android"
+                ],
+                "reveal_at": [
+                    "only",
+                    "both"
+                ],
+                "hold": 2.0
+            },
+            {
+                "type": "checklist",
+                "at": "wrap",
+                "title": "Before you wrap it",
+                "items": [
+                    "iPhone: AirTag",
+                    "Android or unsure: Tile"
+                ],
+                "reveal_at": [
+                    "tracker",
+                    "phone"
+                ]
+            }
+        ],
+        "hashtags": [
+            "airtag",
+            "giftideas",
+            "techtips"
+        ],
+        "tags": [
+            "airtag vs tile",
+            "best tracker gift",
+            "airtag for android"
+        ],
+        "question": "iPhone or Android in your house?",
+        "affiliate": {
+            "product_name": "Tile Mate bluetooth tracker",
+            "search_term": "Tile Mate tracker"
+        }
+    },
+    {
         "slug": "wifi7_vs_wifi6_router",
+        "series": "Before you buy",
         "format": "comparison",
         "title": "Wi-Fi 7 vs Wi-Fi 6: do you actually need the new router?",
         "hook_text": "Wi-Fi 7 router? Check your plan",
         "hook_emph": "Wi-Fi 7",
         "script": (
-            "A new Wi-Fi 7 router probably won't make your internet any faster. Here's why. Your wifi can only be "
+            "A new Wi-Fi 7 router probably won't make your internet any faster. Your wifi can only be "
             "as fast as the plan coming into your house. If you're paying for three hundred megabits, a decent "
             "Wi-Fi 6 router already delivers that, so Wi-Fi 7's multi-gig speeds just go unused. It also only "
             "helps devices that support it, which is still mostly the newest phones and laptops. Where it does "
@@ -417,7 +569,78 @@ SCRIPTS = [
         "question": "What speed do you actually get next to your router?",
     },
     {
+        "slug": "kindle_vs_tablet_gift",
+        "series": "Before you buy",
+        "format": "comparison",
+        "title": "Kindle or a tablet: what to get the reader on your list",
+        "hook_text": "Kindle vs tablet for a reader",
+        "hook_emph": "Kindle",
+        "script": "A Kindle beats a tablet that costs twice as much. Its E Ink screen reflects light like paper instead of shining it at your eyes, so it's comfortable for hours and stays sharp in direct sun. One charge lasts weeks, not a day, and there are no notifications pulling them out of the book. A tablet only wins if they also want video, color comics or games. One thing to check: Kindles are built around Amazon's book store, but in the US, Libby can send free library books straight to a Kindle. So for anyone who reads more than they scroll,",
+        "footage_queries": [
+            "kindle e reader closeup",
+            "reading ebook on couch",
+            "tablet video streaming",
+            "library bookshelf",
+            "person reading in sunlight"
+        ],
+        "captions": [
+            {
+                "text": "No glare, even in sun",
+                "at": "sun"
+            }
+        ],
+        "graphics": [
+            {
+                "type": "versus",
+                "at": "charge",
+                "left": [
+                    "Kindle",
+                    "weeks per charge"
+                ],
+                "right": [
+                    "Tablet",
+                    "charge it daily"
+                ],
+                "winner": "left",
+                "reveal_at": [
+                    "weeks",
+                    "day"
+                ],
+                "hold": 2.0
+            },
+            {
+                "type": "checklist",
+                "at": "check",
+                "title": "Before you buy",
+                "items": [
+                    "They mostly read",
+                    "Library? Check Libby"
+                ],
+                "reveal_at": [
+                    "kindles",
+                    "libby"
+                ]
+            }
+        ],
+        "hashtags": [
+            "kindle",
+            "booktok",
+            "giftideas"
+        ],
+        "tags": [
+            "kindle vs ipad",
+            "gift for readers",
+            "is a kindle worth it"
+        ],
+        "question": "Paper books or e-reader?",
+        "affiliate": {
+            "product_name": "Kindle e-reader",
+            "search_term": "Kindle Paperwhite"
+        }
+    },
+    {
         "slug": "ssd_old_laptop_upgrade",
+        "series": "Before you buy",
         "format": "under_budget",
         "title": "Don't replace your slow old laptop until you check this one part",
         "hook_text": "Slow laptop? Swap in an SSD",
@@ -447,13 +670,79 @@ SCRIPTS = [
         "affiliate": {"product_name": "2.5 inch SATA SSD 500GB", "search_term": "2.5 inch sata ssd 500gb"},
     },
     {
+        "slug": "streaming_stick_gift",
+        "series": "Before you buy",
+        "format": "before_you_buy",
+        "title": "Before you gift a streaming stick, check their TV",
+        "hook_text": "Streaming stick? Check TV",
+        "hook_emph": "TV",
+        "script": "A streaming stick can be a pointless gift if their TV is already smart. But it's one of the best upgrades for an older TV, or a smart TV whose built-in apps have gotten slow. Before you buy, check two things. First, the ports: it needs a free HDMI port, and most also need power from the TV's USB port or a wall outlet. Second, resolution: if the TV is 4K, get a 4K stick, otherwise the cheaper HD model looks the same. Roku, Fire TV and Google TV all have the big apps, so pick the one that matches their phone or smart speaker, because",
+        "footage_queries": [
+            "streaming stick hdmi",
+            "tv remote living room",
+            "hdmi port back of tv",
+            "4k tv living room",
+            "family watching tv"
+        ],
+        "captions": [
+            {
+                "text": "Match their phone or speaker",
+                "at": "matches"
+            }
+        ],
+        "graphics": [
+            {
+                "type": "checklist",
+                "at": "upgrades",
+                "title": "Worth it for",
+                "items": [
+                    "TVs with no smart apps",
+                    "Smart TVs gone slow"
+                ],
+                "reveal_at": [
+                    "older",
+                    "slow"
+                ]
+            },
+            {
+                "type": "checklist",
+                "at": "check",
+                "title": "Check the TV",
+                "items": [
+                    "Free HDMI port",
+                    "4K TV? Get a 4K stick"
+                ],
+                "reveal_at": [
+                    "ports",
+                    "resolution"
+                ]
+            }
+        ],
+        "hashtags": [
+            "streaming",
+            "giftideas",
+            "techtips"
+        ],
+        "tags": [
+            "best streaming stick gift",
+            "roku vs fire tv stick",
+            "do i need a streaming stick"
+        ],
+        "question": "Is your TV's built-in app menu slow too?",
+        "affiliate": {
+            "product_name": "4K streaming stick",
+            "search_term": "4K streaming stick"
+        }
+    },
+    {
         "slug": "five_g_battery_drain",
+        "series": "Settings worth changing",
         "format": "did_you_know",
         "title": "Why 5G might be draining your battery faster than 4G",
         "hook_text": "Weak 5G drains your battery",
         "hook_emph": "5G",
         "script": (
-            "If your battery dies faster than it used to, 5G could be part of the reason. When the 5G signal is "
+            "5G could be the reason your battery dies faster than it used to. When the 5G signal is "
             "weak, your phone keeps hunting between 5G and 4G, and that burns power. For texting, maps and music, "
             "you usually can't tell the difference anyway. On iPhone, go to Settings, Cellular, Cellular Data "
             "Options, Voice and Data, and pick 5G Auto. On Android, open your network settings, find preferred "
@@ -480,7 +769,73 @@ SCRIPTS = [
         "question": "Do you keep 5G on, or Auto?",
     },
     {
+        "slug": "photo_frame_grandparents_gift",
+        "series": "Before you buy",
+        "format": "life_hack",
+        "title": "The tech gift grandparents actually use every day",
+        "hook_text": "Grandparents use this daily",
+        "hook_emph": "daily",
+        "script": "A Wi-Fi photo frame is the tech gift grandparents actually use every day. The family sends photos from their phones through an app, and they just show up on the frame, so there's nothing for grandma or grandpa to learn. Two things to check before you buy. Does it need a monthly subscription for storage or features? Some do, some don't. And set it up yourself before you give it, on their Wi-Fi if you can, so it works the moment they plug it in. Then add the first few photos, because",
+        "footage_queries": [
+            "digital photo frame",
+            "grandmother smiling",
+            "family taking photo smartphone",
+            "elderly couple living room",
+            "wrapped gift"
+        ],
+        "captions": [
+            {
+                "text": "Nothing new to learn",
+                "at": "learn"
+            }
+        ],
+        "graphics": [
+            {
+                "type": "steps",
+                "at": "sends",
+                "title": "How it works",
+                "items": [
+                    "Family sends photos",
+                    "They appear on the frame"
+                ],
+                "reveal_at": [
+                    "sends",
+                    "show"
+                ]
+            },
+            {
+                "type": "checklist",
+                "at": "check",
+                "title": "Before you buy",
+                "items": [
+                    "Subscription required?",
+                    "Set it up first"
+                ],
+                "reveal_at": [
+                    "subscription",
+                    "yourself"
+                ]
+            }
+        ],
+        "hashtags": [
+            "giftideas",
+            "grandparents",
+            "techtips"
+        ],
+        "tags": [
+            "gift for grandparents",
+            "digital photo frame gift",
+            "wifi photo frame"
+        ],
+        "question": "Who on your list would love this?",
+        "affiliate": {
+            "product_name": "WiFi digital photo frame",
+            "search_term": "WiFi digital photo frame"
+        }
+    },
+    {
         "slug": "browser_passwords_vs_manager",
+        "series": "Security in 30 seconds",
         "format": "comparison",
         "title": "Browser passwords vs a password manager: is the built-in one enough?",
         "hook_text": "Your password saver is enough",
@@ -513,13 +868,83 @@ SCRIPTS = [
     # that win (head-to-head choices / "you don't need the expensive one"),
     # plus one timely topic (Qi2 chargers are replacing MagSafe-only pads).
     {
+        "slug": "smart_speaker_gift",
+        "series": "Before you buy",
+        "format": "comparison",
+        "title": "Echo or Nest? Pick the smart speaker that fits their home",
+        "hook_text": "Echo or Nest gift?",
+        "hook_emph": "Echo",
+        "script": "The best smart speaker gift is whichever one matches the stuff they already own. An Echo runs Alexa and fits homes that use Amazon, like Prime Music, a Ring doorbell or a Fire TV. A Nest speaker runs Google's assistant and fits homes with Android phones, Google TV or Nest cameras. If they have an iPhone and Apple Music, a HomePod mini is the one that really works with it, though it costs more. Most smart plugs and bulbs work with Alexa and Google, so either one can run their lights. So before you pick by price, look at their phone and their TV, because",
+        "footage_queries": [
+            "smart speaker closeup",
+            "amazon echo speaker",
+            "google nest speaker",
+            "smart home living room",
+            "video doorbell"
+        ],
+        "captions": [
+            {
+                "text": "iPhone home? HomePod mini",
+                "at": "homepod"
+            }
+        ],
+        "graphics": [
+            {
+                "type": "versus",
+                "at": "echo",
+                "left": [
+                    "Echo",
+                    "Amazon homes"
+                ],
+                "right": [
+                    "Nest",
+                    "Google homes"
+                ],
+                "reveal_at": [
+                    "echo",
+                    "nest"
+                ],
+                "hold": 2.0
+            },
+            {
+                "type": "checklist",
+                "at": "pick",
+                "title": "Look at their",
+                "items": [
+                    "Phone",
+                    "TV"
+                ],
+                "reveal_at": [
+                    "phone",
+                    "tv"
+                ]
+            }
+        ],
+        "hashtags": [
+            "smarthome",
+            "giftideas",
+            "alexa"
+        ],
+        "tags": [
+            "echo vs google nest",
+            "best smart speaker gift",
+            "alexa vs google home"
+        ],
+        "question": "Alexa, Google, or neither in your house?",
+        "affiliate": {
+            "product_name": "smart speaker",
+            "search_term": "Echo Pop smart speaker"
+        }
+    },
+    {
         "slug": "qi2_vs_magsafe",
+        "series": "Charging, decoded",
         "format": "comparison",
         "title": "Qi2 vs MagSafe: do you need a new wireless charger?",
         "hook_text": "Qi2 is MagSafe for everyone",
         "hook_emph": "Qi2",
         "script": (
-            "Qi2 is showing up on more and more chargers, and it's basically MagSafe made universal. Apple "
+            "Qi2 is basically MagSafe made universal, and it's showing up on more and more chargers. Apple "
             "helped create it, so it uses the same kind of magnetic ring to snap your phone into the right spot. "
             "That alignment is the whole point. Old flat wireless pads waste energy as heat when your phone sits "
             "slightly off-center, which is why they charge slowly and run warm. A Qi2 charger works with recent "
@@ -545,6 +970,7 @@ SCRIPTS = [
     },
     {
         "slug": "budget_anc_earbuds",
+        "series": "Before you buy",
         "format": "under_budget",
         "title": "You don't need $250 earbuds for good noise cancelling",
         "hook_text": "$250 earbuds? It's the seal",
@@ -576,12 +1002,13 @@ SCRIPTS = [
     },
     {
         "slug": "sms_codes_vs_authenticator",
+        "series": "Security in 30 seconds",
         "format": "comparison",
         "title": "Text codes vs an authenticator app: which one actually protects you?",
         "hook_text": "Text codes: the weakest 2FA",
         "hook_emph": "Text codes",
         "script": (
-            "Text message codes are better than nothing, but they're the weakest kind of two-factor. Here's why. "
+            "Text message codes are better than nothing, but they're the weakest kind of two-factor. "
             "A scammer can talk your carrier into moving your number to their SIM card, and then your codes go "
             "straight to them. An authenticator app creates the codes on your phone itself, so there's nothing to "
             "intercept. Setting one up takes about thirty seconds per account. Install a free authenticator app, "
@@ -606,13 +1033,14 @@ SCRIPTS = [
     },
     {
         "slug": "screen_cleaner_vs_water",
+        "series": "Before you buy",
         "format": "comparison",
         "title": "Glass cleaner vs water: what's actually safe for your laptop screen",
         "hook_text": "Glass cleaner vs your screen",
         "hook_emph": "Glass cleaner",
         "script": (
-            "Glass cleaner and a paper towel feel like the obvious way to clean a screen, but they can slowly ruin "
-            "it. Most laptop and phone screens have a thin coating that resists fingerprints, and ammonia-based "
+            "Glass cleaner and a paper towel can slowly ruin your screen, even though they feel like the obvious "
+            "choice. Most laptop and phone screens have a thin coating that resists fingerprints, and ammonia-based "
             "cleaners wear it down over time. Paper towels are slightly abrasive, so they leave fine scratches you "
             "only notice in bright light. The safe way is simple: a microfiber cloth, lightly dampened with plain "
             "water, wiped gently. Spray the cloth, never the screen, so nothing seeps into the edges. Because"
@@ -635,6 +1063,7 @@ SCRIPTS = [
     },
     {
         "slug": "move_router_before_upgrading",
+        "series": "Before you buy",
         "format": "before_you_buy",
         "title": "Don't buy a new router until you try moving this one",
         "hook_text": "Router on the floor? Move it",
@@ -666,6 +1095,7 @@ SCRIPTS = [
     },
     {
         "slug": "search_with_your_camera",
+        "series": "Settings worth changing",
         "format": "comparison",
         "title": "Stop typing what you're trying to find. Search with your camera instead",
         "hook_text": "Your camera is a search bar",
