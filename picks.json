@@ -1,9 +1,9 @@
 {
-  "_about": "How each affiliate product is shown on the landing page, keyed by scripts.py affiliate.product_name. name = what a shopper recognizes, note = one plain sentence on why (written like you'd text a friend, no hype), price = rough range (prices move), budget = 25 / 50 / 100 / 999 for the gift sections, gift = belongs in the holiday gift picks. photo = a hand-picked Pexels image (free for commercial use) that actually shows the product category; checked by eye, since automatic stock matches were often wrong.",
+  "_about": "How each affiliate product is shown on the landing page, keyed by scripts.py affiliate.product_name. name = what a shopper recognizes, slug = the permanent #pick-<slug> anchor (quickbyteshorts.pages.dev/#pick-<slug> jumps straight to the card, so never rename one that's live), note = one plain sentence on why (written like you'd text a friend, no hype), budget = 25 / 50 / 100 / 999 for the gift sections (the typical price when picked; no prices are ever shown, because Amazon only allows prices pulled live from its API), gift = belongs in the holiday gift picks. photo = a hand-picked Pexels image (free for commercial use) that actually shows the product category; checked by eye, since automatic stock matches were often wrong. Never use Amazon's product images.",
   "30W USB-C PD GaN charger": {
     "name": "Anker Nano 30W USB-C charger",
+    "slug": "anker-nano-charger",
     "note": "Most phones don't come with a charger anymore, and this one is pocket-sized but fast enough for a phone or an iPad.",
-    "price": "around $20",
     "budget": 25,
     "gift": true,
     "photo": "https://images.pexels.com/photos/4195332/pexels-photo-4195332.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
@@ -12,8 +12,8 @@
   },
   "Tile Mate bluetooth tracker": {
     "name": "Tile Mate tracker",
+    "slug": "tile-mate",
     "note": "Works with iPhone and Android, so it's the safe tracker gift when you don't know what phone they have.",
-    "price": "around $25",
     "budget": 25,
     "gift": true,
     "photo": "https://images.pexels.com/photos/7453894/pexels-photo-7453894.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
@@ -22,8 +22,8 @@
   },
   "240W USB-C cable with e-marker (USB4 40Gbps)": {
     "name": "UGREEN 240W USB-C cable (USB4)",
+    "slug": "ugreen-usb4-cable",
     "note": "One cable that handles full-speed data, 4K video and laptop charging, so nobody has to guess which cable is which.",
-    "price": "around $25",
     "budget": 25,
     "gift": true,
     "photo": "https://images.pexels.com/photos/3921705/pexels-photo-3921705.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
@@ -32,8 +32,8 @@
   },
   "microfiber cleaning cloths for screens": {
     "name": "MagicFiber microfiber cloths (6-pack)",
+    "slug": "magicfiber-cloths",
     "note": "The only thing that should touch a screen. Cheap, washable, and a solid stocking stuffer.",
-    "price": "under $10",
     "budget": 25,
     "gift": true,
     "photo": "https://images.pexels.com/photos/24503721/pexels-photo-24503721.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
@@ -42,8 +42,8 @@
   },
   "USB-C power bank with PD fast charging": {
     "name": "Anker Nano power bank (10,000mAh)",
+    "slug": "anker-nano-power-bank",
     "note": "Built-in USB-C cable and 30W output, so it actually fast-charges a phone instead of trickling.",
-    "price": "around $35",
     "budget": 50,
     "gift": true,
     "photo": "https://images.pexels.com/photos/37475662/pexels-photo-37475662.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
@@ -52,8 +52,8 @@
   },
   "budget mechanical keyboard": {
     "name": "Redragon K552 mechanical keyboard",
+    "slug": "redragon-k552-keyboard",
     "note": "A compact, sturdy mechanical board for a fraction of the big-name price. Great first keyboard for a teen or a new desk setup.",
-    "price": "around $35",
     "budget": 50,
     "gift": true,
     "photo": "https://images.pexels.com/photos/12561283/pexels-photo-12561283.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
@@ -62,8 +62,8 @@
   },
   "smart speaker": {
     "name": "Echo Pop or Nest Mini",
+    "slug": "smart-speaker",
     "note": "Small, cheap and genuinely useful for music, timers and lights. Pick the one that matches the phone they use.",
-    "price": "around $40",
     "budget": 50,
     "gift": true,
     "photo": "https://images.pexels.com/photos/36326800/pexels-photo-36326800.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
@@ -72,8 +72,8 @@
   },
   "4K streaming stick": {
     "name": "4K streaming stick",
+    "slug": "streaming-stick",
     "note": "The cheapest way to make an older or slow smart TV feel new. Roku, Fire TV and Google TV all have the big apps.",
-    "price": "$30-50",
     "budget": 50,
     "gift": true,
     "photo": "https://images.pexels.com/photos/5202957/pexels-photo-5202957.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
@@ -82,8 +82,8 @@
   },
   "Qi2 magnetic wireless charger": {
     "name": "Belkin Qi2 magnetic charger",
+    "slug": "belkin-qi2-charger",
     "note": "Snaps into place so the phone charges at full speed instead of running warm on a misaligned pad.",
-    "price": "around $40",
     "budget": 50,
     "gift": true,
     "photo": "https://images.pexels.com/photos/7742585/pexels-photo-7742585.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
@@ -92,8 +92,8 @@
   },
   "noise cancelling wireless earbuds": {
     "name": "Soundcore Liberty 4 NC earbuds",
+    "slug": "soundcore-liberty-4-nc",
     "note": "Strong noise cancelling for well under flagship prices. The included ear tips matter more than the brand.",
-    "price": "around $80",
     "budget": 100,
     "gift": true,
     "photo": "https://images.pexels.com/photos/33797659/pexels-photo-33797659.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
@@ -102,8 +102,8 @@
   },
   "WiFi digital photo frame": {
     "name": "Wi-Fi photo frame",
+    "slug": "wifi-photo-frame",
     "note": "The family sends photos from their phones and they just appear. Pick one that doesn't require a subscription.",
-    "price": "$80-150",
     "budget": 999,
     "gift": true,
     "photo": "https://images.pexels.com/photos/7983796/pexels-photo-7983796.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
@@ -112,8 +112,8 @@
   },
   "Kindle e-reader": {
     "name": "Kindle Paperwhite",
+    "slug": "kindle-paperwhite",
     "note": "Paper-like screen, weeks of battery and nothing pinging them mid-chapter. In the US it borrows library books through Libby.",
-    "price": "around $160",
     "budget": 999,
     "gift": true,
     "photo": "https://images.pexels.com/photos/16199482/pexels-photo-16199482.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
@@ -122,8 +122,8 @@
   },
   "2.5 inch SATA SSD 500GB": {
     "name": "Samsung 870 EVO SSD (500GB)",
+    "slug": "samsung-870-evo-ssd",
     "note": "The upgrade that makes an old laptop boot in seconds instead of minutes. Check that your laptop takes a 2.5-inch drive first.",
-    "price": "around $50",
     "budget": 50,
     "gift": false,
     "photo": "https://images.pexels.com/photos/35147150/pexels-photo-35147150.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",

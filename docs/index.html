@@ -3,125 +3,165 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>QuickByte gift picks 2026</title>
-<meta name="description" content="Short videos on which tech is worth buying, and which isn't. Every product from the QuickByte videos, with links.">
+<title>Tech gift ideas 2026: useful picks under $25, $50 and $100 | QuickByte</title>
+<meta name="description" content="Practical tech gifts for 2026 from the QuickByte videos, sorted by budget: chargers, trackers, earbuds, an e-reader and more, each with a plain reason it made the list.">
 <link rel="canonical" href="https://quickbyteshorts.pages.dev/">
-<link rel="icon" href="logo.png">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#fbfaf8">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QuickByte">
+<meta property="og:title" content="Gift picks for 2026 | QuickByte">
+<meta property="og:description" content="Practical tech gifts for 2026 from the QuickByte videos, sorted by budget: chargers, trackers, earbuds, an e-reader and more, each with a plain reason it made the list.">
+<meta property="og:url" content="https://quickbyteshorts.pages.dev/">
+<meta property="og:image" content="https://quickbyteshorts.pages.dev/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gift picks for 2026 from QuickByte">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://quickbyteshorts.pages.dev/og.jpg">
+<link rel="icon" href="logo-112.png">
+<link rel="apple-touch-icon" href="logo.png">
 <style>
 :root{--bg:#fbfaf8;--card:#fff;--ink:#14161a;--ink2:#3d424c;--muted:#6b707a;--line:#e9e6e1;
---accent:#ff6b4a;--accent-ink:#d9482a;--chip:#f2efea}
+--accent:#ff6b4a;--accent-ink:#c7401f;--chip:#f2efea;--hl:#fff3ee}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 a{color:inherit}
 .wrap{max-width:980px;margin:0 auto;padding:36px 20px 72px}
 .head{display:flex;align-items:center;gap:14px}
-.head img{width:56px;height:56px;border-radius:50%}
+.head img{width:56px;height:56px;border-radius:50%;flex:none}
 .brand{font-weight:800;font-size:1.5rem;letter-spacing:-.02em;line-height:1.1}
 .tagline{color:var(--muted);font-size:.95rem}
 .socials{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0}
 .socials a{text-decoration:none;font-size:.85rem;font-weight:600;padding:7px 14px;border-radius:999px;background:var(--chip)}
 .socials a:hover{background:var(--line)}
-.season{margin:40px 0 6px;font-size:1.75rem;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.disc{color:var(--muted);font-size:.8rem;margin:16px 0 0;max-width:640px}
+.kicker{display:block;color:var(--accent-ink);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 4px}
+.latest{margin:30px 0 0}
+#latest-h{margin:0 0 14px}
+.latest h2{margin-top:26px}
+.grid.wide{grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))}
+.feature{display:grid;grid-template-columns:1fr;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.feature .ph{aspect-ratio:4/3;background:var(--chip)}
+.feature .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.feature .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;justify-content:center}
+.feature .name{margin:0;font-weight:800;font-size:1.3rem;line-height:1.25;letter-spacing:-.01em}
+.feature .note{font-size:1rem;flex:none}
+@media (min-width:700px){.feature{grid-template-columns:1.1fr 1fr}.feature .body{padding:26px 28px}}
+.season{margin:44px 0 6px;font-size:1.75rem;font-weight:800;letter-spacing:-.02em;line-height:1.2}
 .season-sub{color:var(--ink2);max-width:620px;margin:0 0 6px}
 .jump{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 6px}
 .jump a{text-decoration:none;font-size:.85rem;font-weight:600;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
 .jump a:hover{border-color:var(--ink)}
-h2{font-size:1.05rem;font-weight:800;margin:36px 0 14px;letter-spacing:-.01em}
+h2{font-size:1.05rem;font-weight:800;margin:36px 0 14px;letter-spacing:-.01em;scroll-margin-top:16px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.pick{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.pick{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;scroll-margin-top:16px;transition:box-shadow .3s,border-color .3s}
+.pick:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--hl),0 0 0 4px var(--accent)}
 .pick .ph{aspect-ratio:4/3;background:var(--chip);overflow:hidden}
 .pick .ph img{width:100%;height:100%;object-fit:cover;display:block}
 .pick .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
-.pick .name{font-weight:700;font-size:1.02rem;line-height:1.3}
-.pick .price{color:var(--muted);font-size:.85rem}
-.pick .note{color:var(--ink2);font-size:.92rem;flex:1}
-.pick .row{display:flex;align-items:center;gap:12px;margin-top:8px;flex-wrap:wrap}
-.buy{display:inline-block;text-decoration:none;background:var(--ink);color:#fff;font-weight:700;font-size:.88rem;padding:9px 16px;border-radius:999px}
-.buy:hover{background:var(--accent-ink)}
-.watch{font-size:.85rem;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.pick .name{font-weight:700;font-size:1.02rem;line-height:1.3;margin:0}
+.seen{color:var(--muted);font-size:.82rem;margin:0}
+.pick.compact{flex-direction:row}
+.pick.compact .ph{aspect-ratio:auto;width:34%;max-width:170px;flex:none;position:relative}
+.pick.compact .ph img{position:absolute;inset:0}
+.pick.compact .body{padding:12px 14px 14px;gap:4px}
+.pick.compact .name{font-size:.98rem}
+.pick.compact .note{font-size:.86rem}
+.pick.compact .row{margin-top:6px}
+.pick.compact .watch{margin-left:0}
+.note{color:var(--ink2);font-size:.92rem;flex:1;margin:0}
+.row{display:flex;align-items:center;gap:6px 14px;margin-top:8px;flex-wrap:wrap}
+.buy{display:inline-block;text-decoration:none;background:var(--ink);color:#fff;font-weight:700;font-size:.88rem;padding:10px 17px;border-radius:999px}
+.buy:hover,.buy:focus-visible{background:var(--accent-ink)}
+.paid{color:var(--muted);font-size:.72rem;letter-spacing:.02em}
+.watch{font-size:.85rem;color:var(--ink2);text-decoration:underline;text-underline-offset:3px;margin-left:auto}
 .fine{color:var(--muted);font-size:.82rem;margin:22px 0 0;max-width:640px}
+.fine a{text-underline-offset:2px}
 .vids{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
 .vids li{border-bottom:1px solid var(--line)}
 .vids a{display:flex;justify-content:space-between;gap:16px;padding:13px 2px;text-decoration:none}
 .vids a span:last-child{color:var(--muted);font-size:.85rem;white-space:nowrap}
 .vids a:hover span:first-child{text-decoration:underline;text-underline-offset:3px}
-footer{color:var(--muted);font-size:.82rem;text-align:center;padding:24px}
-@media (max-width:520px){.season{font-size:1.45rem}.wrap{padding-top:26px}}
+footer{color:var(--muted);font-size:.82rem;text-align:center;padding:24px 20px 32px;max-width:680px;margin:0 auto}
+footer a{color:inherit}
+@media (max-width:520px){.season{font-size:1.45rem}.wrap{padding-top:26px}.feature .name{font-size:1.15rem}}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://quickbyteshorts.pages.dev/#website", "name": "QuickByte", "url": "https://quickbyteshorts.pages.dev/", "description": "Short videos on which tech is worth buying, and which isn't"}, {"@type": "ItemList", "name": "Gift picks for 2026", "numberOfItems": 13, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "UGREEN 240W USB-C cable (USB4)", "url": "https://quickbyteshorts.pages.dev/#pick-ugreen-usb4-cable"}, {"@type": "ListItem", "position": 2, "name": "Redragon K552 mechanical keyboard", "url": "https://quickbyteshorts.pages.dev/#pick-redragon-k552-keyboard"}, {"@type": "ListItem", "position": 3, "name": "Anker Nano power bank (10,000mAh)", "url": "https://quickbyteshorts.pages.dev/#pick-anker-nano-power-bank"}, {"@type": "ListItem", "position": 4, "name": "Anker Nano 30W USB-C charger", "url": "https://quickbyteshorts.pages.dev/#pick-anker-nano-charger"}, {"@type": "ListItem", "position": 5, "name": "Tile Mate tracker", "url": "https://quickbyteshorts.pages.dev/#pick-tile-mate"}, {"@type": "ListItem", "position": 6, "name": "MagicFiber microfiber cloths (6-pack)", "url": "https://quickbyteshorts.pages.dev/#pick-magicfiber-cloths"}, {"@type": "ListItem", "position": 7, "name": "4K streaming stick", "url": "https://quickbyteshorts.pages.dev/#pick-streaming-stick"}, {"@type": "ListItem", "position": 8, "name": "Echo Pop or Nest Mini", "url": "https://quickbyteshorts.pages.dev/#pick-smart-speaker"}, {"@type": "ListItem", "position": 9, "name": "Belkin Qi2 magnetic charger", "url": "https://quickbyteshorts.pages.dev/#pick-belkin-qi2-charger"}, {"@type": "ListItem", "position": 10, "name": "Soundcore Liberty 4 NC earbuds", "url": "https://quickbyteshorts.pages.dev/#pick-soundcore-liberty-4-nc"}, {"@type": "ListItem", "position": 11, "name": "Kindle Paperwhite", "url": "https://quickbyteshorts.pages.dev/#pick-kindle-paperwhite"}, {"@type": "ListItem", "position": 12, "name": "Wi-Fi photo frame", "url": "https://quickbyteshorts.pages.dev/#pick-wifi-photo-frame"}, {"@type": "ListItem", "position": 13, "name": "Samsung 870 EVO SSD (500GB)", "url": "https://quickbyteshorts.pages.dev/#pick-samsung-870-evo-ssd"}]}]}</script>
 </head>
 <body>
 <div class="wrap">
-<header class="head"><img src="logo.png" alt="QuickByte logo"><div>
+<header class="head"><img src="logo-112.png" alt="QuickByte logo" width="56" height="56"><div>
 <div class="brand">QuickByte</div><div class="tagline">Short videos on which tech is worth buying, and which isn't</div></div></header>
-<nav class="socials"><a href="https://www.youtube.com/@quickbytetips" target="_blank" rel="noopener">YouTube</a><a href="https://www.tiktok.com/@quickbytetips" target="_blank" rel="noopener">TikTok</a><a href="https://www.instagram.com/quickbytetips" target="_blank" rel="noopener">Instagram</a></nav>
-<h1 class="season">Gift picks for 2026</h1><p class="season-sub">Every pick here is one we cover in a QuickByte video: useful, well reviewed, and something we'd tell a friend to buy. Sorted by budget.</p><nav class="jump"><a href="#under-25">Under $25</a><a href="#under-50">Under $50</a><a href="#under-100">Under $100</a><a href="#worth-the-splurge">Worth the splurge</a></nav><h2 id="under-25">Under $25</h2><div class="grid"><article class="pick"><div class="ph"><img src="img/240w-usb-c-cable-with-e-marker-usb4-40gbps.jpg" alt="" loading="lazy" width="800" height="600"></div><div class="body">
-<div class="name">UGREEN 240W USB-C cable (USB4)</div>
-<div class="price">around $25</div>
-<p class="note" style="margin:0">One cable that handles full-speed data, 4K video and laptop charging, so nobody has to guess which cable is which.</p>
-<div class="row"><a class="buy" href="https://www.amazon.com/dp/B0HHF28F1R?tag=quickbyte0f-20" target="_blank" rel="noopener sponsored nofollow">See it on Amazon</a><a class="watch" href="https://www.youtube.com/shorts/p5rjeAwEhS0" target="_blank" rel="noopener">Watch the video</a></div>
-</div></article><article class="pick"><div class="ph"><img src="img/30w-usb-c-pd-gan-charger.jpg" alt="" loading="lazy" width="800" height="600"></div><div class="body">
-<div class="name">Anker Nano 30W USB-C charger</div>
-<div class="price">around $20</div>
-<p class="note" style="margin:0">Most phones don&#x27;t come with a charger anymore, and this one is pocket-sized but fast enough for a phone or an iPad.</p>
-<div class="row"><a class="buy" href="https://www.amazon.com/dp/B0B2MM1W65?tag=quickbyte0f-20" target="_blank" rel="noopener sponsored nofollow">See it on Amazon</a></div>
-</div></article><article class="pick"><div class="ph"><img src="img/tile-mate-bluetooth-tracker.jpg" alt="" loading="lazy" width="800" height="600"></div><div class="body">
-<div class="name">Tile Mate tracker</div>
-<div class="price">around $25</div>
-<p class="note" style="margin:0">Works with iPhone and Android, so it&#x27;s the safe tracker gift when you don&#x27;t know what phone they have.</p>
-<div class="row"><a class="buy" href="https://www.amazon.com/dp/B09998MBFM?tag=quickbyte0f-20" target="_blank" rel="noopener sponsored nofollow">See it on Amazon</a></div>
-</div></article><article class="pick"><div class="ph"><img src="img/microfiber-cleaning-cloths-for-screens.jpg" alt="" loading="lazy" width="800" height="600"></div><div class="body">
-<div class="name">MagicFiber microfiber cloths (6-pack)</div>
-<div class="price">under $10</div>
-<p class="note" style="margin:0">The only thing that should touch a screen. Cheap, washable, and a solid stocking stuffer.</p>
-<div class="row"><a class="buy" href="https://www.amazon.com/dp/B0050R67U0?tag=quickbyte0f-20" target="_blank" rel="noopener sponsored nofollow">See it on Amazon</a></div>
-</div></article></div><h2 id="under-50">Under $50</h2><div class="grid"><article class="pick"><div class="ph"><img src="img/budget-mechanical-keyboard.jpg" alt="" loading="lazy" width="800" height="600"></div><div class="body">
-<div class="name">Redragon K552 mechanical keyboard</div>
-<div class="price">around $35</div>
-<p class="note" style="margin:0">A compact, sturdy mechanical board for a fraction of the big-name price. Great first keyboard for a teen or a new desk setup.</p>
-<div class="row"><a class="buy" href="https://www.amazon.com/dp/B016MAK38U?tag=quickbyte0f-20" target="_blank" rel="noopener sponsored nofollow">See it on Amazon</a><a class="watch" href="https://www.youtube.com/shorts/F7UZa16uvv4" target="_blank" rel="noopener">Watch the video</a></div>
-</div></article><article class="pick"><div class="ph"><img src="img/usb-c-power-bank-with-pd-fast-charging.jpg" alt="" loading="lazy" width="800" height="600"></div><div class="body">
-<div class="name">Anker Nano power bank (10,000mAh)</div>
-<div class="price">around $35</div>
-<p class="note" style="margin:0">Built-in USB-C cable and 30W output, so it actually fast-charges a phone instead of trickling.</p>
-<div class="row"><a class="buy" href="https://www.amazon.com/dp/B0C9CJKCH3?tag=quickbyte0f-20" target="_blank" rel="noopener sponsored nofollow">See it on Amazon</a><a class="watch" href="https://www.youtube.com/shorts/fx5Mr8gkuYM" target="_blank" rel="noopener">Watch the video</a></div>
-</div></article><article class="pick"><div class="ph"><img src="img/4k-streaming-stick.jpg" alt="" loading="lazy" width="800" height="600"></div><div class="body">
-<div class="name">4K streaming stick</div>
-<div class="price">$30-50</div>
-<p class="note" style="margin:0">The cheapest way to make an older or slow smart TV feel new. Roku, Fire TV and Google TV all have the big apps.</p>
-<div class="row"><a class="buy" href="https://www.amazon.com/s?k=4K+streaming+stick&amp;tag=quickbyte0f-20" target="_blank" rel="noopener sponsored nofollow">See it on Amazon</a></div>
-</div></article><article class="pick"><div class="ph"><img src="img/smart-speaker.jpg" alt="" loading="lazy" width="800" height="600"></div><div class="body">
-<div class="name">Echo Pop or Nest Mini</div>
-<div class="price">around $40</div>
-<p class="note" style="margin:0">Small, cheap and genuinely useful for music, timers and lights. Pick the one that matches the phone they use.</p>
-<div class="row"><a class="buy" href="https://www.amazon.com/s?k=Echo+Pop+smart+speaker&amp;tag=quickbyte0f-20" target="_blank" rel="noopener sponsored nofollow">See it on Amazon</a></div>
-</div></article><article class="pick"><div class="ph"><img src="img/qi2-magnetic-wireless-charger.jpg" alt="" loading="lazy" width="800" height="600"></div><div class="body">
-<div class="name">Belkin Qi2 magnetic charger</div>
-<div class="price">around $40</div>
-<p class="note" style="margin:0">Snaps into place so the phone charges at full speed instead of running warm on a misaligned pad.</p>
-<div class="row"><a class="buy" href="https://www.amazon.com/dp/B0F8LMHB64?tag=quickbyte0f-20" target="_blank" rel="noopener sponsored nofollow">See it on Amazon</a></div>
-</div></article></div><h2 id="under-100">Under $100</h2><div class="grid"><article class="pick"><div class="ph"><img src="img/noise-cancelling-wireless-earbuds.jpg" alt="" loading="lazy" width="800" height="600"></div><div class="body">
-<div class="name">Soundcore Liberty 4 NC earbuds</div>
-<div class="price">around $80</div>
-<p class="note" style="margin:0">Strong noise cancelling for well under flagship prices. The included ear tips matter more than the brand.</p>
-<div class="row"><a class="buy" href="https://www.amazon.com/dp/B0BZV4QFP8?tag=quickbyte0f-20" target="_blank" rel="noopener sponsored nofollow">See it on Amazon</a></div>
-</div></article></div><h2 id="worth-the-splurge">Worth the splurge</h2><div class="grid"><article class="pick"><div class="ph"><img src="img/kindle-e-reader.jpg" alt="" loading="lazy" width="800" height="600"></div><div class="body">
-<div class="name">Kindle Paperwhite</div>
-<div class="price">around $160</div>
-<p class="note" style="margin:0">Paper-like screen, weeks of battery and nothing pinging them mid-chapter. In the US it borrows library books through Libby.</p>
-<div class="row"><a class="buy" href="https://www.amazon.com/s?k=Kindle+Paperwhite&amp;tag=quickbyte0f-20" target="_blank" rel="noopener sponsored nofollow">See it on Amazon</a></div>
-</div></article><article class="pick"><div class="ph"><img src="img/wifi-digital-photo-frame.jpg" alt="" loading="lazy" width="800" height="600"></div><div class="body">
-<div class="name">Wi-Fi photo frame</div>
-<div class="price">$80-150</div>
-<p class="note" style="margin:0">The family sends photos from their phones and they just appear. Pick one that doesn&#x27;t require a subscription.</p>
-<div class="row"><a class="buy" href="https://www.amazon.com/s?k=WiFi+digital+photo+frame&amp;tag=quickbyte0f-20" target="_blank" rel="noopener sponsored nofollow">See it on Amazon</a></div>
-</div></article></div><h2>More gear from the videos</h2><div class="grid"><article class="pick"><div class="ph"><img src="img/2-5-inch-sata-ssd-500gb.jpg" alt="" loading="lazy" width="800" height="600"></div><div class="body">
-<div class="name">Samsung 870 EVO SSD (500GB)</div>
-<div class="price">around $50</div>
-<p class="note" style="margin:0">The upgrade that makes an old laptop boot in seconds instead of minutes. Check that your laptop takes a 2.5-inch drive first.</p>
-<div class="row"><a class="buy" href="https://www.amazon.com/dp/B08QBMD6P4?tag=quickbyte0f-20" target="_blank" rel="noopener sponsored nofollow">See it on Amazon</a></div>
-</div></article></div><p class="fine">We earn a small commission if you buy through these links, at no extra cost to you. Nobody pays to be on this page. Prices change often, so the ranges above are rough.</p><h2>Latest videos</h2><ul class="vids"><li><a href="https://www.youtube.com/shorts/2sWIIXGx2iw" target="_blank" rel="noopener"><span>You don&#x27;t need a $1,000 phone. Here&#x27;s what the expensive one actually adds</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/p5rjeAwEhS0" target="_blank" rel="noopener"><span>Why two identical USB-C cables can charge at totally different speeds</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/Bk_amU1xUcM" target="_blank" rel="noopener"><span>Three signs a cheap charger is actually dangerous, not just low quality</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/knvkyxutnIs" target="_blank" rel="noopener"><span>That old phone in your drawer can replace a $60 security camera</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/KJKDggHqN4Y" target="_blank" rel="noopener"><span>Why the USB-C switch actually matters, not just for cables</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/F7UZa16uvv4" target="_blank" rel="noopener"><span>You don&#x27;t need a $150 keyboard to stop hating how you type</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/jSKiF74CtXQ" target="_blank" rel="noopener"><span>The gesture built into your phone that almost nobody turns on</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/mvgQGiVhjCY" target="_blank" rel="noopener"><span>Charging to 100% every single night is quietly wearing out your battery</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/rM1jyvzLhdA" target="_blank" rel="noopener"><span>Your browser is quietly eating your RAM even when tabs are hidden</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/fx5Mr8gkuYM" target="_blank" rel="noopener"><span>The number on power banks that&#x27;s basically a lie</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/ycjdO54EKSw" target="_blank" rel="noopener"><span>Does fast charging actually ruin your battery?</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/2QGR7k-7H24" target="_blank" rel="noopener"><span>Free up storage without deleting a single app</span><span>Watch</span></a></li></ul>
+<nav class="socials" aria-label="QuickByte on social media"><a href="https://www.youtube.com/@quickbytetips" target="_blank" rel="noopener me">YouTube</a><a href="https://www.tiktok.com/@quickbytetips" target="_blank" rel="noopener me">TikTok</a><a href="https://www.instagram.com/quickbytetips" target="_blank" rel="noopener me">Instagram</a></nav>
+<p class="disc">The Amazon links on this page are affiliate links. As an Amazon Associate I earn from qualifying purchases.</p>
+<main>
+<section class="latest" aria-labelledby="latest-h"><h2 id="latest-h">From recent videos</h2><div class="grid wide"><article class="pick compact"><div class="ph"><picture><source type="image/webp" srcset="img/240w-usb-c-cable-with-e-marker-usb4-40gbps-480.webp 480w, img/240w-usb-c-cable-with-e-marker-usb4-40gbps-800.webp 800w" sizes="160px"><img src="img/240w-usb-c-cable-with-e-marker-usb4-40gbps.jpg" alt="" width="800" height="600" fetchpriority="high" decoding="async"></picture></div><div class="body">
+<h3 class="name">UGREEN 240W USB-C cable (USB4)</h3>
+<p class="seen">From: Why two identical USB-C cables can charge at totally different speeds</p><p class="note">One cable that handles full-speed data, 4K video and laptop charging, so nobody has to guess which cable is which.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/dp/B0HHF28F1R?tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span><a class="watch" href="https://www.youtube.com/shorts/p5rjeAwEhS0" target="_blank" rel="noopener">Watch the video</a></div>
+</div></article><article class="pick compact"><div class="ph"><picture><source type="image/webp" srcset="img/budget-mechanical-keyboard-480.webp 480w, img/budget-mechanical-keyboard-800.webp 800w" sizes="160px"><img src="img/budget-mechanical-keyboard.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">Redragon K552 mechanical keyboard</h3>
+<p class="seen">From: You don&#x27;t need a $150 keyboard to stop hating how you type</p><p class="note">A compact, sturdy mechanical board for a fraction of the big-name price. Great first keyboard for a teen or a new desk setup.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/dp/B016MAK38U?tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span><a class="watch" href="https://www.youtube.com/shorts/F7UZa16uvv4" target="_blank" rel="noopener">Watch the video</a></div>
+</div></article></div></section><h1 class="season" id="gifts">Gift picks for 2026</h1><p class="season-sub">Each pick comes from a QuickByte video (a few of those videos are still on the way). Useful things, sensibly priced, that we'd tell a friend to buy. Sorted by budget.</p><nav class="jump" aria-label="Budgets"><a href="#under-25">Under $25</a><a href="#under-50">Under $50</a><a href="#under-100">Under $100</a><a href="#worth-the-splurge">Worth the splurge</a></nav><h2 id="under-25">Under $25</h2><div class="grid"><article class="pick" id="pick-ugreen-usb4-cable"><div class="ph"><picture><source type="image/webp" srcset="img/240w-usb-c-cable-with-e-marker-usb4-40gbps-480.webp 480w, img/240w-usb-c-cable-with-e-marker-usb4-40gbps-800.webp 800w" sizes="(max-width:640px) calc(100vw - 40px), 320px"><img src="img/240w-usb-c-cable-with-e-marker-usb4-40gbps.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">UGREEN 240W USB-C cable (USB4)</h3>
+<p class="note">One cable that handles full-speed data, 4K video and laptop charging, so nobody has to guess which cable is which.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/dp/B0HHF28F1R?tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span><a class="watch" href="https://www.youtube.com/shorts/p5rjeAwEhS0" target="_blank" rel="noopener">Watch the video</a></div>
+</div></article><article class="pick" id="pick-anker-nano-charger"><div class="ph"><picture><source type="image/webp" srcset="img/30w-usb-c-pd-gan-charger-480.webp 480w, img/30w-usb-c-pd-gan-charger-800.webp 800w" sizes="(max-width:640px) calc(100vw - 40px), 320px"><img src="img/30w-usb-c-pd-gan-charger.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">Anker Nano 30W USB-C charger</h3>
+<p class="note">Most phones don&#x27;t come with a charger anymore, and this one is pocket-sized but fast enough for a phone or an iPad.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/dp/B0B2MM1W65?tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span></div>
+</div></article><article class="pick" id="pick-tile-mate"><div class="ph"><picture><source type="image/webp" srcset="img/tile-mate-bluetooth-tracker-480.webp 480w, img/tile-mate-bluetooth-tracker-800.webp 800w" sizes="(max-width:640px) calc(100vw - 40px), 320px"><img src="img/tile-mate-bluetooth-tracker.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">Tile Mate tracker</h3>
+<p class="note">Works with iPhone and Android, so it&#x27;s the safe tracker gift when you don&#x27;t know what phone they have.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/dp/B09998MBFM?tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span></div>
+</div></article><article class="pick" id="pick-magicfiber-cloths"><div class="ph"><picture><source type="image/webp" srcset="img/microfiber-cleaning-cloths-for-screens-480.webp 480w, img/microfiber-cleaning-cloths-for-screens-800.webp 800w" sizes="(max-width:640px) calc(100vw - 40px), 320px"><img src="img/microfiber-cleaning-cloths-for-screens.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">MagicFiber microfiber cloths (6-pack)</h3>
+<p class="note">The only thing that should touch a screen. Cheap, washable, and a solid stocking stuffer.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/dp/B0050R67U0?tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span></div>
+</div></article></div><h2 id="under-50">Under $50</h2><div class="grid"><article class="pick" id="pick-redragon-k552-keyboard"><div class="ph"><picture><source type="image/webp" srcset="img/budget-mechanical-keyboard-480.webp 480w, img/budget-mechanical-keyboard-800.webp 800w" sizes="(max-width:640px) calc(100vw - 40px), 320px"><img src="img/budget-mechanical-keyboard.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">Redragon K552 mechanical keyboard</h3>
+<p class="note">A compact, sturdy mechanical board for a fraction of the big-name price. Great first keyboard for a teen or a new desk setup.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/dp/B016MAK38U?tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span><a class="watch" href="https://www.youtube.com/shorts/F7UZa16uvv4" target="_blank" rel="noopener">Watch the video</a></div>
+</div></article><article class="pick" id="pick-anker-nano-power-bank"><div class="ph"><picture><source type="image/webp" srcset="img/usb-c-power-bank-with-pd-fast-charging-480.webp 480w, img/usb-c-power-bank-with-pd-fast-charging-800.webp 800w" sizes="(max-width:640px) calc(100vw - 40px), 320px"><img src="img/usb-c-power-bank-with-pd-fast-charging.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">Anker Nano power bank (10,000mAh)</h3>
+<p class="note">Built-in USB-C cable and 30W output, so it actually fast-charges a phone instead of trickling.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/dp/B0C9CJKCH3?tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span><a class="watch" href="https://www.youtube.com/shorts/fx5Mr8gkuYM" target="_blank" rel="noopener">Watch the video</a></div>
+</div></article><article class="pick" id="pick-streaming-stick"><div class="ph"><picture><source type="image/webp" srcset="img/4k-streaming-stick-480.webp 480w, img/4k-streaming-stick-800.webp 800w" sizes="(max-width:640px) calc(100vw - 40px), 320px"><img src="img/4k-streaming-stick.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">4K streaming stick</h3>
+<p class="note">The cheapest way to make an older or slow smart TV feel new. Roku, Fire TV and Google TV all have the big apps.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/s?k=4K+streaming+stick&amp;tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span></div>
+</div></article><article class="pick" id="pick-smart-speaker"><div class="ph"><picture><source type="image/webp" srcset="img/smart-speaker-480.webp 480w, img/smart-speaker-800.webp 800w" sizes="(max-width:640px) calc(100vw - 40px), 320px"><img src="img/smart-speaker.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">Echo Pop or Nest Mini</h3>
+<p class="note">Small, cheap and genuinely useful for music, timers and lights. Pick the one that matches the phone they use.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/s?k=Echo+Pop+smart+speaker&amp;tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span></div>
+</div></article><article class="pick" id="pick-belkin-qi2-charger"><div class="ph"><picture><source type="image/webp" srcset="img/qi2-magnetic-wireless-charger-480.webp 480w, img/qi2-magnetic-wireless-charger-800.webp 800w" sizes="(max-width:640px) calc(100vw - 40px), 320px"><img src="img/qi2-magnetic-wireless-charger.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">Belkin Qi2 magnetic charger</h3>
+<p class="note">Snaps into place so the phone charges at full speed instead of running warm on a misaligned pad.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/dp/B0F8LMHB64?tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span></div>
+</div></article></div><h2 id="under-100">Under $100</h2><div class="grid"><article class="pick" id="pick-soundcore-liberty-4-nc"><div class="ph"><picture><source type="image/webp" srcset="img/noise-cancelling-wireless-earbuds-480.webp 480w, img/noise-cancelling-wireless-earbuds-800.webp 800w" sizes="(max-width:640px) calc(100vw - 40px), 320px"><img src="img/noise-cancelling-wireless-earbuds.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">Soundcore Liberty 4 NC earbuds</h3>
+<p class="note">Strong noise cancelling for well under flagship prices. The included ear tips matter more than the brand.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/dp/B0BZV4QFP8?tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span></div>
+</div></article></div><h2 id="worth-the-splurge">Worth the splurge</h2><div class="grid"><article class="pick" id="pick-kindle-paperwhite"><div class="ph"><picture><source type="image/webp" srcset="img/kindle-e-reader-480.webp 480w, img/kindle-e-reader-800.webp 800w" sizes="(max-width:640px) calc(100vw - 40px), 320px"><img src="img/kindle-e-reader.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">Kindle Paperwhite</h3>
+<p class="note">Paper-like screen, weeks of battery and nothing pinging them mid-chapter. In the US it borrows library books through Libby.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/s?k=Kindle+Paperwhite&amp;tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span></div>
+</div></article><article class="pick" id="pick-wifi-photo-frame"><div class="ph"><picture><source type="image/webp" srcset="img/wifi-digital-photo-frame-480.webp 480w, img/wifi-digital-photo-frame-800.webp 800w" sizes="(max-width:640px) calc(100vw - 40px), 320px"><img src="img/wifi-digital-photo-frame.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">Wi-Fi photo frame</h3>
+<p class="note">The family sends photos from their phones and they just appear. Pick one that doesn&#x27;t require a subscription.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/s?k=WiFi+digital+photo+frame&amp;tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span></div>
+</div></article></div><h2 id="gear">More gear from the videos</h2><div class="grid"><article class="pick" id="pick-samsung-870-evo-ssd"><div class="ph"><picture><source type="image/webp" srcset="img/2-5-inch-sata-ssd-500gb-480.webp 480w, img/2-5-inch-sata-ssd-500gb-800.webp 800w" sizes="(max-width:640px) calc(100vw - 40px), 320px"><img src="img/2-5-inch-sata-ssd-500gb.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"></picture></div><div class="body">
+<h3 class="name">Samsung 870 EVO SSD (500GB)</h3>
+<p class="note">The upgrade that makes an old laptop boot in seconds instead of minutes. Check that your laptop takes a 2.5-inch drive first.</p>
+<div class="row"><a class="buy" href="https://www.amazon.com/dp/B08QBMD6P4?tag=quickbyte0f-20" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a><span class="paid">Paid link</span></div>
+</div></article></div><p class="fine">We earn a small commission if you buy through these links, at no extra cost to you, and nobody pays to be on this page. Budget groups are based on typical prices when we chose each pick; Amazon shows the current price. Photos show the kind of product, not always the exact model.</p><h2 id="videos">Latest videos</h2><ul class="vids"><li><a href="https://www.youtube.com/shorts/0XX0cCefPyw" target="_blank" rel="noopener"><span>eSIM vs a physical SIM card: what actually changes for you</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/2sWIIXGx2iw" target="_blank" rel="noopener"><span>You don&#x27;t need a $1,000 phone. Here&#x27;s what the expensive one actually adds</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/p5rjeAwEhS0" target="_blank" rel="noopener"><span>Why two identical USB-C cables can charge at totally different speeds</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/Bk_amU1xUcM" target="_blank" rel="noopener"><span>Three signs a cheap charger is actually dangerous, not just low quality</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/knvkyxutnIs" target="_blank" rel="noopener"><span>That old phone in your drawer can replace a $60 security camera</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/KJKDggHqN4Y" target="_blank" rel="noopener"><span>Why the USB-C switch actually matters, not just for cables</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/F7UZa16uvv4" target="_blank" rel="noopener"><span>You don&#x27;t need a $150 keyboard to stop hating how you type</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/jSKiF74CtXQ" target="_blank" rel="noopener"><span>The gesture built into your phone that almost nobody turns on</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/mvgQGiVhjCY" target="_blank" rel="noopener"><span>Charging to 100% every single night is quietly wearing out your battery</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/rM1jyvzLhdA" target="_blank" rel="noopener"><span>Your browser is quietly eating your RAM even when tabs are hidden</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/fx5Mr8gkuYM" target="_blank" rel="noopener"><span>The number on power banks that&#x27;s basically a lie</span><span>Watch</span></a></li><li><a href="https://www.youtube.com/shorts/ycjdO54EKSw" target="_blank" rel="noopener"><span>Does fast charging actually ruin your battery?</span><span>Watch</span></a></li></ul>
+</main>
 </div>
-<footer>QuickByte &middot; @quickbytetips</footer>
+<footer>QuickByte &middot; @quickbytetips<br>As an Amazon Associate I earn from qualifying purchases. Amazon and the Amazon logo are trademarks of
+Amazon.com, Inc. or its affiliates. <a href="privacy.html">Privacy</a></footer>
 </body>
 </html>
