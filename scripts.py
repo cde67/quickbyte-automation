@@ -534,39 +534,40 @@ SCRIPTS = [
             "search_term": "Tile Mate tracker"
         }
     },
+    # ---- Oct 20, 2026 batch (weekly learn-and-write) ----
+    # Old breakouts have flatlined (USB-C +3 views in 5 days); eSIM vs SIM got
+    # 71 YouTube views and 186 Instagram views on day one, so a travel-eSIM
+    # follow-up leads. Batch: projector two-parter, Gift of the week (photo
+    # printer), 3 Kitchen tech, decoded, a keyboard sequel, holiday travel and
+    # scam timing. Each carries a hook_pattern for the weekly comparison.
     {
-        "slug": "wifi7_vs_wifi6_router",
-        "series": "Before you buy",
+        "slug": "travel_esim_vs_roaming",
+        "series": "Settings worth changing",
         "format": "comparison",
-        "title": "Wi-Fi 7 vs Wi-Fi 6: do you actually need the new router?",
-        "hook_text": "Wi-Fi 7 router? Check your plan",
-        "hook_emph": "Wi-Fi 7",
+        "hook_pattern": "price_vs",
+        "title": "Travel eSIM vs your carrier's day pass: what to use abroad",
+        "hook_text": "$12/day vs a travel eSIM",
+        "hook_emph": "$12",
         "script": (
-            "A new Wi-Fi 7 router probably won't make your internet any faster. Your wifi can only be "
-            "as fast as the plan coming into your house. If you're paying for three hundred megabits, a decent "
-            "Wi-Fi 6 router already delivers that, so Wi-Fi 7's multi-gig speeds just go unused. It also only "
-            "helps devices that support it, which is still mostly the newest phones and laptops. Where it does "
-            "help is a home packed with devices, or a multi-gig fiber plan. So before you upgrade, run a speed "
-            "test right next to your router, because unless you're on multi-gig fiber,"
+            "A carrier day pass for data abroad often costs ten to twelve dollars a day, so a week-long trip adds "
+            "up fast. A travel eSIM is usually the cheaper route. Apps like Airalo or Holafly sell data for a "
+            "country, priced by the gigabyte or by the trip, and you install it before you leave. Check two things "
+            "first: your phone has to be unlocked, and it has to support eSIM, which most recent phones do. When "
+            "you land, switch data to the travel eSIM and turn off roaming on your main line, or a day pass can "
+            "start by accident. Then compare the total for your trip, because"
         ),
-        "footage_queries": ["router closeup", "internet speed test on phone", "family using devices at home",
-                            "laptop on couch at home", "smartphone and laptop on desk", "fiber optic cable closeup",
-                            "wifi network laptop"],
-        "captions": [{"text": "Speed test next to the router", "at": "test"}],
+        "footage_queries": ["traveler using phone at airport", "airport terminal travelers", "tourist using phone map city",
+                            "phone settings screen", "airplane landing", "smartphone closeup"],
+        "captions": [{"text": "Roaming off on your main line", "at": "land"}],
         "graphics": [
-            # 9.6 / 46 Gbps: peak PHY rates in the IEEE 802.11ax (Wi-Fi 6) and
-            # 802.11be (Wi-Fi 7) standards; 300 Mbps is the plan in the narration.
-            {"type": "specs", "at": "three", "title": "Your plan vs the router",
-             "rows": [["Your plan", "300 Mbps"], ["Wi-Fi 6 peak", "9.6 Gbps"], ["Wi-Fi 7 peak", "46 Gbps"]],
-             "highlight": 0, "reveal_at": ["three", "6", "multi"],
-             "source": "Peak rates: IEEE 802.11ax / 802.11be"},
-            {"type": "checklist", "at": "helps", "title": "Wi-Fi 7 only helps",
-             "items": ["Devices that support it", "Device-packed homes", "Multi-gig fiber plans"],
-             "reveal_at": ["support", "packed", "fiber"]},
+            {"type": "versus", "at": "cheaper", "left": ["Day pass", "~$10-12 a day"],
+             "right": ["Travel eSIM", "by the GB or trip"], "winner": "right", "dur": 4.4},
+            {"type": "checklist", "at": "things", "title": "Check first",
+             "items": ["Phone is unlocked", "Phone supports eSIM"], "reveal_at": ["unlocked", "support"]},
         ],
-        "hashtags": ["wifi", "techtips", "router"],
-        "tags": ["wifi 7 vs wifi 6", "do i need wifi 7", "slow wifi fix"],
-        "question": "What speed do you actually get next to your router?",
+        "hashtags": ["esim", "travel", "techtips"],
+        "tags": ["travel esim", "international data plan", "esim vs roaming", "airalo"],
+        "question": "Where are you traveling next?",
     },
     {
         "slug": "kindle_vs_tablet_gift",
@@ -639,35 +640,225 @@ SCRIPTS = [
         }
     },
     {
-        "slug": "ssd_old_laptop_upgrade",
+        "slug": "qi2_vs_magsafe",
+        "series": "Charging, decoded",
+        "format": "comparison",
+        "title": "Qi2 vs MagSafe: do you need a new wireless charger?",
+        "hook_text": "Qi2 is MagSafe for everyone",
+        "hook_emph": "Qi2",
+        "script": (
+            "Qi2 is basically MagSafe made universal, and it's showing up on more and more chargers. Apple "
+            "helped create it, so it uses the same kind of magnetic ring to snap your phone into the right spot. "
+            "That alignment is the whole point. Old flat wireless pads waste energy as heat when your phone sits "
+            "slightly off-center, which is why they charge slowly and run warm. A Qi2 charger works with recent "
+            "iPhones and newer Android phones like the Pixel 10, and other phones can use it with a magnetic "
+            "case. So if you're replacing an old wireless pad anyway, look for the Qi2 logo, because"
+        ),
+        "footage_queries": ["wireless charging phone", "wireless charging pad phone", "magnetic phone charger",
+                            "smartphone on desk", "phone charging on desk", "charging station smartwatch",
+                            "smartphone closeup"],
+        "captions": [{"text": "Same magnetic ring as MagSafe", "at": "magnetic"},
+                     {"text": "Look for the Qi2 logo", "at": "look"}],
+        "graphics": [
+            {"type": "versus", "at": "alignment", "left": ["Flat pad", "off-center, runs warm"],
+             "right": ["Qi2", "magnets snap it into place"], "winner": "right", "dur": 6.5},
+            {"type": "checklist", "at": "works", "title": "Qi2 works with",
+             "items": ["Recent iPhones", "Pixel 10 + newer Android", "Others: a magnetic case"],
+             "reveal_at": ["iphones", "pixel", "case"]},
+        ],
+        "hashtags": ["qi2", "magsafe", "techtips"],
+        "tags": ["qi2 charger", "magsafe vs qi2", "wireless charging"],
+        "question": "MagSafe, Qi2, or still plugging in?",
+        "affiliate": {"product_name": "Qi2 magnetic wireless charger", "search_term": "qi2 magnetic charger"},
+    },
+    {
+        "slug": "projector_lumens_spec",
+        "series": "Before you buy",
+        "format": "before_you_buy",
+        "hook_pattern": "one_spec",
+        "two_part": {"id": "projector", "part": 1},
+        "title": "Cheap projector? The one spec that matters is ANSI lumens",
+        "hook_text": "The 1 projector spec to check",
+        "hook_emph": "1",
+        "script": (
+            "The one spec that matters on a cheap projector is brightness, and the number on the box often isn't "
+            "the real one. Many budget projectors advertise eight or ten thousand lumens, a light-source figure "
+            "that isn't what reaches the wall. Look for ANSI lumens instead, which come from a standardized test. "
+            "Around two hundred ANSI lumens is fine for a small picture in a dark bedroom, while a living room "
+            "with some light needs closer to five hundred or more. If a listing hides the ANSI number, assume "
+            "it's low. So when a mini projector looks like a bargain, skip the giant figure and look for the word "
+            "ANSI, because"
+        ),
+        "footage_queries": ["movie night projector screen", "home projector on table", "watching movie on projector screen",
+                            "dark bedroom", "living room tv", "family movie night living room"],
+        "captions": [{"text": "No ANSI number? Assume it's low", "at": "hides"}],
+        "graphics": [
+            {"type": "versus", "at": "advertise", "left": ["Box claim", "10,000 lumens"],
+             "right": ["ANSI lumens", "standardized test"], "winner": "right",
+             "reveal_at": ["advertise", "ansi"], "hold": 2.0},
+            {"type": "checklist", "at": "around", "title": "ANSI lumens you need",
+             "items": ["Dark bedroom: ~200", "Some light: 500+"], "reveal_at": ["dark", "living"]},
+        ],
+        "hashtags": ["projector", "giftideas", "techtips"],
+        "tags": ["best cheap projector", "ansi lumens", "mini projector gift"],
+        "question": "Bedroom, living room or backyard: where would yours go?",
+    },
+    {
+        "slug": "projector_80_vs_300",
+        "series": "Before you buy",
+        "format": "comparison",
+        "hook_pattern": "price_vs",
+        "two_part": {"id": "projector", "part": 2},
+        "title": "$80 vs $300 projector: what the extra money actually buys",
+        "hook_text": "$80 vs $300 projector",
+        "hook_emph": "$80",
+        "script": (
+            "A projector around eighty bucks that says four K usually isn't four K at all. It accepts a four K "
+            "signal, but the chip inside is often only HD or full HD, so look for the word native. One closer to "
+            "three hundred bucks buys three more things: brightness you can measure in ANSI lumens, "
+            "streaming apps built in instead of a separate stick, and quieter fans, often with autofocus. The cheap one is fine "
+            "for the occasional kids' movie. If movie night is every week, spend more, because"
+        ),
+        "footage_queries": ["home theater projector", "kids watching movie projector", "movie night projector screen",
+                            "streaming stick tv", "kids watching movie", "living room movie night"],
+        "captions": [{"text": "Look for the word native", "at": "native"}],
+        "graphics": [
+            {"type": "versus", "at": "accepts", "left": ["Says 4K", "accepts the signal"],
+             "right": ["Native", "what you actually see"], "winner": "right", "dur": 4.2},
+            {"type": "checklist", "at": "buys", "title": "What $300 adds",
+             "items": ["Real ANSI lumens", "Built-in streaming apps", "Quieter, autofocus"],
+             "reveal_at": ["brightness", "streaming", "quieter"]},
+        ],
+        "hashtags": ["projector", "movienight", "techtips"],
+        "tags": ["cheap projector vs expensive", "best projector under 300", "native 1080p projector"],
+        "question": "Would you spend $80 or $300 on a projector?",
+    },
+    {
+        "slug": "budget_anc_earbuds",
         "series": "Before you buy",
         "format": "under_budget",
-        "title": "Don't replace your slow old laptop until you check this one part",
-        "hook_text": "Slow laptop? Swap in an SSD",
-        "hook_emph": "SSD",
+        "title": "You don't need $250 earbuds for good noise cancelling",
+        "hook_text": "$250 earbuds? It's the seal",
+        "hook_emph": "$250",
         "script": (
-            "Don't replace your slow old laptop until you check this one part. If it's five or more years old and "
-            "takes forever to boot, the culprit is often a spinning hard drive, not the processor. Swapping in a "
-            "solid-state drive costs far less than a new laptop and cuts boot times from minutes to seconds. But check "
-            "two things first. Does your laptop have a replaceable drive? Most older Windows laptops do, but "
-            "newer MacBooks don't. And which type does it take: a two-and-a-half-inch SATA drive, or a small M "
-            "dot two stick? Search your model number plus SSD upgrade, and"
+            "You don't need two-hundred-fifty-dollar earbuds for good noise cancelling. Here's what actually "
+            "blocks the noise. The noise cancelling chip handles low, steady sounds like engine hum or an air "
+            "conditioner, but it barely touches voices or a door slamming. What blocks those is the seal: how "
+            "well the ear tip plugs your ear. That's why an under-a-hundred-dollar pair with the right fit can get "
+            "surprisingly close to a flagship. The expensive pairs mostly add better call quality and app "
+            "features. So before you upgrade, try every tip size in the box and run the fit test if your app has "
+            "one, because"
         ),
-        "footage_queries": ["hard drive closeup", "old laptop on desk", "frustrated person waiting at laptop",
-                            "computer repair technician", "laptop motherboard", "opening laptop back panel",
-                            "person typing on laptop happy"],
-        "captions": [{"text": "Spinning hard drive = slow boot", "at": "spinning"}],
+        "footage_queries": ["wireless earbuds", "wireless earbuds case closeup", "air conditioner",
+                            "door closing", "airplane cabin passengers", "person putting in earbuds",
+                            "person wearing earbuds commuting"],
+        "captions": [{"text": "Right fit: close to a flagship", "at": "fit"},
+                     {"text": "Pricier pairs add calls + app features", "at": "expensive"}],
         "graphics": [
-            {"type": "versus", "at": "swapping", "left": ["Hard drive", "boots in minutes"],
-             "right": ["SSD", "boots in seconds"], "winner": "right", "dur": 5.6},
-            {"type": "checklist", "at": "check", "title": "Before you buy",
-             "items": ["Replaceable drive?", "SATA 2.5\" or M.2?", "Search: model + SSD"],
-             "reveal_at": ["replaceable", "sata", "search"]},
+            {"type": "versus", "at": "chip", "left": ["ANC chip", "blocks engine hum, AC"],
+             "right": ["Ear tip seal", "blocks voices, slams"], "reveal_at": ["chip", "seal"], "hold": 2.2},
+            {"type": "checklist", "at": "upgrade", "title": "Before you upgrade",
+             "items": ["Try every tip size", "Run the fit test"], "reveal_at": ["tip", "fit"]},
         ],
-        "hashtags": ["laptop", "pcupgrade", "techtips"],
-        "tags": ["ssd upgrade", "slow laptop fix", "hdd to ssd"],
-        "question": "How old is the laptop you're using right now?",
-        "affiliate": {"product_name": "2.5 inch SATA SSD 500GB", "search_term": "2.5 inch sata ssd 500gb"},
+        "hashtags": ["earbuds", "airpods", "techtips"],
+        "tags": ["best budget earbuds", "noise cancelling earbuds", "airpods pro alternative"],
+        "question": "What earbuds are you using right now?",
+        "affiliate": {"product_name": "noise cancelling wireless earbuds", "search_term": "noise cancelling earbuds"},
+    },
+    {
+        "slug": "photo_printer_gift_of_week",
+        "series": "Gift of the week",
+        "format": "gift_pick",
+        "hook_pattern": "look_identical",
+        "title": "Mini photo printer gift: Zink or dye? Check the paper first",
+        "hook_text": "Same printer? Different prints",
+        "hook_emph": "prints",
+        "script": (
+            "Two mini photo printers can look almost the same and make completely different prints. Zink printers, "
+            "like the Kodak Step, use paper with the color built in, so there's no ink at all. You get two by "
+            "three inch sticky-back prints in under a minute, which kids and teens love for journals, lockers and "
+            "phone cases. Printers that use dye cartridges make bigger prints that look more like real photos, "
+            "with a protective coat on top. So for the scrapbooker or the teenager, a Zink printer is the fun "
+            "gift. For someone who frames photos, go with dye. Ask which they'd use, because"
+        ),
+        "footage_queries": ["printing photos", "polaroid photos on table", "teenager decorating journal",
+                            "photo album", "framed photos on wall", "wrapping gift box"],
+        "captions": [{"text": "Prints in under a minute", "at": "minute"}],
+        "graphics": [
+            {"type": "versus", "at": "zink", "left": ["Zink", "sticky-back, no ink"],
+             "right": ["Dye cartridge", "photo look, coated"], "reveal_at": ["zink", "dye"], "hold": 2.0},
+            {"type": "checklist", "at": "scrapbooker", "title": "Who it's for",
+             "items": ["Journals, lockers: Zink", "Framed photos: dye"], "reveal_at": ["scrapbooker", "frames"]},
+        ],
+        "hashtags": ["giftideas", "photoprinter", "techgifts"],
+        "tags": ["mini photo printer", "kodak step printer", "gifts for teens", "photo printer gift"],
+        "question": "Who on your list would actually use a photo printer?",
+        "affiliate": {"product_name": "Kodak Step instant photo printer (Zink)", "search_term": "kodak step photo printer"},
+    },
+    {
+        "slug": "instant_read_thermometer",
+        "series": "Kitchen tech, decoded",
+        "format": "under_budget",
+        "hook_pattern": "price_vs",
+        "title": "Instant-read thermometer: the $20 one does most of the job",
+        "hook_text": "$20 vs $100 thermometer",
+        "hook_emph": "$20",
+        "script": (
+            "A twenty-dollar instant-read thermometer does most of what a hundred-dollar one does. At the top end "
+            "you're paying for speed and precision: premium models read in about a second and are accurate to "
+            "within about half a degree. Budget ones, like the ThermoPro TP19H, take a few seconds at most, which "
+            "is plenty for chicken, steak or a holiday turkey. Check three things: a probe long enough to reach "
+            "the center of a roast, a backlit screen for grilling after dark, and a waterproof rating so it "
+            "survives the sink. Then cook to temperature, not time, since"
+        ),
+        "footage_queries": ["grilling steak", "cooking steak pan", "roast chicken oven",
+                            "grilling at night", "washing dishes sink", "thanksgiving turkey"],
+        "captions": [{"text": "Cook to temperature, not time", "at": "temperature"}],
+        "graphics": [
+            {"type": "versus", "at": "paying", "left": ["$100 model", "1-second reads"],
+             "right": ["~$20 model", "a few seconds"], "dur": 4.2},
+            {"type": "checklist", "at": "three", "title": "Check these",
+             "items": ["Probe reaches the center", "Backlit screen", "Waterproof"],
+             "reveal_at": ["probe", "backlit", "waterproof"]},
+        ],
+        "hashtags": ["kitchengadgets", "cooking", "techtips"],
+        "tags": ["instant read thermometer", "best meat thermometer", "thermopro tp19h", "gifts for dad"],
+        "question": "Do you cook by time or by temperature?",
+        "affiliate": {"product_name": "instant-read meat thermometer", "search_term": "instant read meat thermometer"},
+    },
+    {
+        "slug": "wifi7_vs_wifi6_router",
+        "series": "Before you buy",
+        "format": "comparison",
+        "title": "Wi-Fi 7 vs Wi-Fi 6: do you actually need the new router?",
+        "hook_text": "Wi-Fi 7 router? Check your plan",
+        "hook_emph": "Wi-Fi 7",
+        "script": (
+            "A new Wi-Fi 7 router probably won't make your internet any faster. Your wifi can only be "
+            "as fast as the plan coming into your house. If you're paying for three hundred megabits, a decent "
+            "Wi-Fi 6 router already delivers that, so Wi-Fi 7's multi-gig speeds just go unused. It also only "
+            "helps devices that support it, which is still mostly the newest phones and laptops. Where it does "
+            "help is a home packed with devices, or a multi-gig fiber plan. So before you upgrade, run a speed "
+            "test right next to your router, because unless you're on multi-gig fiber,"
+        ),
+        "footage_queries": ["router closeup", "internet speed test on phone", "family using devices at home",
+                            "laptop on couch at home", "smartphone and laptop on desk", "fiber optic cable closeup",
+                            "wifi network laptop"],
+        "captions": [{"text": "Speed test next to the router", "at": "test"}],
+        "graphics": [
+            # 9.6 / 46 Gbps: peak PHY rates in the IEEE 802.11ax (Wi-Fi 6) and
+            # 802.11be (Wi-Fi 7) standards; 300 Mbps is the plan in the narration.
+            {"type": "specs", "at": "three", "title": "Your plan vs the router",
+             "rows": [["Your plan", "300 Mbps"], ["Wi-Fi 6 peak", "9.6 Gbps"], ["Wi-Fi 7 peak", "46 Gbps"]],
+             "highlight": 0, "reveal_at": ["three", "6", "multi"],
+             "source": "Peak rates: IEEE 802.11ax / 802.11be"},
+            {"type": "checklist", "at": "helps", "title": "Wi-Fi 7 only helps",
+             "items": ["Devices that support it", "Device-packed homes", "Multi-gig fiber plans"],
+             "reveal_at": ["support", "packed", "fiber"]},
+        ],
+        "hashtags": ["wifi", "techtips", "router"],
+        "tags": ["wifi 7 vs wifi 6", "do i need wifi 7", "slow wifi fix"],
+        "question": "What speed do you actually get next to your router?",
     },
     {
         "slug": "streaming_stick_gift",
@@ -735,134 +926,35 @@ SCRIPTS = [
         }
     },
     {
-        "slug": "five_g_battery_drain",
-        "series": "Settings worth changing",
-        "format": "did_you_know",
-        "title": "Why 5G might be draining your battery faster than 4G",
-        "hook_text": "Weak 5G drains your battery",
-        "hook_emph": "5G",
-        "script": (
-            "5G could be the reason your battery dies faster than it used to. When the 5G signal is "
-            "weak, your phone keeps hunting between 5G and 4G, and that burns power. For texting, maps and music, "
-            "you usually can't tell the difference anyway. On iPhone, go to Settings, Cellular, Cellular Data "
-            "Options, Voice and Data, and pick 5G Auto. On Android, open your network settings, find preferred "
-            "network type, and choose LTE if 5G is spotty where you live. Try it for a week and watch your "
-            "battery screen, because"
-        ),
-        "footage_queries": ["phone battery", "low battery phone screen", "phone signal bars city",
-                            "person using phone on street", "texting on phone", "listening to music on phone",
-                            "phone settings menu scrolling"],
-        "captions": [{"text": "Try it for a week", "at": "try"}],
-        "graphics": [
-            # Apple: 5G Auto switches to LTE when 5G wouldn't be noticeably faster
-            {"type": "versus", "at": "weak", "left": ["Always 5G", "hunts on a weak signal"],
-             "right": ["5G Auto", "5G only when it helps"], "winner": "right", "dur": 4.4},
-            {"type": "steps", "at": "iphone", "title": "iPhone",
-             "items": ["Settings", "Cellular", "Cellular Data Options", "Voice & Data: 5G Auto"],
-             "reveal_at": ["settings", "cellular", "options", "voice"]},
-            {"type": "steps", "at": "android", "title": "Android",
-             "items": ["Network settings", "Preferred network type", "LTE if 5G is spotty"],
-             "reveal_at": ["network", "preferred", "lte"]},
-        ],
-        "hashtags": ["iphone", "battery", "techtips"],
-        "tags": ["5g battery drain", "iphone battery tips", "5g auto"],
-        "question": "Do you keep 5G on, or Auto?",
-    },
-    {
-        "slug": "photo_frame_grandparents_gift",
+        "slug": "ssd_old_laptop_upgrade",
         "series": "Before you buy",
-        "format": "life_hack",
-        "title": "The tech gift grandparents actually use every day",
-        "hook_text": "Grandparents use this daily",
-        "hook_emph": "daily",
-        "script": "A Wi-Fi photo frame is the tech gift grandparents actually use every day. The family sends photos from their phones through an app, and they just show up on the frame, so there's nothing for grandma or grandpa to learn. Two things to check before you buy. Does it need a monthly subscription for storage or features? Some do, some don't. And set it up yourself before you give it, on their Wi-Fi if you can, so it works the moment they plug it in. Then add the first few photos, because",
-        "footage_queries": [
-            "digital photo frame",
-            "grandmother smiling",
-            "family taking photo smartphone",
-            "elderly couple living room",
-            "wrapped gift"
-        ],
-        "captions": [
-            {
-                "text": "Nothing new to learn",
-                "at": "learn"
-            }
-        ],
-        "graphics": [
-            {
-                "type": "steps",
-                "at": "sends",
-                "title": "How it works",
-                "items": [
-                    "Family sends photos",
-                    "They appear on the frame"
-                ],
-                "reveal_at": [
-                    "sends",
-                    "show"
-                ]
-            },
-            {
-                "type": "checklist",
-                "at": "check",
-                "title": "Before you buy",
-                "items": [
-                    "Subscription required?",
-                    "Set it up first"
-                ],
-                "reveal_at": [
-                    "subscription",
-                    "yourself"
-                ]
-            }
-        ],
-        "hashtags": [
-            "giftideas",
-            "grandparents",
-            "techtips"
-        ],
-        "tags": [
-            "gift for grandparents",
-            "digital photo frame gift",
-            "wifi photo frame"
-        ],
-        "question": "Who on your list would love this?",
-        "affiliate": {
-            "product_name": "WiFi digital photo frame",
-            "search_term": "WiFi digital photo frame"
-        }
-    },
-    {
-        "slug": "browser_passwords_vs_manager",
-        "series": "Security in 30 seconds",
-        "format": "comparison",
-        "title": "Browser passwords vs a password manager: is the built-in one enough?",
-        "hook_text": "Your password saver is enough",
-        "hook_emph": "password saver",
+        "format": "under_budget",
+        "title": "Don't replace your slow old laptop until you check this one part",
+        "hook_text": "Slow laptop? Swap in an SSD",
+        "hook_emph": "SSD",
         "script": (
-            "Is the password saver in your browser actually good enough? For most people, yes. The ones built "
-            "into your iPhone, your Android phone or your browser now create strong passwords, sync across your "
-            "devices, and warn you about leaks. A dedicated manager makes sense if you mix ecosystems, like an "
-            "iPhone with a Windows PC, share logins with family, or want to store things like recovery codes. But "
-            "the real danger isn't picking the wrong one. It's reusing the same password. So open your saved "
-            "passwords today, fix any reuse warnings starting with your email, and then ask yourself:"
+            "Don't replace your slow old laptop until you check this one part. If it's five or more years old and "
+            "takes forever to boot, the culprit is often a spinning hard drive, not the processor. Swapping in a "
+            "solid-state drive costs far less than a new laptop and cuts boot times from minutes to seconds. But check "
+            "two things first. Does your laptop have a replaceable drive? Most older Windows laptops do, but "
+            "newer MacBooks don't. And which type does it take: a two-and-a-half-inch SATA drive, or a small M "
+            "dot two stick? Search your model number plus SSD upgrade, and"
         ),
-        "footage_queries": ["password", "typing password on laptop", "smartphone and laptop on desk",
-                            "family sharing tablet couch", "using smartphone on couch", "laptop keyboard closeup",
-                            "padlock security concept"],
-        "captions": [{"text": "Strong passwords, sync, leak alerts", "at": "strong"},
-                     {"text": "Reused passwords are the real risk", "at": "danger"}],
+        "footage_queries": ["hard drive closeup", "old laptop on desk", "frustrated person waiting at laptop",
+                            "computer repair technician", "laptop motherboard", "opening laptop back panel",
+                            "person typing on laptop happy"],
+        "captions": [{"text": "Spinning hard drive = slow boot", "at": "spinning"}],
         "graphics": [
-            {"type": "versus", "at": "dedicated", "left": ["Built-in", "fine for most people"],
-             "right": ["Manager", "iPhone + PC, sharing"], "dur": 8.4},
-            {"type": "checklist", "at": "open", "title": "Do this today",
-             "items": ["Open saved passwords", "Fix reuse warnings", "Start with your email"],
-             "reveal_at": ["open", "reuse", "email"]},
+            {"type": "versus", "at": "swapping", "left": ["Hard drive", "boots in minutes"],
+             "right": ["SSD", "boots in seconds"], "winner": "right", "dur": 5.6},
+            {"type": "checklist", "at": "check", "title": "Before you buy",
+             "items": ["Replaceable drive?", "SATA 2.5\" or M.2?", "Search: model + SSD"],
+             "reveal_at": ["replaceable", "sata", "search"]},
         ],
-        "hashtags": ["cybersecurity", "passwords", "techtips"],
-        "tags": ["password manager", "browser password manager", "password security"],
-        "question": "Built-in password saver or a dedicated manager?",
+        "hashtags": ["laptop", "pcupgrade", "techtips"],
+        "tags": ["ssd upgrade", "slow laptop fix", "hdd to ssd"],
+        "question": "How old is the laptop you're using right now?",
+        "affiliate": {"product_name": "2.5 inch SATA SSD 500GB", "search_term": "2.5 inch sata ssd 500gb"},
     },
     # ---- Oct 2026, batch 2: the five older scripts re-angled into the formats
     # that win (head-to-head choices / "you don't need the expensive one"),
@@ -937,68 +1029,67 @@ SCRIPTS = [
         }
     },
     {
-        "slug": "qi2_vs_magsafe",
-        "series": "Charging, decoded",
+        "slug": "burr_vs_blade_grinder",
+        "series": "Kitchen tech, decoded",
         "format": "comparison",
-        "title": "Qi2 vs MagSafe: do you need a new wireless charger?",
-        "hook_text": "Qi2 is MagSafe for everyone",
-        "hook_emph": "Qi2",
+        "hook_pattern": "price_vs",
+        "title": "Blade vs burr coffee grinder: why the $20 one tastes bitter",
+        "hook_text": "$20 grinder, bitter coffee",
+        "hook_emph": "$20",
         "script": (
-            "Qi2 is basically MagSafe made universal, and it's showing up on more and more chargers. Apple "
-            "helped create it, so it uses the same kind of magnetic ring to snap your phone into the right spot. "
-            "That alignment is the whole point. Old flat wireless pads waste energy as heat when your phone sits "
-            "slightly off-center, which is why they charge slowly and run warm. A Qi2 charger works with recent "
-            "iPhones and newer Android phones like the Pixel 10, and other phones can use it with a magnetic "
-            "case. So if you're replacing an old wireless pad anyway, look for the Qi2 logo, because"
+            "A twenty-dollar blade grinder can make good beans taste bitter and sour in the same cup. The blade "
+            "chops at random, so you get dust next to big chunks. The dust over-extracts and turns bitter, while "
+            "the chunks under-extract and taste sour. A burr grinder crushes beans between two plates set a fixed "
+            "distance apart, so the pieces come out about the same size. That consistency often matters more than "
+            "the coffee maker. Entry-level burr grinders, like the Baratza Encore, have forty settings, from fine "
+            "for pour-over to coarse for French press. Before you buy a new coffee maker, upgrade the grinder, "
+            "because"
         ),
-        "footage_queries": ["wireless charging phone", "wireless charging pad phone", "magnetic phone charger",
-                            "smartphone on desk", "phone charging on desk", "charging station smartwatch",
-                            "smartphone closeup"],
-        "captions": [{"text": "Same magnetic ring as MagSafe", "at": "magnetic"},
-                     {"text": "Look for the Qi2 logo", "at": "look"}],
+        "footage_queries": ["coffee grinder", "coffee beans closeup", "ground coffee",
+                            "pour over coffee", "french press coffee", "coffee maker kitchen"],
+        "captions": [{"text": "Upgrade the grinder first", "at": "upgrade"}],
         "graphics": [
-            {"type": "versus", "at": "alignment", "left": ["Flat pad", "off-center, runs warm"],
-             "right": ["Qi2", "magnets snap it into place"], "winner": "right", "dur": 6.5},
-            {"type": "checklist", "at": "works", "title": "Qi2 works with",
-             "items": ["Recent iPhones", "Pixel 10 + newer Android", "Others: a magnetic case"],
-             "reveal_at": ["iphones", "pixel", "case"]},
+            {"type": "checklist", "at": "dust", "title": "Uneven grind", "style": "avoid",
+             "items": ["Dust: bitter", "Chunks: sour"], "reveal_at": ["dust", "chunks"]},
+            {"type": "versus", "at": "crushes", "left": ["Blade", "random chop"],
+             "right": ["Burr", "even size"], "winner": "right", "dur": 4.4},
         ],
-        "hashtags": ["qi2", "magsafe", "techtips"],
-        "tags": ["qi2 charger", "magsafe vs qi2", "wireless charging"],
-        "question": "MagSafe, Qi2, or still plugging in?",
-        "affiliate": {"product_name": "Qi2 magnetic wireless charger", "search_term": "qi2 magnetic charger"},
+        "hashtags": ["coffee", "kitchengadgets", "techtips"],
+        "tags": ["burr vs blade grinder", "best coffee grinder", "baratza encore"],
+        "question": "Blade, burr or pre-ground in your kitchen?",
+        "affiliate": {"product_name": "conical burr coffee grinder", "search_term": "burr coffee grinder"},
     },
     {
-        "slug": "budget_anc_earbuds",
+        "slug": "keyboard_gift_size",
         "series": "Before you buy",
-        "format": "under_budget",
-        "title": "You don't need $250 earbuds for good noise cancelling",
-        "hook_text": "$250 earbuds? It's the seal",
-        "hook_emph": "$250",
+        "format": "before_you_buy",
+        "hook_pattern": "dont_until",
+        "title": "Gifting a mechanical keyboard? Check the size before the switches",
+        "hook_text": "Don't gift a keyboard yet",
+        "hook_emph": "keyboard",
         "script": (
-            "You don't need two-hundred-fifty-dollar earbuds for good noise cancelling. Here's what actually "
-            "blocks the noise. The noise cancelling chip handles low, steady sounds like engine hum or an air "
-            "conditioner, but it barely touches voices or a door slamming. What blocks those is the seal: how "
-            "well the ear tip plugs your ear. That's why an under-a-hundred-dollar pair with the right fit can get "
-            "surprisingly close to a flagship. The expensive pairs mostly add better call quality and app "
-            "features. So before you upgrade, try every tip size in the box and run the fit test if your app has "
-            "one, because"
+            "Don't gift a mechanical keyboard until you know whether they use a number pad. Full-size boards have "
+            "one, which matters for spreadsheets and data entry. Tenkeyless boards drop it, so the mouse sits "
+            "closer and the desk feels bigger. Seventy-five percent boards go smaller still but keep the arrows "
+            "and the function row, which makes them a safe pick for most gamers and writers. Then think about "
+            "noise. If they share a room or take calls, choose red or brown switches over clicky blue ones. "
+            "Budget tenkeyless boards like the Redragon K552 cost far less than enthusiast models. So it's simple:"
         ),
-        "footage_queries": ["wireless earbuds", "wireless earbuds case closeup", "air conditioner",
-                            "door closing", "airplane cabin passengers", "person putting in earbuds",
-                            "person wearing earbuds commuting"],
-        "captions": [{"text": "Right fit: close to a flagship", "at": "fit"},
-                     {"text": "Pricier pairs add calls + app features", "at": "expensive"}],
+        "footage_queries": ["mechanical keyboard typing closeup", "spreadsheet on computer screen",
+                            "gaming setup keyboard mouse", "person writing on laptop", "video call at desk",
+                            "wrapped gift box"],
+        "captions": [],
         "graphics": [
-            {"type": "versus", "at": "chip", "left": ["ANC chip", "blocks engine hum, AC"],
-             "right": ["Ear tip seal", "blocks voices, slams"], "reveal_at": ["chip", "seal"], "hold": 2.2},
-            {"type": "checklist", "at": "upgrade", "title": "Before you upgrade",
-             "items": ["Try every tip size", "Run the fit test"], "reveal_at": ["tip", "fit"]},
+            {"type": "checklist", "at": "spreadsheets", "title": "Pick the size",
+             "items": ["Full: number pad", "Tenkeyless: no numpad", "75%: keeps the arrows"],
+             "reveal_at": ["spreadsheets", "tenkeyless", "percent"]},
+            {"type": "versus", "at": "noise", "left": ["Blue switches", "clicky, loud"],
+             "right": ["Red or brown", "quieter"], "winner": "right", "dur": 4.0},
         ],
-        "hashtags": ["earbuds", "airpods", "techtips"],
-        "tags": ["best budget earbuds", "noise cancelling earbuds", "airpods pro alternative"],
-        "question": "What earbuds are you using right now?",
-        "affiliate": {"product_name": "noise cancelling wireless earbuds", "search_term": "noise cancelling earbuds"},
+        "hashtags": ["mechanicalkeyboard", "giftideas", "desksetup"],
+        "tags": ["mechanical keyboard gift", "tenkeyless vs full size", "gifts for gamers"],
+        "question": "Number pad or no number pad?",
+        "affiliate": {"product_name": "budget mechanical keyboard", "search_term": "mechanical keyboard"},
     },
     {
         "slug": "sms_codes_vs_authenticator",
@@ -1032,34 +1123,253 @@ SCRIPTS = [
         "question": "Are you still using text codes anywhere?",
     },
     {
-        "slug": "screen_cleaner_vs_water",
+        "slug": "smart_ring_vs_watch_gift",
         "series": "Before you buy",
         "format": "comparison",
-        "title": "Glass cleaner vs water: what's actually safe for your laptop screen",
-        "hook_text": "Glass cleaner vs your screen",
-        "hook_emph": "Glass cleaner",
+        "hook_pattern": "one_spec",
+        "title": "Smart ring vs smartwatch gift: check the monthly fee first",
+        "hook_text": "Smart ring gift? Check the fee",
+        "hook_emph": "fee",
         "script": (
-            "Glass cleaner and a paper towel can slowly ruin your screen, even though they feel like the obvious "
-            "choice. Most laptop and phone screens have a thin coating that resists fingerprints, and ammonia-based "
-            "cleaners wear it down over time. Paper towels are slightly abrasive, so they leave fine scratches you "
-            "only notice in bright light. The safe way is simple: a microfiber cloth, lightly dampened with plain "
-            "water, wiped gently. Spray the cloth, never the screen, so nothing seeps into the edges. Because"
+            "Some smart rings keep charging you after you buy them. The Oura Ring needs a membership, about six "
+            "dollars a month, for most of its insights. Samsung's Galaxy Ring has no subscription, but it only "
+            "works with Android phones. What a ring does well is sleep tracking, since it's comfortable at night "
+            "and the battery lasts most of a week. What it can't do is show texts or take calls, because there's "
+            "no screen. So for someone who wants notifications, get a watch. For better sleep data, a ring makes "
+            "sense. Just remember that"
         ),
-        "footage_queries": ["cleaning screen", "cleaning laptop screen cloth", "glass cleaner spray bottle",
-                            "paper towel", "microfiber cloth closeup", "laptop screen closeup",
-                            "spray bottle"],
-        "captions": [{"text": "Spray the cloth, never the screen", "at": "spray"}],
+        "footage_queries": ["smartwatch on wrist", "sleeping in bed", "person sleeping at night",
+                            "checking smartwatch notification", "person running with smartwatch", "phone health app"],
+        "captions": [{"text": "No screen: no texts or calls", "at": "screen"}],
         "graphics": [
-            {"type": "checklist", "at": "coating", "title": "What goes wrong", "style": "avoid",
-             "items": ["Ammonia strips coating", "Paper towels scratch"],
-             "reveal_at": ["ammonia", "paper"], "hold": 4.6},
-            {"type": "versus", "at": "safe", "left": ["Glass cleaner", "strips coating, scratches"],
-             "right": ["Microfiber", "+ plain water, gently"], "winner": "right", "dur": 5.4},
+            {"type": "versus", "at": "membership", "left": ["Oura", "~$6 a month"],
+             "right": ["Galaxy Ring", "no fee, Android only"], "reveal_at": ["membership", "subscription"],
+             "hold": 1.8},
+            {"type": "checklist", "at": "sleep", "title": "Ring or watch?",
+             "items": ["Ring: sleep tracking", "Watch: texts and calls"], "reveal_at": ["sleep", "notifications"]},
         ],
-        "hashtags": ["laptop", "cleaning", "techtips"],
-        "tags": ["how to clean laptop screen", "screen cleaning", "microfiber cloth"],
-        "question": "What have you been cleaning your screen with?",
-        "affiliate": {"product_name": "microfiber cleaning cloths for screens", "search_term": "microfiber cleaning cloth screens"},
+        "hashtags": ["smartring", "giftideas", "techtips"],
+        "tags": ["smart ring", "oura vs galaxy ring", "smart ring vs smartwatch"],
+        "question": "Would you wear a ring to bed for sleep data?",
+    },
+    {
+        "slug": "power_bank_plane_rule",
+        "series": "Charging, decoded",
+        "format": "before_you_buy",
+        "hook_pattern": "one_spec",
+        "title": "Flying for the holidays? The power bank limit is in watt hours",
+        "hook_text": "Power bank? Carry-on only",
+        "hook_emph": "Carry-on",
+        "script": (
+            "A power bank in your checked bag can get pulled at the airport, because spare lithium batteries have "
+            "to fly in the cabin. The limit that matters is a hundred watt hours, not milliamp hours. To convert, "
+            "multiply the milliamp hours by three point seven and divide by a thousand. A twenty thousand milliamp "
+            "hour bank is about seventy-four watt hours, so it's fine. Around twenty-seven thousand, you hit the "
+            "limit, and bigger ones need airline approval. Some airlines now ban using power banks during the "
+            "flight, so check before you board, and pack it in your carry-on, because"
+        ),
+        "footage_queries": ["charging phone with power bank", "airport security line", "suitcase packing",
+                            "airplane cabin passengers", "airplane overhead bin", "phone charging on airplane"],
+        "captions": [{"text": "mAh x 3.7 / 1,000 = Wh", "at": "multiply"}],
+        "graphics": [
+            {"type": "specs", "at": "about", "title": "Carry-on limit: 100 Wh",
+             "rows": [["20,000 mAh", "~74 Wh"], ["27,000 mAh", "~100 Wh"]],
+             "highlight": 1, "source": "source: FAA lithium battery rules", "dur": 4.6},
+            {"type": "checklist", "at": "airlines", "title": "Before you fly",
+             "items": ["Carry-on, never checked", "Check the airline's rules"], "reveal_at": ["airlines", "pack"]},
+        ],
+        "hashtags": ["travel", "powerbank", "techtips"],
+        "tags": ["power bank on plane", "tsa power bank rules", "100wh power bank"],
+        "question": "How big is the power bank in your bag?",
+    },
+    {
+        "slug": "photo_frame_grandparents_gift",
+        "series": "Before you buy",
+        "format": "life_hack",
+        "title": "The tech gift grandparents actually use every day",
+        "hook_text": "Grandparents use this daily",
+        "hook_emph": "daily",
+        "script": "A Wi-Fi photo frame is the tech gift grandparents actually use every day. The family sends photos from their phones through an app, and they just show up on the frame, so there's nothing for grandma or grandpa to learn. Two things to check before you buy. Does it need a monthly subscription for storage or features? Some do, some don't. And set it up yourself before you give it, on their Wi-Fi if you can, so it works the moment they plug it in. Then add the first few photos, because",
+        "footage_queries": [
+            "digital photo frame",
+            "grandmother smiling",
+            "family taking photo smartphone",
+            "elderly couple living room",
+            "wrapped gift"
+        ],
+        "captions": [
+            {
+                "text": "Nothing new to learn",
+                "at": "learn"
+            }
+        ],
+        "graphics": [
+            {
+                "type": "steps",
+                "at": "sends",
+                "title": "How it works",
+                "items": [
+                    "Family sends photos",
+                    "They appear on the frame"
+                ],
+                "reveal_at": [
+                    "sends",
+                    "show"
+                ]
+            },
+            {
+                "type": "checklist",
+                "at": "check",
+                "title": "Before you buy",
+                "items": [
+                    "Subscription required?",
+                    "Set it up first"
+                ],
+                "reveal_at": [
+                    "subscription",
+                    "yourself"
+                ]
+            }
+        ],
+        "hashtags": [
+            "giftideas",
+            "grandparents",
+            "techtips"
+        ],
+        "tags": [
+            "gift for grandparents",
+            "digital photo frame gift",
+            "wifi photo frame"
+        ],
+        "question": "Who on your list would love this?",
+        "affiliate": {
+            "product_name": "WiFi digital photo frame",
+            "search_term": "WiFi digital photo frame"
+        }
+    },
+    {
+        "slug": "delivery_text_scam",
+        "series": "Security in 30 seconds",
+        "format": "red_flag",
+        "hook_pattern": "one_spec",
+        "title": "That 'package couldn't be delivered' text is a holiday scam",
+        "hook_text": "USPS doesn't text you links",
+        "hook_emph": "links",
+        "script": (
+            "Real delivery companies don't text you a link to pay a redelivery fee. That text is one of the most "
+            "common holiday scams. It claims USPS, FedEx or UPS missed your package and asks you to confirm your "
+            "address or pay a small fee. The link leads to a copycat site that steals your card number. USPS says "
+            "it doesn't text links unless you asked for tracking. To check a real package, open the carrier's app "
+            "with the store's tracking number. Then forward the text to seven, seven, two, six, because"
+        ),
+        "footage_queries": ["package on doorstep", "phone text message notification", "delivery truck",
+                            "entering credit card online", "typing on smartphone", "delivery man with box"],
+        "captions": [{"text": "Forward scam texts to 7726", "at": "forward"}],
+        "graphics": [
+            {"type": "checklist", "at": "confirm", "title": "Red flags", "style": "avoid",
+             "items": ["Confirm your address", "Pay a small fee"], "reveal_at": ["confirm", "fee"], "hold": 1.6},
+            {"type": "steps", "at": "check", "title": "Check it safely",
+             "items": ["Open the carrier's app", "Use the store's tracking #"], "reveal_at": ["app", "tracking"]},
+        ],
+        "hashtags": ["scam", "cybersecurity", "techtips"],
+        "tags": ["usps text scam", "package delivery scam", "smishing"],
+        "question": "Have you gotten one of these texts yet?",
+    },
+    {
+        "slug": "air_fryer_size_check",
+        "series": "Kitchen tech, decoded",
+        "format": "before_you_buy",
+        "hook_pattern": "one_spec",
+        "title": "Before you buy an air fryer, check the quarts, not the presets",
+        "hook_text": "Air fryer? Check the quarts",
+        "hook_emph": "quarts",
+        "script": (
+            "The number that matters on an air fryer is the basket size in quarts. A two-quart model handles fries "
+            "for one person. Three to four quarts fits two people, and a family of four usually needs five quarts "
+            "or more, because food only crisps in a single layer. Pile it up and the middle steams instead. The "
+            "presets matter far less, since most of them are just a temperature and a timer you could set "
+            "yourself. A five-quart basket, like the Cosori Pro LE, covers most households. So if you're shopping "
+            "for one this season, remember that"
+        ),
+        "footage_queries": ["crispy chicken wings", "family dinner table", "kitchen countertop appliances",
+                            "cooking at home kitchen", "french fries on plate", "kitchen timer"],
+        "captions": [{"text": "Single layer = crispy", "at": "layer"}],
+        "graphics": [
+            {"type": "specs", "at": "handles", "title": "Basket size",
+             "rows": [["1 person", "2 qt"], ["2 people", "3-4 qt"], ["Family of 4", "5 qt+"]],
+             "reveal_at": ["person", "people", "family"], "source": "typical sizing guidance"},
+            {"type": "versus", "at": "presets", "left": ["Presets", "a temp + a timer"],
+             "right": ["Basket size", "what matters"], "winner": "right", "dur": 4.0},
+        ],
+        "hashtags": ["airfryer", "kitchengadgets", "techtips"],
+        "tags": ["best air fryer", "air fryer size guide", "air fryer for family"],
+        "question": "How many people does your air fryer cook for?",
+        "affiliate": {"product_name": "5-quart basket air fryer", "search_term": "5 quart air fryer"},
+    },
+    {
+        "slug": "browser_passwords_vs_manager",
+        "series": "Security in 30 seconds",
+        "format": "comparison",
+        "title": "Browser passwords vs a password manager: is the built-in one enough?",
+        "hook_text": "Your password saver is enough",
+        "hook_emph": "password saver",
+        "script": (
+            "Is the password saver in your browser actually good enough? For most people, yes. The ones built "
+            "into your iPhone, your Android phone or your browser now create strong passwords, sync across your "
+            "devices, and warn you about leaks. A dedicated manager makes sense if you mix ecosystems, like an "
+            "iPhone with a Windows PC, share logins with family, or want to store things like recovery codes. But "
+            "the real danger isn't picking the wrong one. It's reusing the same password. So open your saved "
+            "passwords today, fix any reuse warnings starting with your email, and then ask yourself:"
+        ),
+        "footage_queries": ["password", "typing password on laptop", "smartphone and laptop on desk",
+                            "family sharing tablet couch", "using smartphone on couch", "laptop keyboard closeup",
+                            "padlock security concept"],
+        "captions": [{"text": "Strong passwords, sync, leak alerts", "at": "strong"},
+                     {"text": "Reused passwords are the real risk", "at": "danger"}],
+        "graphics": [
+            {"type": "versus", "at": "dedicated", "left": ["Built-in", "fine for most people"],
+             "right": ["Manager", "iPhone + PC, sharing"], "dur": 8.4},
+            {"type": "checklist", "at": "open", "title": "Do this today",
+             "items": ["Open saved passwords", "Fix reuse warnings", "Start with your email"],
+             "reveal_at": ["open", "reuse", "email"]},
+        ],
+        "hashtags": ["cybersecurity", "passwords", "techtips"],
+        "tags": ["password manager", "browser password manager", "password security"],
+        "question": "Built-in password saver or a dedicated manager?",
+    },
+    {
+        "slug": "five_g_battery_drain",
+        "series": "Settings worth changing",
+        "format": "did_you_know",
+        "title": "Why 5G might be draining your battery faster than 4G",
+        "hook_text": "Weak 5G drains your battery",
+        "hook_emph": "5G",
+        "script": (
+            "5G could be the reason your battery dies faster than it used to. When the 5G signal is "
+            "weak, your phone keeps hunting between 5G and 4G, and that burns power. For texting, maps and music, "
+            "you usually can't tell the difference anyway. On iPhone, go to Settings, Cellular, Cellular Data "
+            "Options, Voice and Data, and pick 5G Auto. On Android, open your network settings, find preferred "
+            "network type, and choose LTE if 5G is spotty where you live. Try it for a week and watch your "
+            "battery screen, because"
+        ),
+        "footage_queries": ["phone battery", "low battery phone screen", "phone signal bars city",
+                            "person using phone on street", "texting on phone", "listening to music on phone",
+                            "phone settings menu scrolling"],
+        "captions": [{"text": "Try it for a week", "at": "try"}],
+        "graphics": [
+            # Apple: 5G Auto switches to LTE when 5G wouldn't be noticeably faster
+            {"type": "versus", "at": "weak", "left": ["Always 5G", "hunts on a weak signal"],
+             "right": ["5G Auto", "5G only when it helps"], "winner": "right", "dur": 4.4},
+            {"type": "steps", "at": "iphone", "title": "iPhone",
+             "items": ["Settings", "Cellular", "Cellular Data Options", "Voice & Data: 5G Auto"],
+             "reveal_at": ["settings", "cellular", "options", "voice"]},
+            {"type": "steps", "at": "android", "title": "Android",
+             "items": ["Network settings", "Preferred network type", "LTE if 5G is spotty"],
+             "reveal_at": ["network", "preferred", "lte"]},
+        ],
+        "hashtags": ["iphone", "battery", "techtips"],
+        "tags": ["5g battery drain", "iphone battery tips", "5g auto"],
+        "question": "Do you keep 5G on, or Auto?",
     },
     {
         "slug": "move_router_before_upgrading",
@@ -1094,6 +1404,36 @@ SCRIPTS = [
         "question": "Where is your router right now?",
     },
     {
+        "slug": "screen_cleaner_vs_water",
+        "series": "Before you buy",
+        "format": "comparison",
+        "title": "Glass cleaner vs water: what's actually safe for your laptop screen",
+        "hook_text": "Glass cleaner vs your screen",
+        "hook_emph": "Glass cleaner",
+        "script": (
+            "Glass cleaner and a paper towel can slowly ruin your screen, even though they feel like the obvious "
+            "choice. Most laptop and phone screens have a thin coating that resists fingerprints, and ammonia-based "
+            "cleaners wear it down over time. Paper towels are slightly abrasive, so they leave fine scratches you "
+            "only notice in bright light. The safe way is simple: a microfiber cloth, lightly dampened with plain "
+            "water, wiped gently. Spray the cloth, never the screen, so nothing seeps into the edges. Because"
+        ),
+        "footage_queries": ["cleaning screen", "cleaning laptop screen cloth", "glass cleaner spray bottle",
+                            "paper towel", "microfiber cloth closeup", "laptop screen closeup",
+                            "spray bottle"],
+        "captions": [{"text": "Spray the cloth, never the screen", "at": "spray"}],
+        "graphics": [
+            {"type": "checklist", "at": "coating", "title": "What goes wrong", "style": "avoid",
+             "items": ["Ammonia strips coating", "Paper towels scratch"],
+             "reveal_at": ["ammonia", "paper"], "hold": 4.6},
+            {"type": "versus", "at": "safe", "left": ["Glass cleaner", "strips coating, scratches"],
+             "right": ["Microfiber", "+ plain water, gently"], "winner": "right", "dur": 5.4},
+        ],
+        "hashtags": ["laptop", "cleaning", "techtips"],
+        "tags": ["how to clean laptop screen", "screen cleaning", "microfiber cloth"],
+        "question": "What have you been cleaning your screen with?",
+        "affiliate": {"product_name": "microfiber cleaning cloths for screens", "search_term": "microfiber cleaning cloth screens"},
+    },
+    {
         "slug": "search_with_your_camera",
         "series": "Settings worth changing",
         "format": "comparison",
@@ -1125,5 +1465,34 @@ SCRIPTS = [
         "hashtags": ["iphone", "android", "techtips"],
         "tags": ["google lens", "visual look up", "circle to search"],
         "question": "Have you tried searching with a photo yet?",
+    },
+    {
+        "slug": "tv_motion_rate_trap",
+        "series": "Before you buy",
+        "format": "before_you_buy",
+        "hook_pattern": "one_spec",
+        "title": "Buying a TV for Black Friday? 'Motion Rate 240' isn't 240Hz",
+        "hook_text": "Motion Rate 240 isn't 240Hz",
+        "hook_emph": "240",
+        "script": (
+            "That Motion Rate two hundred forty on a TV box usually isn't the screen's real refresh rate. Brands use names "
+            "like Motion Rate, TruMotion or Motionflow for a processed figure that's often double the panel's "
+            "native rate. A Motion Rate two hundred forty TV is very often a native one hundred twenty hertz panel, and Motion Rate "
+            "one hundred twenty is often native sixty. That's fine for movies and regular TV. Native one hundred twenty matters for sports and for gaming on a "
+            "PlayStation five or Xbox Series X. So search the model number plus native refresh rate before you "
+            "buy, because"
+        ),
+        "footage_queries": ["television living room", "tv store display", "watching football on tv",
+                            "playing video games console", "tv remote closeup", "electronics store shopping"],
+        "captions": [{"text": "Search: model + native refresh rate", "at": "search"}],
+        "graphics": [
+            {"type": "versus", "at": "processed", "left": ["On the box", "Motion Rate 240"],
+             "right": ["Real panel", "often 120Hz"], "winner": "right", "dur": 4.6},
+            {"type": "checklist", "at": "matters", "title": "Native 120Hz helps",
+             "items": ["Sports", "PS5 / Xbox Series X"], "reveal_at": ["sports", "gaming"]},
+        ],
+        "hashtags": ["tv", "blackfriday", "techtips"],
+        "tags": ["black friday tv", "120hz vs 60hz tv", "motion rate 240"],
+        "question": "What refresh rate is your TV, really?",
     },
 ]

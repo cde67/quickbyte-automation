@@ -14,7 +14,8 @@
     "flagship_vs_midrange_phone",
     "esim_vs_physical_sim",
     "tech_gifts_under_30",
-    "charger_brick_matters"
+    "charger_brick_matters",
+    "airtag_vs_tile_gift"
   ],
   "ig_posted": [
     "mechanical_keyboard_budget",
@@ -23,7 +24,8 @@
     "flagship_vs_midrange_phone",
     "esim_vs_physical_sim",
     "tech_gifts_under_30",
-    "charger_brick_matters"
+    "charger_brick_matters",
+    "airtag_vs_tile_gift"
   ],
   "tiktok_exported": [
     "mechanical_keyboard_budget",
@@ -32,7 +34,8 @@
     "flagship_vs_midrange_phone",
     "esim_vs_physical_sim",
     "tech_gifts_under_30",
-    "charger_brick_matters"
+    "charger_brick_matters",
+    "airtag_vs_tile_gift"
   ],
   "tiktok_posted": [
     "usb_c_lightning_why",
@@ -41,10 +44,12 @@
     "usb_c_cable_speed_test",
     "tech_gifts_under_30",
     "flagship_vs_midrange_phone",
-    "charger_brick_matters"
+    "charger_brick_matters",
+    "airtag_vs_tile_gift"
   ],
   "posted_dates": {
     "tech_gifts_under_30": "2026-10-19",
-    "charger_brick_matters": "2026-10-20"
+    "charger_brick_matters": "2026-10-20",
+    "airtag_vs_tile_gift": "2026-10-21"
   }
 }
