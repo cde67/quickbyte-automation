@@ -17,7 +17,8 @@
     "charger_brick_matters",
     "airtag_vs_tile_gift",
     "travel_esim_vs_roaming",
-    "kindle_vs_tablet_gift"
+    "kindle_vs_tablet_gift",
+    "qi2_vs_magsafe"
   ],
   "ig_posted": [
     "mechanical_keyboard_budget",
@@ -29,7 +30,8 @@
     "charger_brick_matters",
     "airtag_vs_tile_gift",
     "travel_esim_vs_roaming",
-    "kindle_vs_tablet_gift"
+    "kindle_vs_tablet_gift",
+    "qi2_vs_magsafe"
   ],
   "tiktok_exported": [
     "mechanical_keyboard_budget",
@@ -41,7 +43,8 @@
     "charger_brick_matters",
     "airtag_vs_tile_gift",
     "travel_esim_vs_roaming",
-    "kindle_vs_tablet_gift"
+    "kindle_vs_tablet_gift",
+    "qi2_vs_magsafe"
   ],
   "tiktok_posted": [
     "usb_c_lightning_why",
@@ -53,13 +56,15 @@
     "charger_brick_matters",
     "airtag_vs_tile_gift",
     "travel_esim_vs_roaming",
-    "kindle_vs_tablet_gift"
+    "kindle_vs_tablet_gift",
+    "qi2_vs_magsafe"
   ],
   "posted_dates": {
     "tech_gifts_under_30": "2026-10-19",
     "charger_brick_matters": "2026-10-20",
     "airtag_vs_tile_gift": "2026-10-21",
     "travel_esim_vs_roaming": "2026-10-24",
-    "kindle_vs_tablet_gift": "2026-10-25"
+    "kindle_vs_tablet_gift": "2026-10-25",
+    "qi2_vs_magsafe": "2026-10-25"
   }
 }
