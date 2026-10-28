@@ -19,7 +19,8 @@
     "travel_esim_vs_roaming",
     "kindle_vs_tablet_gift",
     "qi2_vs_magsafe",
-    "projector_lumens_spec"
+    "projector_lumens_spec",
+    "projector_80_vs_300"
   ],
   "ig_posted": [
     "mechanical_keyboard_budget",
@@ -33,7 +34,8 @@
     "travel_esim_vs_roaming",
     "kindle_vs_tablet_gift",
     "qi2_vs_magsafe",
-    "projector_lumens_spec"
+    "projector_lumens_spec",
+    "projector_80_vs_300"
   ],
   "tiktok_exported": [
     "mechanical_keyboard_budget",
@@ -47,7 +49,8 @@
     "travel_esim_vs_roaming",
     "kindle_vs_tablet_gift",
     "qi2_vs_magsafe",
-    "projector_lumens_spec"
+    "projector_lumens_spec",
+    "projector_80_vs_300"
   ],
   "tiktok_posted": [
     "usb_c_lightning_why",
@@ -61,7 +64,8 @@
     "travel_esim_vs_roaming",
     "kindle_vs_tablet_gift",
     "qi2_vs_magsafe",
-    "projector_lumens_spec"
+    "projector_lumens_spec",
+    "projector_80_vs_300"
   ],
   "posted_dates": {
     "tech_gifts_under_30": "2026-10-19",
@@ -70,6 +74,7 @@
     "travel_esim_vs_roaming": "2026-10-24",
     "kindle_vs_tablet_gift": "2026-10-25",
     "qi2_vs_magsafe": "2026-10-25",
-    "projector_lumens_spec": "2026-10-26"
+    "projector_lumens_spec": "2026-10-26",
+    "projector_80_vs_300": "2026-10-28"
   }
 }
