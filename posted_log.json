@@ -26,7 +26,8 @@
     "instant_read_thermometer",
     "wifi7_vs_wifi6_router",
     "streaming_stick_gift",
-    "ssd_old_laptop_upgrade"
+    "ssd_old_laptop_upgrade",
+    "smart_speaker_gift"
   ],
   "ig_posted": [
     "mechanical_keyboard_budget",
@@ -46,7 +47,8 @@
     "photo_printer_gift_of_week",
     "wifi7_vs_wifi6_router",
     "streaming_stick_gift",
-    "ssd_old_laptop_upgrade"
+    "ssd_old_laptop_upgrade",
+    "smart_speaker_gift"
   ],
   "tiktok_exported": [
     "mechanical_keyboard_budget",
@@ -67,7 +69,8 @@
     "instant_read_thermometer",
     "wifi7_vs_wifi6_router",
     "streaming_stick_gift",
-    "ssd_old_laptop_upgrade"
+    "ssd_old_laptop_upgrade",
+    "smart_speaker_gift"
   ],
   "tiktok_posted": [
     "usb_c_lightning_why",
@@ -88,7 +91,8 @@
     "instant_read_thermometer",
     "wifi7_vs_wifi6_router",
     "streaming_stick_gift",
-    "ssd_old_laptop_upgrade"
+    "ssd_old_laptop_upgrade",
+    "smart_speaker_gift"
   ],
   "posted_dates": {
     "tech_gifts_under_30": "2026-10-19",
@@ -104,6 +108,7 @@
     "instant_read_thermometer": "2026-10-31",
     "wifi7_vs_wifi6_router": "2026-11-01",
     "streaming_stick_gift": "2026-11-03",
-    "ssd_old_laptop_upgrade": "2026-11-03"
+    "ssd_old_laptop_upgrade": "2026-11-03",
+    "smart_speaker_gift": "2026-11-04"
   }
 }
