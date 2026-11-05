@@ -29,7 +29,8 @@
     "ssd_old_laptop_upgrade",
     "smart_speaker_gift",
     "burr_vs_blade_grinder",
-    "keyboard_gift_size"
+    "keyboard_gift_size",
+    "sms_codes_vs_authenticator"
   ],
   "ig_posted": [
     "mechanical_keyboard_budget",
@@ -52,7 +53,8 @@
     "ssd_old_laptop_upgrade",
     "smart_speaker_gift",
     "burr_vs_blade_grinder",
-    "keyboard_gift_size"
+    "keyboard_gift_size",
+    "sms_codes_vs_authenticator"
   ],
   "tiktok_exported": [
     "mechanical_keyboard_budget",
@@ -76,7 +78,8 @@
     "ssd_old_laptop_upgrade",
     "smart_speaker_gift",
     "burr_vs_blade_grinder",
-    "keyboard_gift_size"
+    "keyboard_gift_size",
+    "sms_codes_vs_authenticator"
   ],
   "tiktok_posted": [
     "usb_c_lightning_why",
@@ -100,7 +103,8 @@
     "ssd_old_laptop_upgrade",
     "smart_speaker_gift",
     "burr_vs_blade_grinder",
-    "keyboard_gift_size"
+    "keyboard_gift_size",
+    "sms_codes_vs_authenticator"
   ],
   "posted_dates": {
     "tech_gifts_under_30": "2026-10-19",
@@ -119,6 +123,7 @@
     "ssd_old_laptop_upgrade": "2026-11-03",
     "smart_speaker_gift": "2026-11-04",
     "burr_vs_blade_grinder": "2026-11-04",
-    "keyboard_gift_size": "2026-11-05"
+    "keyboard_gift_size": "2026-11-05",
+    "sms_codes_vs_authenticator": "2026-11-05"
   }
 }
