@@ -1122,6 +1122,9 @@ SCRIPTS = [
         "tags": ["two factor authentication", "sim swap", "authenticator app"],
         "question": "Are you still using text codes anywhere?",
     },
+    # ---- Nov 5 2026 weekly batch + reorder: kitchen and "don't replace until" lead (thermometer,
+    # grinder, SSD-laptop broke out), gift budgets/Gift of the week mid-queue, Black Friday deal-literacy
+    # timed for ~Nov 14-17, weakest formats (settings/hidden-feature style) moved to the back.
     {
         "slug": "smart_ring_vs_watch_gift",
         "series": "Before you buy",
@@ -1153,34 +1156,67 @@ SCRIPTS = [
         "question": "Would you wear a ring to bed for sleep data?",
     },
     {
-        "slug": "power_bank_plane_rule",
-        "series": "Charging, decoded",
+        "slug": "air_fryer_size_check",
+        "series": "Kitchen tech, decoded",
         "format": "before_you_buy",
         "hook_pattern": "one_spec",
-        "title": "Flying for the holidays? The power bank limit is in watt hours",
-        "hook_text": "Power bank? Carry-on only",
-        "hook_emph": "Carry-on",
+        "title": "Before you buy an air fryer, check the quarts, not the presets",
+        "hook_text": "Air fryer? Check the quarts",
+        "hook_emph": "quarts",
         "script": (
-            "A power bank in your checked bag can get pulled at the airport, because spare lithium batteries have "
-            "to fly in the cabin. The limit that matters is a hundred watt hours, not milliamp hours. To convert, "
-            "multiply the milliamp hours by three point seven and divide by a thousand. A twenty thousand milliamp "
-            "hour bank is about seventy-four watt hours, so it's fine. Around twenty-seven thousand, you hit the "
-            "limit, and bigger ones need airline approval. Some airlines now ban using power banks during the "
-            "flight, so check before you board, and pack it in your carry-on, because"
+            "The number that matters on an air fryer is the basket size in quarts. A two-quart model handles fries "
+            "for one person. Three to four quarts fits two people, and a family of four usually needs five quarts "
+            "or more, because food only crisps in a single layer. Pile it up and the middle steams instead. The "
+            "presets matter far less, since most of them are just a temperature and a timer you could set "
+            "yourself. A five-quart basket, like the Cosori Pro LE, covers most households. So if you're shopping "
+            "for one this season, remember that"
         ),
-        "footage_queries": ["charging phone with power bank", "airport security line", "suitcase packing",
-                            "airplane cabin passengers", "airplane overhead bin", "phone charging on airplane"],
-        "captions": [{"text": "mAh x 3.7 / 1,000 = Wh", "at": "multiply"}],
+        "footage_queries": ["crispy chicken wings", "family dinner table", "kitchen countertop appliances",
+                            "cooking at home kitchen", "french fries on plate", "kitchen timer"],
+        "captions": [{"text": "Single layer = crispy", "at": "layer"}],
         "graphics": [
-            {"type": "specs", "at": "about", "title": "Carry-on limit: 100 Wh",
-             "rows": [["20,000 mAh", "~74 Wh"], ["27,000 mAh", "~100 Wh"]],
-             "highlight": 1, "source": "source: FAA lithium battery rules", "dur": 4.6},
-            {"type": "checklist", "at": "airlines", "title": "Before you fly",
-             "items": ["Carry-on, never checked", "Check the airline's rules"], "reveal_at": ["airlines", "pack"]},
+            {"type": "specs", "at": "handles", "title": "Basket size",
+             "rows": [["1 person", "2 qt"], ["2 people", "3-4 qt"], ["Family of 4", "5 qt+"]],
+             "reveal_at": ["person", "people", "family"], "source": "typical sizing guidance"},
+            {"type": "versus", "at": "presets", "left": ["Presets", "a temp + a timer"],
+             "right": ["Basket size", "what matters"], "winner": "right", "dur": 4.0},
         ],
-        "hashtags": ["travel", "powerbank", "techtips"],
-        "tags": ["power bank on plane", "tsa power bank rules", "100wh power bank"],
-        "question": "How big is the power bank in your bag?",
+        "hashtags": ["airfryer", "kitchengadgets", "techtips"],
+        "tags": ["best air fryer", "air fryer size guide", "air fryer for family"],
+        "question": "How many people does your air fryer cook for?",
+        "affiliate": {"product_name": "5-quart basket air fryer", "search_term": "5 quart air fryer"},
+    },
+    {
+        "slug": "move_router_before_upgrading",
+        "series": "Before you buy",
+        "format": "before_you_buy",
+        "title": "Don't buy a new router until you try moving this one",
+        "hook_text": "Router on the floor? Move it",
+        "hook_emph": "floor",
+        "script": (
+            "Don't buy a new router until you try moving the one you have. Where it sits can matter more than "
+            "which model it is. A router sends its signal outward in every direction, so one on the floor, inside "
+            "a cabinet or behind the TV loses range right away. Put it up high, out in the open and as central as "
+            "you can. Keep it away from mirrors and big metal objects, which reflect the signal, and from the "
+            "microwave, which interferes with the two point four gigahertz band. Then run a speed test in your "
+            "slowest room. If it's still slow, upgrade. But"
+        ),
+        "footage_queries": ["router", "tv cabinet living room", "hallway shelf home",
+                            "person using phone on couch", "mirror in living room", "microwave oven closeup",
+                            "internet speed test on phone"],
+        "captions": [{"text": "Placement can matter more", "at": "matter"},
+                     {"text": "Speed test in your slowest room", "at": "run"}],
+        "graphics": [
+            {"type": "versus", "at": "floor", "left": ["Floor or cabinet", "loses range right away"],
+             "right": ["Up high", "open and central"], "winner": "right",
+             "reveal_at": ["floor", "high"], "hold": 2.4},
+            {"type": "checklist", "at": "keep", "title": "Keep it away from", "style": "avoid",
+             "items": ["Mirrors", "Big metal objects", "Microwaves (2.4 GHz)"],
+             "reveal_at": ["mirrors", "metal", "microwave"], "hold": 3.2},
+        ],
+        "hashtags": ["wifi", "router", "techtips"],
+        "tags": ["slow wifi fix", "router placement", "wifi tips"],
+        "question": "Where is your router right now?",
     },
     {
         "slug": "photo_frame_grandparents_gift",
@@ -1247,6 +1283,283 @@ SCRIPTS = [
             "search_term": "WiFi digital photo frame"
         }
     },
+    {   'slug': 'phone_battery_before_upgrade',
+        'series': 'Before you buy',
+        'format': 'under_budget',
+        'hook_pattern': 'dont_until',
+        'title': "Don't replace your phone until you check its battery health",
+        'hook_text': 'Check battery before upgrading',
+        'hook_emph': 'battery',
+        'script': "Don't replace your phone until you check one number: battery health. On iPhone, it's in "
+                  'Settings, Battery, Battery Health. Below eighty percent, Apple considers the battery worn, '
+                  'and a worn battery can slow the phone down and leave it dead by mid-afternoon. A replacement '
+                  'at Apple usually costs around a hundred dollars, a fraction of a new phone. On newer Pixels, '
+                  'look under Settings, Battery. On Samsung, run the battery test in the Samsung Members app. If '
+                  'the health is fine and the phone still lags, then upgrading makes sense. So before you head '
+                  'to the store,',
+        'footage_queries': [   'phone charging',
+                               'person using smartphone',
+                               'smartphone settings screen',
+                               'phone repair',
+                               'person holding iphone',
+                               'phone store'],
+        'captions': [{'text': 'Samsung: Members app', 'at': 'samsung'}],
+        'graphics': [   {   'type': 'stat',
+                            'at': 'eighty',
+                            'from': 100,
+                            'to': 80,
+                            'unit': '%',
+                            'label': 'battery health: worn below this'},
+                        {   'type': 'versus',
+                            'at': 'replacement',
+                            'left': ['New battery', 'about $100'],
+                            'right': ['New phone', '$800+'],
+                            'winner': 'left',
+                            'reveal_at': ['replacement', 'fraction'],
+                            'hold': 1.6}],
+        'hashtags': ['iphone', 'battery', 'techtips'],
+        'tags': ['should i upgrade my phone', 'phone battery health', 'iphone battery replacement'],
+        'question': "What's your battery health at right now?"},
+    {   'slug': 'electric_kettle_skip',
+        'series': 'Kitchen tech, decoded',
+        'format': 'under_budget',
+        'hook_pattern': 'skip_version',
+        'title': 'Electric kettle gift: skip the $90 one unless they drink tea',
+        'hook_text': 'Skip the $90 kettle',
+        'hook_emph': '$90',
+        'script': 'Skip the ninety-dollar electric kettle unless they drink tea or make pour-over. In the US, '
+                  "most kettles top out around fifteen hundred watts, because that's about what a normal outlet "
+                  'can supply, so a twenty-five-dollar kettle boils water about as fast as an expensive one. '
+                  'What the extra money buys is temperature control. Green tea tastes best around a hundred '
+                  'seventy-five degrees, and pour-over coffee around two hundred, just under boiling. A '
+                  'gooseneck spout helps with the slow, even pour. For pasta water and instant oatmeal, the '
+                  'basic one is all they need. So ask what they actually make in the morning, and',
+        'footage_queries': [   'kettle boiling water',
+                               'pouring hot water into cup',
+                               'green tea cup',
+                               'pour over coffee',
+                               'kitchen counter morning',
+                               'wrapped gift box'],
+        'captions': [{'text': 'Pasta water? Basic is fine', 'at': 'pasta'}],
+        'graphics': [   {   'type': 'versus',
+                            'at': 'watts',
+                            'left': ['$25 kettle', 'about 1500W'],
+                            'right': ['$90 kettle', 'about 1500W'],
+                            'dur': 3.8},
+                        {   'type': 'checklist',
+                            'at': 'temperature',
+                            'title': 'Worth paying for',
+                            'items': ['Green tea: ~175°F', 'Pour-over: ~200°F', 'Gooseneck spout'],
+                            'reveal_at': ['green', 'coffee', 'gooseneck']}],
+        'hashtags': ['kitchengadgets', 'tea', 'giftideas'],
+        'tags': ['electric kettle gift', 'best electric kettle', 'gooseneck kettle'],
+        'question': 'Tea, pour-over, or just instant noodles?',
+        'affiliate': {   'product_name': 'variable temperature electric kettle',
+                         'search_term': 'variable temperature gooseneck electric kettle'}},
+    {
+        "slug": "power_bank_plane_rule",
+        "series": "Charging, decoded",
+        "format": "before_you_buy",
+        "hook_pattern": "one_spec",
+        "title": "Flying for the holidays? The power bank limit is in watt hours",
+        "hook_text": "Power bank? Carry-on only",
+        "hook_emph": "Carry-on",
+        "script": (
+            "A power bank in your checked bag can get pulled at the airport, because spare lithium batteries have "
+            "to fly in the cabin. The limit that matters is a hundred watt hours, not milliamp hours. To convert, "
+            "multiply the milliamp hours by three point seven and divide by a thousand. A twenty thousand milliamp "
+            "hour bank is about seventy-four watt hours, so it's fine. Around twenty-seven thousand, you hit the "
+            "limit, and bigger ones need airline approval. Some airlines now ban using power banks during the "
+            "flight, so check before you board, and pack it in your carry-on, because"
+        ),
+        "footage_queries": ["charging phone with power bank", "airport security line", "suitcase packing",
+                            "airplane cabin passengers", "airplane overhead bin", "phone charging on airplane"],
+        "captions": [{"text": "mAh x 3.7 / 1,000 = Wh", "at": "multiply"}],
+        "graphics": [
+            {"type": "specs", "at": "about", "title": "Carry-on limit: 100 Wh",
+             "rows": [["20,000 mAh", "~74 Wh"], ["27,000 mAh", "~100 Wh"]],
+             "highlight": 1, "source": "source: FAA lithium battery rules", "dur": 4.6},
+            {"type": "checklist", "at": "airlines", "title": "Before you fly",
+             "items": ["Carry-on, never checked", "Check the airline's rules"], "reveal_at": ["airlines", "pack"]},
+        ],
+        "hashtags": ["travel", "powerbank", "techtips"],
+        "tags": ["power bank on plane", "tsa power bank rules", "100wh power bank"],
+        "question": "How big is the power bank in your bag?",
+    },
+    {   'slug': 'tech_gifts_under_50',
+        'series': 'Before you buy',
+        'format': 'under_budget',
+        'hook_pattern': 'one_spec',
+        'two_part': {'id': 'giftbudget', 'part': 1},
+        'title': "Tech gifts under $50: three that don't end up in a drawer",
+        'hook_text': '3 tech gifts under $50',
+        'hook_emph': '$50',
+        'script': 'Tech gifts under fifty dollars that actually get used each come with one check. A ten '
+                  'thousand milliamp hour power bank: make sure it says USB-C P D and at least twenty watts, or '
+                  'it charges slowly. A four K streaming stick: check that their TV has a free HDMI port, and '
+                  "that they don't already love their smart TV's apps. A tenkeyless mechanical keyboard, like "
+                  "the Redragon K552: ask whether they ever use a number pad, because this one doesn't have one. "
+                  'A novelty gadget gets used once. These get used every day. So skip the gimmick aisle, because',
+        'footage_queries': [   'power bank charging phone',
+                               'streaming device tv remote',
+                               'mechanical keyboard typing closeup',
+                               'wrapped christmas gifts',
+                               'person unwrapping gift',
+                               'usb c cable plugged in'],
+        'captions': [],
+        'graphics': [   {   'type': 'checklist',
+                            'at': 'power',
+                            'title': 'Under $50',
+                            'items': ['Power bank: USB-C PD', '4K stick: free HDMI', 'Keyboard: no numpad'],
+                            'reveal_at': ['power', 'streaming', 'tenkeyless'],
+                            'hold': 1.4},
+                        {   'type': 'versus',
+                            'at': 'novelty',
+                            'left': ['Novelty gadget', 'used once'],
+                            'right': ['These three', 'used daily'],
+                            'winner': 'right',
+                            'reveal_at': ['novelty', 'these']}],
+        'hashtags': ['giftideas', 'techgifts', 'techtips'],
+        'tags': ['tech gifts under 50', 'gift ideas under 50', 'cheap tech gifts'],
+        'question': "What's your gift budget per person this year?",
+        'affiliate': {   'product_name': 'USB-C power bank with PD fast charging',
+                         'search_term': 'portable charger power bank'}},
+    {   'slug': 'tech_gifts_under_100',
+        'series': 'Before you buy',
+        'format': 'under_budget',
+        'hook_pattern': 'one_spec',
+        'two_part': {'id': 'giftbudget', 'part': 2},
+        'title': 'Tech gifts under $100: three worth the step up',
+        'hook_text': '3 tech gifts under $100',
+        'hook_emph': '$100',
+        'script': 'Tech gifts under a hundred dollars are where you get real upgrades, but each one has a catch '
+                  'to check. Noise-cancelling earbuds: look for hybrid A N C and several ear-tip sizes, since '
+                  'the seal does most of the work. An instant photo printer like the Kodak Step: Zink paper '
+                  'needs no ink, but paper is the ongoing cost, so add a refill pack. A Qi2 magnetic charging '
+                  'stand: it fits recent iPhones and the Pixel 10, but most other Android phones need a magnetic '
+                  "case. If you don't know their phone, earbuds are the safest bet. So set the budget first, "
+                  'because',
+        'footage_queries': [   'wireless earbuds case',
+                               'person wearing earbuds commute',
+                               'instant photo printing',
+                               'printed photos on table',
+                               'wireless charger phone',
+                               'wrapped christmas gifts'],
+        'captions': [{'text': "Don't know their phone? Earbuds", 'at': 'safest'}],
+        'graphics': [   {   'type': 'checklist',
+                            'at': 'hybrid',
+                            'title': 'Under $100',
+                            'items': ['Earbuds: hybrid ANC', 'Printer: buy refills', 'Qi2 stand: check phone'],
+                            'reveal_at': ['hybrid', 'zink', 'magnetic'],
+                            'hold': 1.4}],
+        'hashtags': ['giftideas', 'techgifts', 'techtips'],
+        'tags': ['tech gifts under 100', 'best gifts under 100', 'gift ideas 2026'],
+        'question': 'Earbuds, printer or charger: which would they use most?',
+        'affiliate': {   'product_name': 'noise cancelling wireless earbuds',
+                         'search_term': 'noise cancelling earbuds'}},
+    {   'slug': 'kitchen_scale_baking',
+        'series': 'Kitchen tech, decoded',
+        'format': 'under_budget',
+        'hook_pattern': 'price_vs',
+        'title': '$15 kitchen scale vs measuring cups: why the same cookies come out different',
+        'hook_text': '$15 scale vs measuring cups',
+        'hook_emph': '$15',
+        'script': 'A fifteen-dollar kitchen scale fixes more baking problems than a new mixer. One cup of flour '
+                  'should weigh about a hundred twenty grams, but scoop it straight from the bag and you can '
+                  "pack in a quarter more. That's why the same recipe comes out dry one week and fine the next. "
+                  'A scale removes the guesswork, and the tare button zeroes out the bowl, so everything goes '
+                  'into one bowl with fewer dishes. Look for one that reads in one-gram steps and holds at least '
+                  "five kilograms. It's also a good stocking stuffer for anyone who bakes, because",
+        'footage_queries': [   'kitchen scale weighing flour',
+                               'measuring cup flour',
+                               'baking cookies',
+                               'mixing bowl baking',
+                               'cookies on baking tray',
+                               'christmas stocking'],
+        'captions': [{'text': 'Tare = zero out the bowl', 'at': 'tare'}],
+        'graphics': [   {   'type': 'versus',
+                            'at': 'scoop',
+                            'left': ['Spooned cup', 'about 120 g'],
+                            'right': ['Scooped cup', 'up to ~150 g'],
+                            'dur': 4.2},
+                        {   'type': 'checklist',
+                            'at': 'look',
+                            'title': 'Check the scale',
+                            'items': ['1 g steps', '5 kg capacity'],
+                            'reveal_at': ['onegram', 'kilograms']}],
+        'hashtags': ['baking', 'kitchengadgets', 'giftideas'],
+        'tags': ['kitchen scale', 'baking gifts', 'stocking stuffers for bakers'],
+        'question': 'Do you measure flour by the cup or by weight?',
+        'affiliate': {'product_name': 'digital kitchen scale', 'search_term': 'digital kitchen scale grams'}},
+    {   'slug': 'monitor_1080_vs_1440',
+        'series': 'Before you buy',
+        'format': 'comparison',
+        'hook_pattern': 'price_vs',
+        'title': '$120 vs $250 monitor: why 1080p looks soft at 27 inches',
+        'hook_text': '$120 vs $250 monitor',
+        'hook_emph': '$120',
+        'script': 'A hundred-twenty-dollar full HD monitor looks sharp at twenty-four inches and soft at '
+                  "twenty-seven. It's the same number of pixels stretched across a bigger screen: about "
+                  'ninety-two pixels per inch at twenty-four inches, but only eighty-two at twenty-seven. Text '
+                  'looks fuzzy, and up close you can see the grid. A Quad HD panel at twenty-seven inches packs '
+                  "about a hundred nine pixels per inch, which is why it's the sweet spot for work and gaming, "
+                  'often for around a hundred dollars more. So get full HD at twenty-four inches, or Quad HD at '
+                  'twenty-seven, and match the resolution to the size, because',
+        'footage_queries': [   'computer monitor on desk',
+                               'home office desk setup',
+                               'typing on keyboard monitor',
+                               'gaming setup monitor',
+                               'spreadsheet on computer screen',
+                               'person working at desk'],
+        'captions': [{'text': '24in full HD, 27in Quad HD', 'at': 'get'}],
+        'graphics': [   {   'type': 'specs',
+                            'at': 'stretched',
+                            'title': 'Pixels per inch',
+                            'rows': [['24 in full HD', '92'], ['27 in full HD', '82'], ['27 in Quad HD', '109']],
+                            'highlight': 3,
+                            'reveal_at': ['ninetytwo', 'eightytwo', 'quad'],
+                            'source': 'source: screen size + resolution math'}],
+        'hashtags': ['desksetup', 'monitor', 'techtips'],
+        'tags': ['1080p vs 1440p', 'best 27 inch monitor', 'budget monitor'],
+        'question': 'What size monitor is on your desk?',
+        'affiliate': {'product_name': '27 inch 1440p monitor', 'search_term': '27 inch 1440p monitor'}},
+    {   'slug': 'projector_gift_of_week',
+        'series': 'Gift of the week',
+        'format': 'gift_pick',
+        'hook_pattern': 'one_spec',
+        'title': 'Mini projector gift: check for a real Netflix app before you buy',
+        'hook_text': 'Projector gift? Check Netflix',
+        'hook_emph': 'Netflix',
+        'script': "A mini projector is a great gift for kids' movie nights, a dorm room or the backyard, but "
+                  'check one thing first: does it run Netflix natively? Many cheap projectors use a generic '
+                  "Android system, and Netflix often won't install, or only plays through screen mirroring. Look "
+                  "for Google TV or Fire TV built in, or plan to add a streaming stick and make sure there's an "
+                  'HDMI port. Then check the two specs that matter: native full HD, not just four K supported, '
+                  'and two to three hundred ANSI lumens for a dark room. Get those right, and',
+        'footage_queries': [   'movie night projector screen',
+                               'home projector on table',
+                               'family watching movie at home',
+                               'projector light beam',
+                               'streaming device tv remote',
+                               'dorm room'],
+        'captions': [],
+        'graphics': [   {   'type': 'versus',
+                            'at': 'generic',
+                            'left': ['Generic', 'Netflix may fail'],
+                            'right': ['Google TV', 'or Fire TV built in'],
+                            'winner': 'right',
+                            'reveal_at': ['generic', 'google'],
+                            'hold': 1.6},
+                        {   'type': 'checklist',
+                            'at': 'specs',
+                            'title': 'Then check',
+                            'items': ['Native full HD', '200-300 ANSI lumens'],
+                            'reveal_at': ['native', 'ansi']}],
+        'hashtags': ['projector', 'giftideas', 'movienight'],
+        'tags': ['projector gift', 'best mini projector', 'projector with netflix'],
+        'question': 'Would you watch movies on a wall instead of a TV?',
+        'affiliate': {   'product_name': '1080p mini projector with Google TV',
+                         'search_term': '1080p mini projector google tv netflix'}},
     {
         "slug": "delivery_text_scam",
         "series": "Security in 30 seconds",
@@ -1275,36 +1588,304 @@ SCRIPTS = [
         "tags": ["usps text scam", "package delivery scam", "smishing"],
         "question": "Have you gotten one of these texts yet?",
     },
+    {   'slug': 'coffee_maker_brew_temp',
+        'series': 'Kitchen tech, decoded',
+        'format': 'comparison',
+        'hook_pattern': 'price_vs',
+        'title': '$25 vs $150 coffee maker: the difference is water temperature',
+        'hook_text': '$25 vs $150 coffee maker',
+        'hook_emph': '$25',
+        'script': 'A twenty-five-dollar coffee maker and a hundred-fifty-dollar one mostly differ in water '
+                  'temperature, not features. Coffee extracts best between about a hundred ninety-five and two '
+                  'hundred five degrees. Many cheap drip machines never get the water that hot, so the coffee '
+                  'tastes flat and sour, even with good beans. The Specialty Coffee Association certifies home '
+                  'brewers that hit that range and finish a full pot in the right time, so look for its '
+                  'certified mark on the box or the listing. Timers, apps and fancy carafes are extras. So check '
+                  'for that mark before you pay for an app, because',
+        'footage_queries': [   'coffee maker brewing',
+                               'pouring coffee into mug',
+                               'coffee beans closeup',
+                               'drip coffee pot',
+                               'kitchen counter morning',
+                               'coffee cup steam'],
+        'captions': [{'text': 'Look for the SCA certified mark', 'at': 'mark'}],
+        'graphics': [   {   'type': 'versus',
+                            'at': 'cheap',
+                            'left': ['Cheap drip', 'often too cool'],
+                            'right': ['SCA certified', '195-205°F'],
+                            'winner': 'right',
+                            'reveal_at': ['cheap', 'certifies'],
+                            'hold': 1.2},
+                        {   'type': 'checklist',
+                            'at': 'timers',
+                            'title': 'Extras, not taste',
+                            'style': 'avoid',
+                            'items': ['Timers', 'Apps'],
+                            'reveal_at': ['timers', 'apps']}],
+        'hashtags': ['coffee', 'kitchengadgets', 'techtips'],
+        'tags': ['best drip coffee maker', 'sca certified coffee maker', 'cheap vs expensive coffee maker'],
+        'question': 'Drip, pod, or French press at your place?'},
+    {   'slug': 'travel_65w_charger',
+        'series': 'Charging, decoded',
+        'format': 'under_budget',
+        'hook_pattern': 'one_spec',
+        'title': 'One 65W USB-C charger can replace three bricks: check your laptop first',
+        'hook_text': 'One 65W charger for all',
+        'hook_emph': '65W',
+        'script': 'One sixty-five-watt USB-C charger can replace your laptop brick, phone charger and tablet '
+                  'charger for holiday travel. Newer GaN chargers are about the size of a phone charger from a '
+                  'few years ago. Two checks first. Your laptop has to charge over USB-C. Round barrel plugs '
+                  "won't work. And look at the wattage printed on its original charger: most thin laptops need "
+                  'forty-five to sixty-five watts. When both ports are in use, the power splits, often '
+                  "forty-five for the laptop and twenty for the phone. That's plenty overnight. So before you "
+                  'pack a tangle of bricks, remember that',
+        'footage_queries': [   'laptop charging',
+                               'packing suitcase travel',
+                               'phone charging',
+                               'usb c port laptop',
+                               'airport travel',
+                               'hotel room desk'],
+        'captions': [{'text': 'Both ports: often 45W + 20W', 'at': 'splits'}],
+        'graphics': [   {   'type': 'checklist',
+                            'at': 'checks',
+                            'title': 'Check first',
+                            'items': ['Laptop charges by USB-C', 'Its brick: 45-65W'],
+                            'reveal_at': ['laptop', 'wattage'],
+                            'hold': 1.4}],
+        'hashtags': ['travel', 'charger', 'techtips'],
+        'tags': ['65w usb c charger', 'travel charger', 'laptop usb c charger'],
+        'question': 'How many chargers are in your bag right now?',
+        'affiliate': {   'product_name': '65W 2-port USB-C GaN charger',
+                         'search_term': '65W USB C GaN charger 2 port'}},
     {
-        "slug": "air_fryer_size_check",
-        "series": "Kitchen tech, decoded",
+        "slug": "tv_motion_rate_trap",
+        "series": "Before you buy",
         "format": "before_you_buy",
         "hook_pattern": "one_spec",
-        "title": "Before you buy an air fryer, check the quarts, not the presets",
-        "hook_text": "Air fryer? Check the quarts",
-        "hook_emph": "quarts",
+        "title": "Buying a TV for Black Friday? 'Motion Rate 240' isn't 240Hz",
+        "hook_text": "Motion Rate 240 isn't 240Hz",
+        "hook_emph": "240",
         "script": (
-            "The number that matters on an air fryer is the basket size in quarts. A two-quart model handles fries "
-            "for one person. Three to four quarts fits two people, and a family of four usually needs five quarts "
-            "or more, because food only crisps in a single layer. Pile it up and the middle steams instead. The "
-            "presets matter far less, since most of them are just a temperature and a timer you could set "
-            "yourself. A five-quart basket, like the Cosori Pro LE, covers most households. So if you're shopping "
-            "for one this season, remember that"
+            "That Motion Rate two hundred forty on a TV box usually isn't the screen's real refresh rate. Brands use names "
+            "like Motion Rate, TruMotion or Motionflow for a processed figure that's often double the panel's "
+            "native rate. A Motion Rate two hundred forty TV is very often a native one hundred twenty hertz panel, and Motion Rate "
+            "one hundred twenty is often native sixty. That's fine for movies and regular TV. Native one hundred twenty matters for sports and for gaming on a "
+            "PlayStation five or Xbox Series X. So search the model number plus native refresh rate before you "
+            "buy, because"
         ),
-        "footage_queries": ["crispy chicken wings", "family dinner table", "kitchen countertop appliances",
-                            "cooking at home kitchen", "french fries on plate", "kitchen timer"],
-        "captions": [{"text": "Single layer = crispy", "at": "layer"}],
+        "footage_queries": ["television living room", "tv store display", "watching football on tv",
+                            "playing video games console", "tv remote closeup", "electronics store shopping"],
+        "captions": [{"text": "Search: model + native refresh rate", "at": "search"}],
         "graphics": [
-            {"type": "specs", "at": "handles", "title": "Basket size",
-             "rows": [["1 person", "2 qt"], ["2 people", "3-4 qt"], ["Family of 4", "5 qt+"]],
-             "reveal_at": ["person", "people", "family"], "source": "typical sizing guidance"},
-            {"type": "versus", "at": "presets", "left": ["Presets", "a temp + a timer"],
-             "right": ["Basket size", "what matters"], "winner": "right", "dur": 4.0},
+            {"type": "versus", "at": "processed", "left": ["On the box", "Motion Rate 240"],
+             "right": ["Real panel", "often 120Hz"], "winner": "right", "dur": 4.6},
+            {"type": "checklist", "at": "matters", "title": "Native 120Hz helps",
+             "items": ["Sports", "PS5 / Xbox Series X"], "reveal_at": ["sports", "gaming"]},
         ],
-        "hashtags": ["airfryer", "kitchengadgets", "techtips"],
-        "tags": ["best air fryer", "air fryer size guide", "air fryer for family"],
-        "question": "How many people does your air fryer cook for?",
-        "affiliate": {"product_name": "5-quart basket air fryer", "search_term": "5 quart air fryer"},
+        "hashtags": ["tv", "blackfriday", "techtips"],
+        "tags": ["black friday tv", "120hz vs 60hz tv", "motion rate 240"],
+        "question": "What refresh rate is your TV, really?",
+    },
+    {   'slug': 'hand_down_phone_signout',
+        'series': 'Settings worth changing',
+        'format': 'before_you_buy',
+        'hook_pattern': 'one_spec',
+        'title': 'Handing down your old phone? Sign out first or it can lock',
+        'hook_text': 'Old phone gift? Sign out first',
+        'hook_emph': 'Sign out',
+        'script': 'Sign out of your account first, or the person you hand your old phone to may get a locked '
+                  'brick. iPhones have Activation Lock, and Android has Factory Reset Protection. Both tie the '
+                  'phone to your account, even after a wipe. On iPhone, back up, then go to Settings, tap your '
+                  'name, sign out, and erase all content and settings. On Android, back up, remove your Google '
+                  'account under Settings, Accounts, then factory reset. Take out the SIM card or delete the '
+                  'eSIM too. The whole thing takes about ten minutes, so when you upgrade this year,',
+        'footage_queries': [   'old smartphone',
+                               'person giving phone gift',
+                               'smartphone settings screen',
+                               'unboxing new smartphone',
+                               'sim card tray',
+                               'phone factory reset screen'],
+        'captions': [],
+        'graphics': [   {   'type': 'steps',
+                            'at': 'back',
+                            'title': 'iPhone',
+                            'items': ['Back up', 'Sign out', 'Erase all content'],
+                            'reveal_at': ['back', 'sign', 'erase'],
+                            'hold': 1.0},
+                        {   'type': 'steps',
+                            'at': 'google',
+                            'title': 'Android',
+                            'items': ['Remove Google account', 'Factory reset'],
+                            'reveal_at': ['google', 'factory']}],
+        'hashtags': ['iphone', 'android', 'techtips'],
+        'tags': ['reset phone before giving away', 'factory reset protection', 'activation lock'],
+        'question': "Who's getting your old phone this year?"},
+    {   'slug': 'coffee_maker_smart_plug',
+        'series': 'Kitchen tech, decoded',
+        'format': 'before_you_buy',
+        'hook_pattern': 'one_spec',
+        'title': 'A $10 smart plug can start your coffee, but only with this kind of switch',
+        'hook_text': '$10 smart plug coffee check',
+        'hook_emph': '$10',
+        'script': 'A ten-dollar smart plug can start your coffee before your alarm goes off, but only if the '
+                  'coffee maker has the right kind of switch. Look for a physical switch that stays on when you '
+                  'unplug the machine and plug it back in. Many newer machines use a soft-touch button that '
+                  "resets to off when power returns, and a smart plug can't press that. Most smart plugs are "
+                  'rated fifteen amps, which covers a typical coffee maker, and many only connect to two point '
+                  'four gigahertz Wi-Fi. Test it once: unplug, plug back in, and see if it brews. If it does, '
+                  'then',
+        'footage_queries': [   'coffee maker brewing',
+                               'smart plug',
+                               'alarm clock morning',
+                               'pouring coffee into mug',
+                               'phone app smart home',
+                               'kitchen counter morning'],
+        'captions': [{'text': 'Most need 2.4 GHz Wi-Fi', 'at': 'gigahertz'}],
+        'graphics': [   {   'type': 'versus',
+                            'at': 'physical',
+                            'left': ['Toggle switch', 'stays on: works'],
+                            'right': ['Push button', 'resets to off'],
+                            'winner': 'left',
+                            'reveal_at': ['physical', 'soft'],
+                            'hold': 1.4},
+                        {   'type': 'steps',
+                            'at': 'test',
+                            'items': ['Unplug, plug back in', 'Does it brew?'],
+                            'reveal_at': ['unplug', 'brews']}],
+        'hashtags': ['smarthome', 'coffee', 'techtips'],
+        'tags': ['smart plug coffee maker', 'smart home ideas', 'automatic coffee maker'],
+        'question': 'Would you trust a timer with your morning coffee?'},
+    {   'slug': 'black_friday_price_history',
+        'series': 'Before you buy',
+        'format': 'before_you_buy',
+        'hook_pattern': 'dont_until',
+        'title': "Black Friday 'was' prices: check the price history first",
+        'hook_text': "Don't trust the 'was' price",
+        'hook_emph': "'was'",
+        'script': "Don't trust a Black Friday was price until you check the price history. Retailers can show a "
+                  'high reference price the product rarely sold at, so forty percent off might just be the '
+                  'normal price. Free tools fix that in seconds. For Amazon, paste the product link into Camel '
+                  "Camel Camel, or install the Keepa extension, and you'll see a chart of past prices. Google "
+                  'Shopping shows price history on many products too. A real deal sits at or near the lowest '
+                  "point on that chart. If last month's price was the same, it isn't a deal. So before you check "
+                  'out,',
+        'footage_queries': [   'online shopping laptop',
+                               'black friday shopping',
+                               'price tag closeup',
+                               'shopping cart online',
+                               'person shopping on phone',
+                               'shopping bags store'],
+        'captions': [],
+        'graphics': [   {   'type': 'steps',
+                            'at': 'amazon',
+                            'title': 'Check the history',
+                            'items': ['CamelCamelCamel', 'Keepa extension', 'Google Shopping'],
+                            'reveal_at': ['camel', 'keepa', 'google'],
+                            'hold': 1.0},
+                        {   'type': 'versus',
+                            'at': 'real',
+                            'left': ['Real deal', 'near the low'],
+                            'right': ['Not a deal', 'same as last month'],
+                            'winner': 'left',
+                            'reveal_at': ['real', 'month']}],
+        'hashtags': ['blackfriday', 'shoppingtips', 'techtips'],
+        'tags': ['black friday deals', 'price history checker', 'camelcamelcamel'],
+        'question': 'What are you waiting for Black Friday to buy?'},
+    {   'slug': 'gift_card_drain',
+        'series': 'Security in 30 seconds',
+        'format': 'red_flag',
+        'hook_pattern': 'one_spec',
+        'title': 'Check the back of a gift card before you buy it off the rack',
+        'hook_text': '$100 gift card, already empty',
+        'hook_emph': '$100',
+        'script': 'A hundred-dollar gift card can be drained before the person you gave it to even opens it. '
+                  'Scammers peel open cards on store racks, copy the number and PIN, and reseal them. Once you '
+                  'pay and the card is activated, they spend the balance. So flip it over before you buy. Pass '
+                  'on any card with torn packaging, a scratched PIN strip, or a sticker over the numbers. And '
+                  'anyone asking you to pay a bill with gift cards is a scammer. Buy from behind the counter or '
+                  "the brand's own website, and keep the receipt, because",
+        'footage_queries': [   'gift card',
+                               'holding gift card',
+                               'store shelf shopping',
+                               'person paying at checkout',
+                               'receipt closeup',
+                               'online shopping laptop'],
+        'captions': [{'text': 'Bill paid in gift cards = scam', 'at': 'bill'}],
+        'graphics': [   {   'type': 'checklist',
+                            'at': 'flip',
+                            'title': 'Pass on it if',
+                            'style': 'avoid',
+                            'items': ['Torn packaging', 'Scratched PIN strip', 'Sticker over numbers'],
+                            'reveal_at': ['torn', 'scratched', 'sticker'],
+                            'hold': 1.2}],
+        'hashtags': ['scamalert', 'giftcards', 'cybersecurity'],
+        'tags': ['gift card scam', 'gift card draining', 'holiday scams'],
+        'question': 'Have you ever had a gift card come up empty?'},
+    {   'slug': 'black_friday_what_to_buy',
+        'series': 'Before you buy',
+        'format': 'comparison',
+        'hook_pattern': 'price_vs',
+        'title': "Black Friday: what's usually worth buying, and what to wait on",
+        'hook_text': 'Black Friday: buy or wait?',
+        'hook_emph': 'buy',
+        'script': 'Black Friday deals are usually real on four kinds of tech: TVs, earbuds, e-readers, and '
+                  "Amazon's own devices like Echo speakers and Fire TV sticks. Those often hit their lowest "
+                  "prices of the year that week. Chargers, cables and storage drives drop too, and they're easy "
+                  'wins. Brand-new flagship phones are the exception. Most of their deals depend on a carrier '
+                  'plan, a new line or a trade-in, so read the fine print before you call it a discount. The '
+                  'same goes for anything released in the last month or two. So make two lists before the sale '
+                  'starts, because',
+        'footage_queries': [   'black friday shopping',
+                               'television living room',
+                               'wireless earbuds case',
+                               'reading e-reader',
+                               'smart speaker closeup',
+                               'smartphone store display'],
+        'captions': [{'text': 'Phone deals: read the fine print', 'at': 'fine'}],
+        'graphics': [   {   'type': 'checklist',
+                            'at': 'tvs',
+                            'title': 'Usually worth it',
+                            'items': ['TVs', 'Earbuds', 'E-readers', 'Amazon devices'],
+                            'reveal_at': ['tvs', 'earbuds', 'ereaders', 'amazons'],
+                            'hold': 1.2},
+                        {   'type': 'checklist',
+                            'at': 'flagship',
+                            'title': 'Usually wait',
+                            'style': 'avoid',
+                            'items': ['New flagship phones', 'Just-released gadgets'],
+                            'reveal_at': ['flagship', 'released']}],
+        'hashtags': ['blackfriday', 'techdeals', 'techtips'],
+        'tags': ['black friday tech deals', 'what to buy on black friday', 'black friday 2026'],
+        'question': 'TV, earbuds or something else on your list?'},
+    {
+        "slug": "screen_cleaner_vs_water",
+        "series": "Before you buy",
+        "format": "comparison",
+        "title": "Glass cleaner vs water: what's actually safe for your laptop screen",
+        "hook_text": "Glass cleaner vs your screen",
+        "hook_emph": "Glass cleaner",
+        "script": (
+            "Glass cleaner and a paper towel can slowly ruin your screen, even though they feel like the obvious "
+            "choice. Most laptop and phone screens have a thin coating that resists fingerprints, and ammonia-based "
+            "cleaners wear it down over time. Paper towels are slightly abrasive, so they leave fine scratches you "
+            "only notice in bright light. The safe way is simple: a microfiber cloth, lightly dampened with plain "
+            "water, wiped gently. Spray the cloth, never the screen, so nothing seeps into the edges. Because"
+        ),
+        "footage_queries": ["cleaning screen", "cleaning laptop screen cloth", "glass cleaner spray bottle",
+                            "paper towel", "microfiber cloth closeup", "laptop screen closeup",
+                            "spray bottle"],
+        "captions": [{"text": "Spray the cloth, never the screen", "at": "spray"}],
+        "graphics": [
+            {"type": "checklist", "at": "coating", "title": "What goes wrong", "style": "avoid",
+             "items": ["Ammonia strips coating", "Paper towels scratch"],
+             "reveal_at": ["ammonia", "paper"], "hold": 4.6},
+            {"type": "versus", "at": "safe", "left": ["Glass cleaner", "strips coating, scratches"],
+             "right": ["Microfiber", "+ plain water, gently"], "winner": "right", "dur": 5.4},
+        ],
+        "hashtags": ["laptop", "cleaning", "techtips"],
+        "tags": ["how to clean laptop screen", "screen cleaning", "microfiber cloth"],
+        "question": "What have you been cleaning your screen with?",
+        "affiliate": {"product_name": "microfiber cleaning cloths for screens", "search_term": "microfiber cleaning cloth screens"},
     },
     {
         "slug": "browser_passwords_vs_manager",
@@ -1372,68 +1953,6 @@ SCRIPTS = [
         "question": "Do you keep 5G on, or Auto?",
     },
     {
-        "slug": "move_router_before_upgrading",
-        "series": "Before you buy",
-        "format": "before_you_buy",
-        "title": "Don't buy a new router until you try moving this one",
-        "hook_text": "Router on the floor? Move it",
-        "hook_emph": "floor",
-        "script": (
-            "Don't buy a new router until you try moving the one you have. Where it sits can matter more than "
-            "which model it is. A router sends its signal outward in every direction, so one on the floor, inside "
-            "a cabinet or behind the TV loses range right away. Put it up high, out in the open and as central as "
-            "you can. Keep it away from mirrors and big metal objects, which reflect the signal, and from the "
-            "microwave, which interferes with the two point four gigahertz band. Then run a speed test in your "
-            "slowest room. If it's still slow, upgrade. But"
-        ),
-        "footage_queries": ["router", "tv cabinet living room", "hallway shelf home",
-                            "person using phone on couch", "mirror in living room", "microwave oven closeup",
-                            "internet speed test on phone"],
-        "captions": [{"text": "Placement can matter more", "at": "matter"},
-                     {"text": "Speed test in your slowest room", "at": "run"}],
-        "graphics": [
-            {"type": "versus", "at": "floor", "left": ["Floor or cabinet", "loses range right away"],
-             "right": ["Up high", "open and central"], "winner": "right",
-             "reveal_at": ["floor", "high"], "hold": 2.4},
-            {"type": "checklist", "at": "keep", "title": "Keep it away from", "style": "avoid",
-             "items": ["Mirrors", "Big metal objects", "Microwaves (2.4 GHz)"],
-             "reveal_at": ["mirrors", "metal", "microwave"], "hold": 3.2},
-        ],
-        "hashtags": ["wifi", "router", "techtips"],
-        "tags": ["slow wifi fix", "router placement", "wifi tips"],
-        "question": "Where is your router right now?",
-    },
-    {
-        "slug": "screen_cleaner_vs_water",
-        "series": "Before you buy",
-        "format": "comparison",
-        "title": "Glass cleaner vs water: what's actually safe for your laptop screen",
-        "hook_text": "Glass cleaner vs your screen",
-        "hook_emph": "Glass cleaner",
-        "script": (
-            "Glass cleaner and a paper towel can slowly ruin your screen, even though they feel like the obvious "
-            "choice. Most laptop and phone screens have a thin coating that resists fingerprints, and ammonia-based "
-            "cleaners wear it down over time. Paper towels are slightly abrasive, so they leave fine scratches you "
-            "only notice in bright light. The safe way is simple: a microfiber cloth, lightly dampened with plain "
-            "water, wiped gently. Spray the cloth, never the screen, so nothing seeps into the edges. Because"
-        ),
-        "footage_queries": ["cleaning screen", "cleaning laptop screen cloth", "glass cleaner spray bottle",
-                            "paper towel", "microfiber cloth closeup", "laptop screen closeup",
-                            "spray bottle"],
-        "captions": [{"text": "Spray the cloth, never the screen", "at": "spray"}],
-        "graphics": [
-            {"type": "checklist", "at": "coating", "title": "What goes wrong", "style": "avoid",
-             "items": ["Ammonia strips coating", "Paper towels scratch"],
-             "reveal_at": ["ammonia", "paper"], "hold": 4.6},
-            {"type": "versus", "at": "safe", "left": ["Glass cleaner", "strips coating, scratches"],
-             "right": ["Microfiber", "+ plain water, gently"], "winner": "right", "dur": 5.4},
-        ],
-        "hashtags": ["laptop", "cleaning", "techtips"],
-        "tags": ["how to clean laptop screen", "screen cleaning", "microfiber cloth"],
-        "question": "What have you been cleaning your screen with?",
-        "affiliate": {"product_name": "microfiber cleaning cloths for screens", "search_term": "microfiber cleaning cloth screens"},
-    },
-    {
         "slug": "search_with_your_camera",
         "series": "Settings worth changing",
         "format": "comparison",
@@ -1465,34 +1984,5 @@ SCRIPTS = [
         "hashtags": ["iphone", "android", "techtips"],
         "tags": ["google lens", "visual look up", "circle to search"],
         "question": "Have you tried searching with a photo yet?",
-    },
-    {
-        "slug": "tv_motion_rate_trap",
-        "series": "Before you buy",
-        "format": "before_you_buy",
-        "hook_pattern": "one_spec",
-        "title": "Buying a TV for Black Friday? 'Motion Rate 240' isn't 240Hz",
-        "hook_text": "Motion Rate 240 isn't 240Hz",
-        "hook_emph": "240",
-        "script": (
-            "That Motion Rate two hundred forty on a TV box usually isn't the screen's real refresh rate. Brands use names "
-            "like Motion Rate, TruMotion or Motionflow for a processed figure that's often double the panel's "
-            "native rate. A Motion Rate two hundred forty TV is very often a native one hundred twenty hertz panel, and Motion Rate "
-            "one hundred twenty is often native sixty. That's fine for movies and regular TV. Native one hundred twenty matters for sports and for gaming on a "
-            "PlayStation five or Xbox Series X. So search the model number plus native refresh rate before you "
-            "buy, because"
-        ),
-        "footage_queries": ["television living room", "tv store display", "watching football on tv",
-                            "playing video games console", "tv remote closeup", "electronics store shopping"],
-        "captions": [{"text": "Search: model + native refresh rate", "at": "search"}],
-        "graphics": [
-            {"type": "versus", "at": "processed", "left": ["On the box", "Motion Rate 240"],
-             "right": ["Real panel", "often 120Hz"], "winner": "right", "dur": 4.6},
-            {"type": "checklist", "at": "matters", "title": "Native 120Hz helps",
-             "items": ["Sports", "PS5 / Xbox Series X"], "reveal_at": ["sports", "gaming"]},
-        ],
-        "hashtags": ["tv", "blackfriday", "techtips"],
-        "tags": ["black friday tv", "120hz vs 60hz tv", "motion rate 240"],
-        "question": "What refresh rate is your TV, really?",
     },
 ]
