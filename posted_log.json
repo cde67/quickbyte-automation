@@ -32,7 +32,8 @@
     "keyboard_gift_size",
     "sms_codes_vs_authenticator",
     "smart_ring_vs_watch_gift",
-    "air_fryer_size_check"
+    "air_fryer_size_check",
+    "move_router_before_upgrading"
   ],
   "ig_posted": [
     "mechanical_keyboard_budget",
@@ -58,7 +59,8 @@
     "keyboard_gift_size",
     "sms_codes_vs_authenticator",
     "smart_ring_vs_watch_gift",
-    "air_fryer_size_check"
+    "air_fryer_size_check",
+    "move_router_before_upgrading"
   ],
   "tiktok_exported": [
     "mechanical_keyboard_budget",
@@ -85,7 +87,8 @@
     "keyboard_gift_size",
     "sms_codes_vs_authenticator",
     "smart_ring_vs_watch_gift",
-    "air_fryer_size_check"
+    "air_fryer_size_check",
+    "move_router_before_upgrading"
   ],
   "tiktok_posted": [
     "usb_c_lightning_why",
@@ -112,7 +115,8 @@
     "keyboard_gift_size",
     "sms_codes_vs_authenticator",
     "smart_ring_vs_watch_gift",
-    "air_fryer_size_check"
+    "air_fryer_size_check",
+    "move_router_before_upgrading"
   ],
   "posted_dates": {
     "tech_gifts_under_30": "2026-10-19",
@@ -134,6 +138,7 @@
     "keyboard_gift_size": "2026-11-05",
     "sms_codes_vs_authenticator": "2026-11-05",
     "smart_ring_vs_watch_gift": "2026-11-06",
-    "air_fryer_size_check": "2026-11-07"
+    "air_fryer_size_check": "2026-11-07",
+    "move_router_before_upgrading": "2026-11-08"
   }
 }
