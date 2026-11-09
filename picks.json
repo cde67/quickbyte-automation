@@ -222,5 +222,68 @@
     "price": "~$35-50",
     "budget": 50,
     "gift": true
+  },
+  "8-quart dual-basket air fryer": {
+    "name": "Dual-basket air fryer (8 qt)",
+    "slug": "dual-basket-air-fryer",
+    "note": "Two 4-quart baskets mean the chicken and the fries finish at the same time, which a single basket can't do.",
+    "price": "~$120-180",
+    "budget": 999,
+    "gift": true,
+    "photo": "https://images.pexels.com/photos/35285814/pexels-photo-35285814.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+    "photo_credit": "FOX ^.ᆽ.^= ∫ / Pexels",
+    "photo_page": "https://www.pexels.com/photo/crispy-chicken-pieces-in-modern-air-fryer-35285814/"
+  },
+  "leave-in probe meat thermometer": {
+    "name": "Leave-in probe meat thermometer",
+    "slug": "leave-in-meat-thermometer",
+    "note": "It stays in the turkey and beeps when it's close, so you're not opening the oven every ten minutes.",
+    "price": "~$25-70",
+    "budget": 50,
+    "gift": false
+  },
+  "5-speed hand mixer": {
+    "name": "5-speed hand mixer",
+    "slug": "hand-mixer",
+    "note": "Handles cookie dough, whipped cream and cake batter, and it goes back in a drawer when you're done.",
+    "price": "~$40-80",
+    "budget": 50,
+    "gift": true,
+    "photo": "https://images.pexels.com/photos/5908008/pexels-photo-5908008.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+    "photo_credit": "Katerina Holmes / Pexels",
+    "photo_page": "https://www.pexels.com/photo/crop-unrecognizable-woman-beating-eggs-with-mixer-5908008/"
+  },
+  "IP67 clip-on Bluetooth speaker": {
+    "name": "IP67 clip-on Bluetooth speaker",
+    "slug": "ip67-bluetooth-speaker",
+    "note": "IP67 means it can handle the beach, the shower and a dropped drink, and the clip hangs it off a bag.",
+    "price": "~$50-80",
+    "budget": 100,
+    "gift": true,
+    "photo": "https://images.pexels.com/photos/374110/pexels-photo-374110.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+    "photo_credit": "Burst / Pexels",
+    "photo_page": "https://www.pexels.com/photo/person-holding-iphone-beside-black-portable-speaker-374110/"
+  },
+  "lidar robot vacuum": {
+    "name": "Robot vacuum with lidar",
+    "slug": "lidar-robot-vacuum",
+    "note": "The spinning lidar turret maps your rooms, so it cleans in rows instead of bumping around and missing spots.",
+    "price": "~$200-300",
+    "budget": 999,
+    "gift": false,
+    "photo": "https://images.pexels.com/photos/7641488/pexels-photo-7641488.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+    "photo_credit": "MART  PRODUCTION / Pexels",
+    "photo_page": "https://www.pexels.com/photo/white-round-robot-vacuum-on-gray-tiled-floor-7641488/"
+  },
+  "Qi2 3-in-1 charging stand with Apple Watch charger": {
+    "name": "Qi2 3-in-1 stand with Apple Watch charger",
+    "slug": "qi2-3-in-1-stand",
+    "note": "Charges an iPhone, AirPods and an Apple Watch overnight, because the watch gets its own puck instead of a flat pad.",
+    "price": "~$60-130",
+    "budget": 100,
+    "gift": true,
+    "photo": "https://images.pexels.com/photos/19238583/pexels-photo-19238583.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+    "photo_credit": "Mateusz Haberny / Pexels",
+    "photo_page": "https://www.pexels.com/photo/magsafe-iphone-stand-oakywood-19238583/"
   }
 }
