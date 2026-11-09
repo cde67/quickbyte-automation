@@ -35,7 +35,8 @@
     "air_fryer_size_check",
     "move_router_before_upgrading",
     "photo_frame_grandparents_gift",
-    "phone_battery_before_upgrade"
+    "phone_battery_before_upgrade",
+    "electric_kettle_skip"
   ],
   "ig_posted": [
     "mechanical_keyboard_budget",
@@ -64,7 +65,8 @@
     "air_fryer_size_check",
     "move_router_before_upgrading",
     "photo_frame_grandparents_gift",
-    "phone_battery_before_upgrade"
+    "phone_battery_before_upgrade",
+    "electric_kettle_skip"
   ],
   "tiktok_exported": [
     "mechanical_keyboard_budget",
@@ -94,7 +96,8 @@
     "air_fryer_size_check",
     "move_router_before_upgrading",
     "photo_frame_grandparents_gift",
-    "phone_battery_before_upgrade"
+    "phone_battery_before_upgrade",
+    "electric_kettle_skip"
   ],
   "tiktok_posted": [
     "usb_c_lightning_why",
@@ -124,7 +127,8 @@
     "air_fryer_size_check",
     "move_router_before_upgrading",
     "photo_frame_grandparents_gift",
-    "phone_battery_before_upgrade"
+    "phone_battery_before_upgrade",
+    "electric_kettle_skip"
   ],
   "posted_dates": {
     "tech_gifts_under_30": "2026-10-19",
@@ -149,6 +153,7 @@
     "air_fryer_size_check": "2026-11-07",
     "move_router_before_upgrading": "2026-11-08",
     "photo_frame_grandparents_gift": "2026-11-08",
-    "phone_battery_before_upgrade": "2026-11-09"
+    "phone_battery_before_upgrade": "2026-11-09",
+    "electric_kettle_skip": "2026-11-09"
   }
 }
