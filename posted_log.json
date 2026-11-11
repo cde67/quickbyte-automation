@@ -39,7 +39,8 @@
     "electric_kettle_skip",
     "kitchen_scale_baking",
     "tech_gifts_under_50",
-    "tech_gifts_under_100"
+    "tech_gifts_under_100",
+    "coffee_maker_brew_temp"
   ],
   "ig_posted": [
     "mechanical_keyboard_budget",
@@ -72,7 +73,8 @@
     "electric_kettle_skip",
     "kitchen_scale_baking",
     "tech_gifts_under_50",
-    "tech_gifts_under_100"
+    "tech_gifts_under_100",
+    "coffee_maker_brew_temp"
   ],
   "tiktok_exported": [
     "mechanical_keyboard_budget",
@@ -106,7 +108,8 @@
     "electric_kettle_skip",
     "kitchen_scale_baking",
     "tech_gifts_under_50",
-    "tech_gifts_under_100"
+    "tech_gifts_under_100",
+    "coffee_maker_brew_temp"
   ],
   "tiktok_posted": [
     "usb_c_lightning_why",
@@ -140,7 +143,8 @@
     "electric_kettle_skip",
     "kitchen_scale_baking",
     "tech_gifts_under_50",
-    "tech_gifts_under_100"
+    "tech_gifts_under_100",
+    "coffee_maker_brew_temp"
   ],
   "posted_dates": {
     "tech_gifts_under_30": "2026-10-19",
@@ -169,6 +173,7 @@
     "electric_kettle_skip": "2026-11-09",
     "kitchen_scale_baking": "2026-11-10",
     "tech_gifts_under_50": "2026-11-10",
-    "tech_gifts_under_100": "2026-11-11"
+    "tech_gifts_under_100": "2026-11-11",
+    "coffee_maker_brew_temp": "2026-11-11"
   }
 }
