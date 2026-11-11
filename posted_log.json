@@ -38,7 +38,8 @@
     "phone_battery_before_upgrade",
     "electric_kettle_skip",
     "kitchen_scale_baking",
-    "tech_gifts_under_50"
+    "tech_gifts_under_50",
+    "tech_gifts_under_100"
   ],
   "ig_posted": [
     "mechanical_keyboard_budget",
@@ -70,7 +71,8 @@
     "phone_battery_before_upgrade",
     "electric_kettle_skip",
     "kitchen_scale_baking",
-    "tech_gifts_under_50"
+    "tech_gifts_under_50",
+    "tech_gifts_under_100"
   ],
   "tiktok_exported": [
     "mechanical_keyboard_budget",
@@ -103,7 +105,8 @@
     "phone_battery_before_upgrade",
     "electric_kettle_skip",
     "kitchen_scale_baking",
-    "tech_gifts_under_50"
+    "tech_gifts_under_50",
+    "tech_gifts_under_100"
   ],
   "tiktok_posted": [
     "usb_c_lightning_why",
@@ -136,7 +139,8 @@
     "phone_battery_before_upgrade",
     "electric_kettle_skip",
     "kitchen_scale_baking",
-    "tech_gifts_under_50"
+    "tech_gifts_under_50",
+    "tech_gifts_under_100"
   ],
   "posted_dates": {
     "tech_gifts_under_30": "2026-10-19",
@@ -164,6 +168,7 @@
     "phone_battery_before_upgrade": "2026-11-09",
     "electric_kettle_skip": "2026-11-09",
     "kitchen_scale_baking": "2026-11-10",
-    "tech_gifts_under_50": "2026-11-10"
+    "tech_gifts_under_50": "2026-11-10",
+    "tech_gifts_under_100": "2026-11-11"
   }
 }
