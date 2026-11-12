@@ -40,7 +40,8 @@
     "kitchen_scale_baking",
     "tech_gifts_under_50",
     "tech_gifts_under_100",
-    "coffee_maker_brew_temp"
+    "coffee_maker_brew_temp",
+    "projector_gift_of_week"
   ],
   "ig_posted": [
     "mechanical_keyboard_budget",
@@ -74,7 +75,8 @@
     "kitchen_scale_baking",
     "tech_gifts_under_50",
     "tech_gifts_under_100",
-    "coffee_maker_brew_temp"
+    "coffee_maker_brew_temp",
+    "projector_gift_of_week"
   ],
   "tiktok_exported": [
     "mechanical_keyboard_budget",
@@ -109,7 +111,8 @@
     "kitchen_scale_baking",
     "tech_gifts_under_50",
     "tech_gifts_under_100",
-    "coffee_maker_brew_temp"
+    "coffee_maker_brew_temp",
+    "projector_gift_of_week"
   ],
   "tiktok_posted": [
     "usb_c_lightning_why",
@@ -144,7 +147,8 @@
     "kitchen_scale_baking",
     "tech_gifts_under_50",
     "tech_gifts_under_100",
-    "coffee_maker_brew_temp"
+    "coffee_maker_brew_temp",
+    "projector_gift_of_week"
   ],
   "posted_dates": {
     "tech_gifts_under_30": "2026-10-19",
@@ -174,6 +178,7 @@
     "kitchen_scale_baking": "2026-11-10",
     "tech_gifts_under_50": "2026-11-10",
     "tech_gifts_under_100": "2026-11-11",
-    "coffee_maker_brew_temp": "2026-11-11"
+    "coffee_maker_brew_temp": "2026-11-11",
+    "projector_gift_of_week": "2026-11-12"
   }
 }
