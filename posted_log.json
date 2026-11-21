@@ -54,7 +54,8 @@
     "coffee_maker_smart_plug",
     "black_friday_what_to_buy",
     "bluetooth_speaker_gift_of_week",
-    "black_friday_laptop_ram"
+    "black_friday_laptop_ram",
+    "espresso_machine_grinder"
   ],
   "ig_posted": [
     "mechanical_keyboard_budget",
@@ -151,7 +152,8 @@
     "coffee_maker_smart_plug",
     "black_friday_what_to_buy",
     "bluetooth_speaker_gift_of_week",
-    "black_friday_laptop_ram"
+    "black_friday_laptop_ram",
+    "espresso_machine_grinder"
   ],
   "tiktok_posted": [
     "usb_c_lightning_why",
@@ -200,7 +202,8 @@
     "coffee_maker_smart_plug",
     "black_friday_what_to_buy",
     "bluetooth_speaker_gift_of_week",
-    "black_friday_laptop_ram"
+    "black_friday_laptop_ram",
+    "espresso_machine_grinder"
   ],
   "posted_dates": {
     "tech_gifts_under_30": "2026-10-19",
@@ -244,6 +247,7 @@
     "coffee_maker_smart_plug": "2026-11-18",
     "black_friday_what_to_buy": "2026-11-18",
     "bluetooth_speaker_gift_of_week": "2026-11-19",
-    "black_friday_laptop_ram": "2026-11-20"
+    "black_friday_laptop_ram": "2026-11-20",
+    "espresso_machine_grinder": "2026-11-21"
   }
 }
