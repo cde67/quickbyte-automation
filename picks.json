@@ -285,5 +285,78 @@
     "photo": "https://images.pexels.com/photos/19238583/pexels-photo-19238583.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
     "photo_credit": "Mateusz Haberny / Pexels",
     "photo_page": "https://www.pexels.com/photo/magsafe-iphone-stand-oakywood-19238583/"
+  },
+  "cordless tire inflator": {
+    "name": "Cordless tire inflator",
+    "slug": "cordless-tire-inflator",
+    "note": "You set the PSI and it stops on its own when the tire gets there, so no more coin-op air machines.",
+    "price": "~-60",
+    "budget": 50,
+    "gift": true,
+    "photo": "https://images.pexels.com/photos/12996982/pexels-photo-12996982.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+    "photo_credit": "Srattha Nualsate / Pexels",
+    "photo_page": "https://www.pexels.com/photo/close-up-of-bike-tire-and-pump-12996982/"
+  },
+  "portable car jump starter": {
+    "name": "Portable car jump starter",
+    "slug": "portable-jump-starter",
+    "note": "Starts a dead battery without a second car or cables, and charges a phone over USB in between.",
+    "price": "~-100",
+    "budget": 100,
+    "gift": true
+  },
+  "smart bird feeder with camera": {
+    "name": "Smart bird feeder with camera",
+    "slug": "smart-bird-feeder",
+    "note": "Sends a clip to their phone every time a bird lands. Check which features need a monthly plan.",
+    "price": "~-200",
+    "budget": 999,
+    "gift": true
+  },
+  "wireless meat thermometer": {
+    "name": "Wireless meat thermometer",
+    "slug": "wireless-meat-thermometer",
+    "note": "The probe stays in the meat and the phone shows the temperature. Get one with a Wi-Fi base or repeater if they cook outside.",
+    "price": "~-100",
+    "budget": 100,
+    "gift": true
+  },
+  "1TB portable SSD (USB-C)": {
+    "name": "1TB portable SSD (USB-C)",
+    "slug": "portable-ssd-1tb",
+    "note": "Pocket-sized, plugs into USB-C laptops and newer iPhones, and you pay once instead of monthly.",
+    "price": "~-110",
+    "budget": 100,
+    "gift": true,
+    "photo": "https://images.pexels.com/photos/13595074/pexels-photo-13595074.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+    "photo_credit": "Avinash Kumar / Pexels",
+    "photo_page": "https://www.pexels.com/photo/an-external-storage-drive-on-wooden-table-13595074/"
+  },
+  "Instax Mini instant camera": {
+    "name": "Instax Mini instant camera",
+    "slug": "instax-mini",
+    "note": "Prints a real photo in seconds. Add a couple of film packs, since each shot costs around a dollar.",
+    "price": "~-90",
+    "budget": 100,
+    "gift": true,
+    "photo": "https://images.pexels.com/photos/16751384/pexels-photo-16751384.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+    "photo_credit": "Jakub Zerdzicki / Pexels",
+    "photo_page": "https://www.pexels.com/photo/instax-camera-in-overhead-view-16751384/"
+  },
+  "video doorbell with local storage": {
+    "name": "Video doorbell with local storage",
+    "slug": "video-doorbell-local",
+    "note": "Saves clips at home instead of in a paid cloud plan, so there's no monthly fee to see what happened.",
+    "price": "~-150",
+    "budget": 999,
+    "gift": true
+  },
+  "sunrise alarm clock": {
+    "name": "Sunrise alarm clock",
+    "slug": "sunrise-alarm-clock",
+    "note": "Light fades up before the alarm, which is easier to wake to on dark mornings. Pick one that works without an app.",
+    "price": "~-100",
+    "budget": 100,
+    "gift": true
   }
 }
