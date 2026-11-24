@@ -147,7 +147,10 @@
   "note": "Reads in a few seconds and has a backlit screen, so you stop guessing whether the chicken is done.",
   "price": "~$15-25",
   "budget": 25,
-  "gift": true
+  "gift": true,
+  "photo": "https://images.pexels.com/photos/6755628/pexels-photo-6755628.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "Vlada Karpovich / Pexels",
+  "photo_page": "https://www.pexels.com/photo/woman-measuring-temperature-in-a-pot-with-melted-wax-6755628/"
  },
  "conical burr coffee grinder": {
   "name": "Baratza Encore burr grinder",
@@ -221,7 +224,10 @@
   "note": "One small brick can charge a USB-C laptop and a phone at the same time, so you pack one charger instead of three.",
   "price": "~$35-50",
   "budget": 50,
-  "gift": true
+  "gift": true,
+  "photo": "https://images.pexels.com/photos/4523024/pexels-photo-4523024.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "Polina Tankilevitch / Pexels",
+  "photo_page": "https://www.pexels.com/photo/white-usb-cable-connected-in-gray-laptop-computer-4523024/"
  },
  "8-quart dual-basket air fryer": {
   "name": "Dual-basket air fryer (8 qt)",
@@ -240,7 +246,10 @@
   "note": "It stays in the turkey and beeps when it's close, so you're not opening the oven every ten minutes.",
   "price": "~$25-70",
   "budget": 50,
-  "gift": false
+  "gift": false,
+  "photo": "https://images.pexels.com/photos/5848154/pexels-photo-5848154.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "RDNE Stock project / Pexels",
+  "photo_page": "https://www.pexels.com/photo/man-in-white-long-sleeve-shirt-with-black-apron-preparing-an-uncooked-turkey-5848154/"
  },
  "5-speed hand mixer": {
   "name": "5-speed hand mixer",
@@ -303,7 +312,10 @@
   "note": "Starts a dead battery without a second car or cables, and charges a phone over USB in between.",
   "price": "~-100",
   "budget": 100,
-  "gift": true
+  "gift": true,
+  "photo": "https://images.pexels.com/photos/6473244/pexels-photo-6473244.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "Julia Avamotive / Pexels",
+  "photo_page": "https://www.pexels.com/photo/car-battery-beside-an-engine-6473244/"
  },
  "smart bird feeder with camera": {
   "name": "Smart bird feeder with camera",
@@ -311,7 +323,10 @@
   "note": "Sends a clip to their phone every time a bird lands. Check which features need a monthly plan.",
   "price": "~-200",
   "budget": 999,
-  "gift": true
+  "gift": true,
+  "photo": "https://images.pexels.com/photos/37418410/pexels-photo-37418410.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "Erwin Bosman / Pexels",
+  "photo_page": "https://www.pexels.com/photo/blue-tit-feeding-on-acorn-shaped-bird-feeder-37418410/"
  },
  "wireless meat thermometer": {
   "name": "Wireless meat thermometer",
@@ -319,7 +334,10 @@
   "note": "The probe stays in the meat and the phone shows the temperature. Get one with a Wi-Fi base or repeater if they cook outside.",
   "price": "~-100",
   "budget": 100,
-  "gift": true
+  "gift": true,
+  "photo": "https://images.pexels.com/photos/33188177/pexels-photo-33188177.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "Sadia Asrar / Pexels",
+  "photo_page": "https://www.pexels.com/photo/grilled-ribeye-steaks-with-potatoes-and-asparagus-33188177/"
  },
  "1TB portable SSD (USB-C)": {
   "name": "1TB portable SSD (USB-C)",
@@ -349,7 +367,10 @@
   "note": "Saves clips at home instead of in a paid cloud plan, so there's no monthly fee to see what happened.",
   "price": "~-150",
   "budget": 999,
-  "gift": true
+  "gift": true,
+  "photo": "https://images.pexels.com/photos/4604662/pexels-photo-4604662.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "cottonbro studio / Pexels",
+  "photo_page": "https://www.pexels.com/photo/person-in-gray-long-sleeve-shirt-holding-gray-door-knob-4604662/"
  },
  "sunrise alarm clock": {
   "name": "Sunrise alarm clock",
@@ -357,7 +378,10 @@
   "note": "Light fades up before the alarm, which is easier to wake to on dark mornings. Pick one that works without an app.",
   "price": "~-100",
   "budget": 100,
-  "gift": true
+  "gift": true,
+  "photo": "https://images.pexels.com/photos/6940872/pexels-photo-6940872.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "cottonbro studio / Pexels",
+  "photo_page": "https://www.pexels.com/photo/woman-using-her-phone-6940872/"
  },
  "laptop RAM upgrade kit 16GB": {
   "name": "Crucial 16GB laptop RAM kit",
