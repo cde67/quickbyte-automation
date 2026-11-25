@@ -124,6 +124,36 @@ def gift_season(today):
     return datetime.date(today.year, 10, 15) <= today <= datetime.date(today.year, 12, 26)
 
 
+def deal_week(today):
+    """Thanksgiving week through Cyber Monday (Nov 26 - Dec 1)."""
+    return datetime.date(today.year, 11, 26) <= today <= datetime.date(today.year, 12, 1)
+
+
+def _is_deal_video(e):
+    t = e.get("title", "").lower()
+    return ("black friday" in t or "cyber monday" in t
+            or "blackfriday" in [h.lower() for h in e.get("hashtags", [])])
+
+
+def _deal_section(live, picks_by_key):
+    """During deal week: the picks from our Black Friday videos in one place,
+    newest first. No prices (Amazon allows only live API prices)."""
+    ps, seen = [], set()
+    for e in live:
+        key = (e.get("affiliate") or {}).get("product_name")
+        if _is_deal_video(e) and key in picks_by_key and key not in seen:
+            seen.add(key)
+            ps.append(picks_by_key[key])
+    if len(ps) < 2:
+        return ""
+    return ('<section class="deals" aria-labelledby="deals-h">'
+            '<h2 id="deals-h">Black Friday: what\'s actually worth buying</h2>'
+            '<p class="season-sub">The picks from our Black Friday videos, each one checked against the spec '
+            'that decides whether a deal is real. Amazon shows the current price, so compare it with the '
+            'price history before you buy.</p>'
+            f'<div class="grid">{"".join(_card(p, anchor=False) for p in ps)}</div></section>')
+
+
 # ---------- product stills from our own footage ----------
 
 def _clip_for(slug):
@@ -501,6 +531,8 @@ def build_page(today=None):
     picks_by_key = {p["key"]: p for p in picks}
 
     parts = [_latest_section(live, picks_by_key, posted_dates, today)]
+    if deal_week(today):
+        parts.append(_deal_section(live, picks_by_key))
     in_season = gift_season(today)
     gifts = [p for p in picks if p["gift"]] if in_season else []
     if gifts:

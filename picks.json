@@ -402,5 +402,65 @@
   "photo": "https://images.pexels.com/photos/4765855/pexels-photo-4765855.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "photo_credit": "Denys Gromov / Pexels",
   "photo_page": "https://www.pexels.com/photo/ground-coffee-falling-to-a-portafilter-4765855/"
+ },
+ "PS5 console with disc drive": {
+  "name": "PlayStation 5 with disc drive",
+  "slug": "ps5-disc",
+  "note": "Plays downloads and discs, so used games, borrowed games and the ones already on the shelf all work.",
+  "budget": 999,
+  "gift": true,
+  "photo": "https://images.pexels.com/photos/12583098/pexels-photo-12583098.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "Edgar Almeida / Pexels",
+  "photo_page": "https://www.pexels.com/photo/close-up-photo-of-a-game-controller-12583098/"
+ },
+ "KitchenAid Artisan 5-quart stand mixer": {
+  "name": "KitchenAid Artisan stand mixer (5 qt)",
+  "slug": "kitchenaid-artisan-5qt",
+  "note": "Half a quart more bowl and a stronger motor than the Classic, which shows up with double batches and bread dough.",
+  "budget": 999,
+  "gift": true,
+  "photo": "https://images.pexels.com/photos/6996340/pexels-photo-6996340.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "Pavel Danilyuk / Pexels",
+  "photo_page": "https://www.pexels.com/photo/stand-mixer-on-a-table-6996340/"
+ },
+ "microSD Express card for Switch 2": {
+  "name": "SanDisk microSD Express card for Switch 2",
+  "slug": "microsd-express-switch-2",
+  "note": "Switch 2 only stores games on microSD Express cards. Check that the card says Express before you buy.",
+  "budget": 100,
+  "gift": true,
+  "photo": "https://images.pexels.com/photos/34482314/pexels-photo-34482314.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "Daniel J. Schwarz / Pexels",
+  "photo_page": "https://www.pexels.com/photo/hand-holding-black-handheld-gaming-device-outdoors-34482314/"
+ },
+ "Apple iPad (A16, 128GB)": {
+  "name": "Apple iPad (A16, 128GB)",
+  "slug": "ipad-a16-128gb",
+  "note": "The current base iPad: 128GB to start, and it works with the USB-C Apple Pencil.",
+  "budget": 999,
+  "gift": true,
+  "photo": "https://images.pexels.com/photos/8715881/pexels-photo-8715881.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "Katya Wolf / Pexels",
+  "photo_page": "https://www.pexels.com/photo/woman-drawing-a-digital-picture-on-a-tablet-8715881/"
+ },
+ "Cuisinart 14-cup food processor": {
+  "name": "Cuisinart 14-cup food processor",
+  "slug": "cuisinart-14-cup",
+  "note": "Chops, slices and shreds dry food without turning it to mush. The job a blender can't do.",
+  "budget": 999,
+  "gift": true,
+  "photo": "https://images.pexels.com/photos/5847235/pexels-photo-5847235.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "ROMAN ODINTSOV / Pexels",
+  "photo_page": "https://www.pexels.com/photo/top-view-of-a-bowl-of-peanuts-5847235/"
+ },
+ "Soundcore Q20i noise cancelling headphones": {
+  "name": "Soundcore Q20i headphones",
+  "slug": "soundcore-q20i",
+  "note": "Rated 40 hours with noise cancelling on, which is the number that matters on a flight.",
+  "budget": 50,
+  "gift": true,
+  "photo": "https://images.pexels.com/photos/33174697/pexels-photo-33174697.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "photo_credit": "Andrey Matveev / Pexels",
+  "photo_page": "https://www.pexels.com/photo/black-over-ear-headphones-on-wooden-background-33174697/"
  }
 }
